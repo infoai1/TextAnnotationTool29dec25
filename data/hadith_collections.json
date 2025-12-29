@@ -1,0 +1,70 @@
+{
+  "collections": [
+    {
+      "name": "Sahih al-Bukhari",
+      "short_names": ["Bukhari", "Al-Bukhari"],
+      "compiler": "Imam al-Bukhari",
+      "total_hadith": 7275
+    },
+    {
+      "name": "Sahih Muslim",
+      "short_names": ["Muslim"],
+      "compiler": "Imam Muslim",
+      "total_hadith": 7500
+    },
+    {
+      "name": "Sunan at-Tirmidhi",
+      "short_names": ["Tirmidhi", "At-Tirmidhi", "Jami at-Tirmidhi"],
+      "compiler": "Imam at-Tirmidhi",
+      "total_hadith": 3956
+    },
+    {
+      "name": "Sunan Abi Dawood",
+      "short_names": ["Abu Dawood", "Abi Dawood", "Abu Dawud"],
+      "compiler": "Imam Abu Dawood",
+      "total_hadith": 5274
+    },
+    {
+      "name": "Sunan an-Nasa'i",
+      "short_names": ["Nasa'i", "An-Nasa'i", "Nasai"],
+      "compiler": "Imam an-Nasa'i",
+      "total_hadith": 5761
+    },
+    {
+      "name": "Sunan Ibn Majah",
+      "short_names": ["Ibn Majah"],
+      "compiler": "Imam Ibn Majah",
+      "total_hadith": 4341
+    },
+    {
+      "name": "Musnad Ahmad",
+      "short_names": ["Ahmad", "Musnad"],
+      "compiler": "Imam Ahmad ibn Hanbal",
+      "total_hadith": 27647
+    },
+    {
+      "name": "Muwatta Malik",
+      "short_names": ["Malik", "Muwatta"],
+      "compiler": "Imam Malik",
+      "total_hadith": 1720
+    },
+    {
+      "name": "Musnad Al-Bazzar",
+      "short_names": ["Al-Bazzar", "Bazzar"],
+      "compiler": "Imam al-Bazzar",
+      "total_hadith": null
+    },
+    {
+      "name": "Musnad Al-Shihab",
+      "short_names": ["Al-Shihab", "Shihab"],
+      "compiler": "Al-Quda'i",
+      "total_hadith": null
+    },
+    {
+      "name": "Al-Tabarani",
+      "short_names": ["Tabarani", "Al-Mu'jam"],
+      "compiler": "Imam al-Tabarani",
+      "total_hadith": null
+    }
+  ]
+}
