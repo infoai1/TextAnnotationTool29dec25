@@ -404,19 +404,32 @@ def render_paragraph(para_idx: int):
                     key=f"hadith_num_{para_id}"
                 )
             with col4:
-                pass  # Empty column for alignment
+                # Show custom input when "Other" is selected
+                if collection == "Other":
+                    custom_collection = st.text_input(
+                        "Collection Name",
+                        key=f"custom_collection_{para_id}",
+                        placeholder="Enter collection name"
+                    )
+                else:
+                    custom_collection = None
 
             if st.button("Add Hadith Reference", key=f"add_hadith_{para_id}"):
-                new_ref = {
-                    'collection': collection,
-                    'number': hadith_num,
-                    'narrator': None,
-                    'detection': 'manual',
-                    'verified': True
-                }
-                para['hadith_refs'].append(new_ref)
-                st.success(f"Added {collection}, Hadith No. {hadith_num}")
-                st.rerun()
+                # Use custom collection name if "Other" was selected
+                final_collection = custom_collection if collection == "Other" and custom_collection else collection
+                if collection == "Other" and not custom_collection:
+                    st.error("Please enter a collection name")
+                else:
+                    new_ref = {
+                        'collection': final_collection,
+                        'number': hadith_num,
+                        'narrator': None,
+                        'detection': 'manual',
+                        'verified': True
+                    }
+                    para['hadith_refs'].append(new_ref)
+                    st.success(f"Added {final_collection}, Hadith No. {hadith_num}")
+                    st.rerun()
 
         elif tag_type == "Seerah":
             with col2:
