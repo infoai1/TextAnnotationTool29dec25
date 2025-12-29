@@ -48,6 +48,16 @@ def init_session_state():
         st.session_state.highlight_numbers = True
     if 'custom_keywords' not in st.session_state:
         st.session_state.custom_keywords = DEFAULT_KEYWORDS.copy()
+    # Paragraph grouping
+    if 'selected_for_grouping' not in st.session_state:
+        st.session_state.selected_for_grouping = set()
+
+
+def count_tokens(text: str) -> dict:
+    """Count words and characters in text."""
+    words = len(text.split())
+    chars = len(text)
+    return {'words': words, 'chars': chars}
 
 
 def process_uploaded_file(uploaded_file):
@@ -122,19 +132,24 @@ def export_json():
     quran_count = sum(len(p.get('quran_refs', [])) for p in st.session_state.paragraphs)
     hadith_count = sum(len(p.get('hadith_refs', [])) for p in st.session_state.paragraphs)
     seerah_count = sum(len(p.get('seerah_refs', [])) for p in st.session_state.paragraphs)
+    other_book_count = sum(len(p.get('other_book_refs', [])) for p in st.session_state.paragraphs)
+
+    # Filter out grouped paragraphs for cleaner export
+    active_paragraphs = [p for p in st.session_state.paragraphs if not p.get('grouped_into')]
 
     export_data = {
         "book_title": st.session_state.book_title,
         "author": st.session_state.author,
         "processed_date": datetime.now().strftime("%Y-%m-%d"),
         "annotator": st.session_state.annotator,
-        "paragraphs": st.session_state.paragraphs,
+        "paragraphs": active_paragraphs,
         "summary": {
-            "total_paragraphs": total,
+            "total_paragraphs": len(active_paragraphs),
             "reviewed_paragraphs": reviewed,
             "quran_refs_count": quran_count,
             "hadith_refs_count": hadith_count,
-            "seerah_refs_count": seerah_count
+            "seerah_refs_count": seerah_count,
+            "other_book_refs_count": other_book_count
         }
     }
 
@@ -203,6 +218,73 @@ def render_progress():
         st.caption(f"Progress: {reviewed}/{total} paragraphs reviewed ({progress*100:.1f}%)")
 
 
+def group_selected_paragraphs():
+    """Group selected consecutive paragraphs into one."""
+    selected = sorted(st.session_state.selected_for_grouping)
+
+    if len(selected) < 2:
+        return
+
+    # Check if paragraphs are consecutive
+    para_indices = []
+    for i, para in enumerate(st.session_state.paragraphs):
+        if para['id'] in selected:
+            para_indices.append(i)
+
+    # Verify they are consecutive
+    is_consecutive = all(para_indices[i] + 1 == para_indices[i + 1] for i in range(len(para_indices) - 1))
+
+    if not is_consecutive:
+        st.sidebar.error("Please select consecutive paragraphs only")
+        return
+
+    # Get the first paragraph (will be the merged one)
+    first_idx = para_indices[0]
+    first_para = st.session_state.paragraphs[first_idx]
+
+    # Merge text from all selected paragraphs
+    merged_text_parts = []
+    merged_quran_refs = list(first_para.get('quran_refs', []))
+    merged_hadith_refs = list(first_para.get('hadith_refs', []))
+    merged_seerah_refs = list(first_para.get('seerah_refs', []))
+    merged_other_book_refs = list(first_para.get('other_book_refs', []))
+    grouped_para_ids = []
+
+    for idx in para_indices:
+        para = st.session_state.paragraphs[idx]
+        merged_text_parts.append(para['text'])
+        grouped_para_ids.append(para['id'])
+
+        if idx != first_idx:
+            # Merge references from other paragraphs
+            merged_quran_refs.extend(para.get('quran_refs', []))
+            merged_hadith_refs.extend(para.get('hadith_refs', []))
+            merged_seerah_refs.extend(para.get('seerah_refs', []))
+            merged_other_book_refs.extend(para.get('other_book_refs', []))
+            # Mark as grouped
+            para['grouped_into'] = first_para['id']
+
+    # Update first paragraph with merged content
+    first_para['text'] = '\n\n'.join(merged_text_parts)
+    first_para['quran_refs'] = merged_quran_refs
+    first_para['hadith_refs'] = merged_hadith_refs
+    first_para['seerah_refs'] = merged_seerah_refs
+    first_para['other_book_refs'] = merged_other_book_refs
+    first_para['grouped_from'] = grouped_para_ids
+
+    # Update detected refs for the merged paragraph
+    from extractors import detect_quran_refs, detect_hadith_refs
+    quran_refs = detect_quran_refs(first_para['text'])
+    hadith_refs = detect_hadith_refs(first_para['text'])
+    st.session_state.detected_refs[first_para['id']] = {
+        'quran': quran_refs,
+        'hadith': hadith_refs
+    }
+
+    # Clear selection
+    st.session_state.selected_for_grouping = set()
+
+
 def render_sidebar():
     """Render the sidebar with highlighting options."""
     with st.sidebar:
@@ -254,6 +336,27 @@ def render_sidebar():
 
         st.divider()
 
+        # Paragraph Grouping Section
+        st.subheader("Paragraph Grouping")
+        selected_count = len(st.session_state.selected_for_grouping)
+        if selected_count > 0:
+            st.info(f"{selected_count} paragraphs selected")
+
+            if selected_count >= 2:
+                if st.button("🔗 Group Selected", use_container_width=True):
+                    group_selected_paragraphs()
+                    st.rerun()
+            else:
+                st.caption("Select at least 2 consecutive paragraphs to group")
+
+            if st.button("Clear Selection", use_container_width=True):
+                st.session_state.selected_for_grouping = set()
+                st.rerun()
+        else:
+            st.caption("Check 'Group' boxes on consecutive paragraphs to merge them")
+
+        st.divider()
+
         # Color legend
         st.subheader("Color Legend")
         st.markdown("""
@@ -261,6 +364,7 @@ def render_sidebar():
         - 🔵 **Blue**: Hadith references
         - 🟠 **Orange**: Keywords
         - 🟣 **Purple**: Numbers
+        - 📌 Has references
         """)
 
 
@@ -270,11 +374,30 @@ def render_paragraph(para_idx: int):
     para_id = para['id']
     detected = st.session_state.detected_refs.get(para_id, {'quran': [], 'hadith': []})
 
+    # Check if paragraph is part of a group
+    if para.get('grouped_into'):
+        return  # Skip rendering if merged into another paragraph
+
     # Paragraph container
     with st.container():
-        # Header
+        # Header with word count
         reviewed_icon = "✅" if para.get('reviewed') else "⬜"
-        st.subheader(f"{reviewed_icon} Paragraph {para_id}")
+        token_info = count_tokens(para['text'])
+        has_refs = bool(detected['quran'] or detected['hadith'] or para.get('quran_refs') or para.get('hadith_refs'))
+        ref_indicator = "📌" if has_refs else ""
+
+        col_header, col_stats, col_group = st.columns([3, 2, 1])
+        with col_header:
+            st.subheader(f"{reviewed_icon} Paragraph {para_id} {ref_indicator}")
+        with col_stats:
+            st.caption(f"📝 {token_info['words']} words | {token_info['chars']} chars")
+        with col_group:
+            # Grouping checkbox
+            is_selected = para_id in st.session_state.selected_for_grouping
+            if st.checkbox("Group", value=is_selected, key=f"group_select_{para_id}", help="Select to group with adjacent paragraphs"):
+                st.session_state.selected_for_grouping.add(para_id)
+            else:
+                st.session_state.selected_for_grouping.discard(para_id)
 
         # Display text with highlights
         keywords = st.session_state.custom_keywords if st.session_state.highlight_keywords else None
@@ -346,7 +469,7 @@ def render_paragraph(para_idx: int):
         with col1:
             tag_type = st.selectbox(
                 "Reference type",
-                ["None", "Quran", "Hadith", "Seerah"],
+                ["None", "Quran", "Hadith", "Seerah", "Other Book"],
                 key=f"tag_type_{para_id}",
                 label_visibility="collapsed"
             )
@@ -448,12 +571,44 @@ def render_paragraph(para_idx: int):
                 st.success("Added Seerah reference")
                 st.rerun()
 
+        elif tag_type == "Other Book":
+            with col2:
+                book_name = st.text_input(
+                    "Book Name",
+                    key=f"other_book_name_{para_id}",
+                    placeholder="Enter book name"
+                )
+            with col3:
+                page_or_ref = st.text_input(
+                    "Page/Reference",
+                    key=f"other_book_ref_{para_id}",
+                    placeholder="e.g., Page 45 or Ch. 3"
+                )
+            with col4:
+                pass  # Alignment
+
+            if st.button("Add Book Reference", key=f"add_other_book_{para_id}"):
+                if not book_name:
+                    st.error("Please enter a book name")
+                else:
+                    if 'other_book_refs' not in para:
+                        para['other_book_refs'] = []
+                    para['other_book_refs'].append({
+                        'book_name': book_name,
+                        'reference': page_or_ref,
+                        'detection': 'manual',
+                        'verified': True
+                    })
+                    st.success(f"Added reference from {book_name}")
+                    st.rerun()
+
         # Display manually added references
         manual_quran = [r for r in para.get('quran_refs', []) if r.get('detection') == 'manual']
         manual_hadith = [r for r in para.get('hadith_refs', []) if r.get('detection') == 'manual']
         manual_seerah = para.get('seerah_refs', [])
+        manual_other_books = para.get('other_book_refs', [])
 
-        if manual_quran or manual_hadith or manual_seerah:
+        if manual_quran or manual_hadith or manual_seerah or manual_other_books:
             st.markdown("**Manually added references:**")
             for ref in manual_quran:
                 ayah_text = f"{ref['surah']}:{ref['ayah_start']}"
@@ -464,6 +619,8 @@ def render_paragraph(para_idx: int):
                 st.markdown(f"🔵 {ref.get('collection', 'Unknown')}, Hadith No. {ref.get('number', '?')} *(manual)*")
             for ref in manual_seerah:
                 st.markdown(f"📜 Seerah: {ref.get('note', '')} *(manual)*")
+            for ref in manual_other_books:
+                st.markdown(f"📚 {ref.get('book_name', 'Unknown')}: {ref.get('reference', '')} *(manual)*")
 
         # Notes section
         notes = st.text_area(
