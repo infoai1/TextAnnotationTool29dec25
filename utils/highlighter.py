@@ -90,6 +90,63 @@ def get_highlight_css() -> str:
         background-color: #9c27b0;
         color: white;
     }
+    /* Structure type styles */
+    div.paragraph-box.type-chapter_heading {
+        background-color: #1a237e !important;
+        border-left-color: #3f51b5 !important;
+        font-size: 1.3em !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        padding: 25px !important;
+    }
+    div.paragraph-box.type-subheading {
+        background-color: #283593 !important;
+        border-left-color: #5c6bc0 !important;
+        font-size: 1.15em !important;
+        font-weight: bold !important;
+        padding: 18px !important;
+    }
+    div.paragraph-box.type-quote {
+        background-color: #424242 !important;
+        border-left-color: #ff9800 !important;
+        font-style: italic !important;
+        padding-left: 30px !important;
+        margin-left: 20px !important;
+        border-left-width: 3px !important;
+    }
+    div.paragraph-box.type-quote.quote-quran {
+        border-left-color: #4caf50 !important;
+        background-color: #1b3320 !important;
+    }
+    div.paragraph-box.type-quote.quote-hadith {
+        border-left-color: #2196f3 !important;
+        background-color: #1a2d40 !important;
+    }
+    /* Structure type badge */
+    .structure-badge {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 0.75em;
+        margin-left: 8px;
+        font-weight: normal;
+    }
+    .structure-badge.chapter_heading {
+        background-color: #3f51b5;
+        color: white;
+    }
+    .structure-badge.subheading {
+        background-color: #5c6bc0;
+        color: white;
+    }
+    .structure-badge.quote {
+        background-color: #ff9800;
+        color: black;
+    }
+    .structure-badge.paragraph {
+        background-color: #757575;
+        color: white;
+    }
     </style>
     """
 

@@ -152,6 +152,21 @@ def export_json():
     # Filter out grouped paragraphs for cleaner export
     active_paragraphs = [p for p in st.session_state.paragraphs if not p.get('grouped_into')]
 
+    # Count structure types
+    structure_counts = {
+        "chapter_headings": sum(1 for p in active_paragraphs if p.get('type') == 'chapter_heading'),
+        "subheadings": sum(1 for p in active_paragraphs if p.get('type') == 'subheading'),
+        "quotes": sum(1 for p in active_paragraphs if p.get('type') == 'quote'),
+        "paragraphs": sum(1 for p in active_paragraphs if p.get('type') == 'paragraph')
+    }
+
+    # Count quote types
+    quote_type_counts = {
+        "quran_quotes": sum(1 for p in active_paragraphs if p.get('type') == 'quote' and p.get('quote_type') == 'quran'),
+        "hadith_quotes": sum(1 for p in active_paragraphs if p.get('type') == 'quote' and p.get('quote_type') == 'hadith'),
+        "other_quotes": sum(1 for p in active_paragraphs if p.get('type') == 'quote' and p.get('quote_type') == 'other')
+    }
+
     export_data = {
         "book_title": st.session_state.book_title,
         "author": st.session_state.author,
@@ -163,7 +178,9 @@ def export_json():
             "hadith_refs_count": hadith_count,
             "seerah_refs_count": seerah_count,
             "other_book_refs_count": other_book_count,
-            "year_refs_count": year_count
+            "year_refs_count": year_count,
+            "structure": structure_counts,
+            "quote_types": quote_type_counts
         }
     }
 
@@ -395,12 +412,18 @@ def render_sidebar():
         # Color legend
         st.subheader("Color Legend")
         st.markdown("""
+        **Highlights:**
         - 🟢 **Green**: Quran references
         - 🔵 **Blue**: Hadith references
         - 🩵 **Cyan**: Years/Dates
         - 🟠 **Orange**: Keywords
         - 🟣 **Purple**: Numbers
-        - 📌 Has references
+
+        **Structure Types:**
+        - 📘 **Chapter**: Dark blue, bold, centered
+        - 📗 **Subheading**: Blue, bold
+        - 💬 **Quote**: Gray, italic, indented
+        - 📄 **Paragraph**: Normal text
         """)
 
 
@@ -416,25 +439,74 @@ def render_paragraph(para_idx: int):
 
     # Paragraph container
     with st.container():
-        # Header with word count
+        # Header with word count and structure type
         reviewed_icon = "✅" if para.get('reviewed') else "⬜"
         token_info = count_tokens(para['text'])
         has_refs = bool(detected['quran'] or detected['hadith'] or detected.get('year') or
                        para.get('quran_refs') or para.get('hadith_refs') or para.get('year_refs'))
         ref_indicator = "📌" if has_refs else ""
 
-        col_header, col_stats, col_group = st.columns([3, 2, 1])
+        # Get current paragraph type
+        para_type = para.get('type', 'paragraph')
+        para_level = para.get('level')
+        quote_type = para.get('quote_type')
+
+        col_header, col_type, col_stats, col_group = st.columns([2, 2, 1.5, 0.5])
         with col_header:
             st.subheader(f"{reviewed_icon} Paragraph {para_id} {ref_indicator}")
+        with col_type:
+            # Type dropdown for structure classification
+            type_options = ["paragraph", "chapter_heading", "subheading", "quote"]
+            current_idx = type_options.index(para_type) if para_type in type_options else 0
+            new_type = st.selectbox(
+                "Type",
+                type_options,
+                index=current_idx,
+                key=f"type_{para_id}",
+                label_visibility="collapsed"
+            )
+            if new_type != para_type:
+                para['type'] = new_type
+                # Set default level for headings
+                if new_type == 'chapter_heading':
+                    para['level'] = 1
+                elif new_type == 'subheading':
+                    para['level'] = 2
+                else:
+                    para['level'] = None
         with col_stats:
-            st.caption(f"📝 {token_info['words']} words | {token_info['chars']} chars")
+            st.caption(f"📝 {token_info['words']}w | {token_info['chars']}c")
         with col_group:
             # Grouping checkbox
             is_selected = para_id in st.session_state.selected_for_grouping
-            if st.checkbox("Group", value=is_selected, key=f"group_select_{para_id}", help="Select to group with adjacent paragraphs"):
+            if st.checkbox("Grp", value=is_selected, key=f"group_select_{para_id}", help="Select to group"):
                 st.session_state.selected_for_grouping.add(para_id)
             else:
                 st.session_state.selected_for_grouping.discard(para_id)
+
+        # Additional options for quotes
+        if para.get('type') == 'quote':
+            col_qt1, col_qt2 = st.columns([1, 3])
+            with col_qt1:
+                quote_options = ["other", "quran", "hadith"]
+                current_qt_idx = quote_options.index(quote_type) if quote_type in quote_options else 0
+                new_quote_type = st.selectbox(
+                    "Quote type",
+                    quote_options,
+                    index=current_qt_idx,
+                    key=f"quote_type_{para_id}",
+                    format_func=lambda x: x.capitalize()
+                )
+                if new_quote_type != quote_type:
+                    para['quote_type'] = new_quote_type
+
+        # Build CSS classes for paragraph box
+        css_classes = ["paragraph-box"]
+        if para.get('reviewed'):
+            css_classes.append("reviewed")
+        css_classes.append(f"type-{para.get('type', 'paragraph')}")
+        if para.get('type') == 'quote' and para.get('quote_type'):
+            css_classes.append(f"quote-{para.get('quote_type')}")
 
         # Display text with highlights
         keywords = st.session_state.custom_keywords if st.session_state.highlight_keywords else None
@@ -447,7 +519,7 @@ def render_paragraph(para_idx: int):
             highlight_years=st.session_state.highlight_years
         )
         st.markdown(
-            f'<div class="paragraph-box {"reviewed" if para.get("reviewed") else ""}">{highlighted_text}</div>',
+            f'<div class="{" ".join(css_classes)}">{highlighted_text}</div>',
             unsafe_allow_html=True
         )
 
@@ -739,15 +811,23 @@ def main():
         quran_count = sum(len(p.get('quran_refs', [])) for p in st.session_state.paragraphs)
         hadith_count = sum(len(p.get('hadith_refs', [])) for p in st.session_state.paragraphs)
 
-        col1, col2, col3, col4 = st.columns(4)
+        # Count structure types
+        chapter_count = sum(1 for p in st.session_state.paragraphs if p.get('type') == 'chapter_heading' and not p.get('grouped_into'))
+        quote_count = sum(1 for p in st.session_state.paragraphs if p.get('type') == 'quote' and not p.get('grouped_into'))
+
+        col1, col2, col3, col4, col5, col6 = st.columns(6)
         with col1:
-            st.metric("Total Paragraphs", total)
+            st.metric("Total", total)
         with col2:
             st.metric("Reviewed", reviewed)
         with col3:
-            st.metric("Quran References", quran_count)
+            st.metric("Chapters", chapter_count)
         with col4:
-            st.metric("Hadith References", hadith_count)
+            st.metric("Quotes", quote_count)
+        with col5:
+            st.metric("Quran Refs", quran_count)
+        with col6:
+            st.metric("Hadith Refs", hadith_count)
 
 
 if __name__ == "__main__":
