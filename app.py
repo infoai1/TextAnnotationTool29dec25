@@ -13,7 +13,7 @@ from extractors import extract_paragraphs, detect_quran_refs, detect_hadith_refs
 from extractors.docx_parser import get_document_metadata
 from extractors.quran_detector import format_quran_ref
 from extractors.hadith_detector import format_hadith_ref, get_collection_list
-from utils.highlighter import get_highlight_css, highlight_text_simple, DEFAULT_KEYWORDS
+from utils.highlighter import get_highlight_css, highlight_text_simple, DEFAULT_KEYWORDS, find_year_positions
 
 
 # Page configuration
@@ -79,11 +79,13 @@ def process_uploaded_file(uploaded_file):
         para_id = para['id']
         quran_refs = detect_quran_refs(para['text'])
         hadith_refs = detect_hadith_refs(para['text'])
+        year_refs = find_year_positions(para['text'])
 
         # Store detected refs
         detected_refs[para_id] = {
             'quran': quran_refs,
-            'hadith': hadith_refs
+            'hadith': hadith_refs,
+            'year': year_refs
         }
 
         # Initialize paragraph refs from auto-detection
@@ -107,6 +109,16 @@ def process_uploaded_file(uploaded_file):
                 'verified': False
             }
             for ref in hadith_refs
+        ]
+        para['year_refs'] = [
+            {
+                'text': para['text'][ref[0]:ref[1]],
+                'start_pos': ref[0],
+                'end_pos': ref[1],
+                'detection': 'auto',
+                'verified': False
+            }
+            for ref in year_refs
         ]
 
     st.session_state.paragraphs = paragraphs
@@ -135,6 +147,7 @@ def export_json():
     hadith_count = sum(len(p.get('hadith_refs', [])) for p in st.session_state.paragraphs)
     seerah_count = sum(len(p.get('seerah_refs', [])) for p in st.session_state.paragraphs)
     other_book_count = sum(len(p.get('other_book_refs', [])) for p in st.session_state.paragraphs)
+    year_count = sum(len(p.get('year_refs', [])) for p in st.session_state.paragraphs)
 
     # Filter out grouped paragraphs for cleaner export
     active_paragraphs = [p for p in st.session_state.paragraphs if not p.get('grouped_into')]
@@ -142,8 +155,6 @@ def export_json():
     export_data = {
         "book_title": st.session_state.book_title,
         "author": st.session_state.author,
-        "processed_date": datetime.now().strftime("%Y-%m-%d"),
-        "annotator": st.session_state.annotator,
         "paragraphs": active_paragraphs,
         "summary": {
             "total_paragraphs": len(active_paragraphs),
@@ -151,7 +162,8 @@ def export_json():
             "quran_refs_count": quran_count,
             "hadith_refs_count": hadith_count,
             "seerah_refs_count": seerah_count,
-            "other_book_refs_count": other_book_count
+            "other_book_refs_count": other_book_count,
+            "year_refs_count": year_count
         }
     }
 
@@ -250,6 +262,7 @@ def group_selected_paragraphs():
     merged_hadith_refs = list(first_para.get('hadith_refs', []))
     merged_seerah_refs = list(first_para.get('seerah_refs', []))
     merged_other_book_refs = list(first_para.get('other_book_refs', []))
+    merged_year_refs = list(first_para.get('year_refs', []))
     grouped_para_ids = []
 
     for idx in para_indices:
@@ -263,6 +276,7 @@ def group_selected_paragraphs():
             merged_hadith_refs.extend(para.get('hadith_refs', []))
             merged_seerah_refs.extend(para.get('seerah_refs', []))
             merged_other_book_refs.extend(para.get('other_book_refs', []))
+            merged_year_refs.extend(para.get('year_refs', []))
             # Mark as grouped
             para['grouped_into'] = first_para['id']
 
@@ -278,10 +292,23 @@ def group_selected_paragraphs():
     from extractors import detect_quran_refs, detect_hadith_refs
     quran_refs = detect_quran_refs(first_para['text'])
     hadith_refs = detect_hadith_refs(first_para['text'])
+    year_refs = find_year_positions(first_para['text'])
     st.session_state.detected_refs[first_para['id']] = {
         'quran': quran_refs,
-        'hadith': hadith_refs
+        'hadith': hadith_refs,
+        'year': year_refs
     }
+    # Update year_refs for merged paragraph
+    first_para['year_refs'] = [
+        {
+            'text': first_para['text'][ref[0]:ref[1]],
+            'start_pos': ref[0],
+            'end_pos': ref[1],
+            'detection': 'auto',
+            'verified': False
+        }
+        for ref in year_refs
+    ]
 
     # Clear selection
     st.session_state.selected_for_grouping = set()
@@ -392,7 +419,8 @@ def render_paragraph(para_idx: int):
         # Header with word count
         reviewed_icon = "✅" if para.get('reviewed') else "⬜"
         token_info = count_tokens(para['text'])
-        has_refs = bool(detected['quran'] or detected['hadith'] or para.get('quran_refs') or para.get('hadith_refs'))
+        has_refs = bool(detected['quran'] or detected['hadith'] or detected.get('year') or
+                       para.get('quran_refs') or para.get('hadith_refs') or para.get('year_refs'))
         ref_indicator = "📌" if has_refs else ""
 
         col_header, col_stats, col_group = st.columns([3, 2, 1])
@@ -424,7 +452,8 @@ def render_paragraph(para_idx: int):
         )
 
         # Auto-detected references section
-        if detected['quran'] or detected['hadith']:
+        year_refs = detected.get('year', [])
+        if detected['quran'] or detected['hadith'] or year_refs:
             st.markdown("**Auto-detected references:**")
 
             # Quran references
@@ -471,6 +500,27 @@ def render_paragraph(para_idx: int):
                 with col2:
                     ref_text = format_hadith_ref(ref)
                     st.markdown(f'🔵 **{ref_text}**')
+
+            # Year/Date references
+            for i, ref in enumerate(year_refs):
+                ref_key = f"year_{para_id}_{i}"
+                col1, col2 = st.columns([0.1, 0.9])
+                with col1:
+                    verified = False
+                    if i < len(para.get('year_refs', [])):
+                        verified = para['year_refs'][i].get('verified', False)
+                    new_verified = st.checkbox(
+                        "",
+                        value=verified,
+                        key=ref_key,
+                        label_visibility="collapsed"
+                    )
+                    if i < len(para.get('year_refs', [])):
+                        para['year_refs'][i]['verified'] = new_verified
+                with col2:
+                    # Extract the year text from the original text
+                    year_text = para['text'][ref[0]:ref[1]]
+                    st.markdown(f'🩵 **Year/Date: {year_text}**')
 
         # Manual tag section
         st.markdown("**Add manual tag:**")
