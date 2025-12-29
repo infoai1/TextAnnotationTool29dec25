@@ -13,27 +13,32 @@ def get_highlight_css() -> str:
     <style>
     .highlight-quran {
         background-color: #c8e6c9;
+        color: #1b5e20 !important;
         padding: 2px 4px;
         border-radius: 3px;
         border-bottom: 2px solid #4caf50;
     }
     .highlight-hadith {
         background-color: #bbdefb;
+        color: #0d47a1 !important;
         padding: 2px 4px;
         border-radius: 3px;
         border-bottom: 2px solid #2196f3;
     }
     .paragraph-box {
-        background-color: #f5f5f5;
-        padding: 15px;
+        background-color: #2d2d2d;
+        color: #e0e0e0 !important;
+        padding: 20px;
         border-radius: 8px;
         margin: 10px 0;
         border-left: 4px solid #9e9e9e;
-        line-height: 1.6;
+        line-height: 1.8;
+        min-height: 80px;
+        font-size: 1.05em;
     }
     .paragraph-box.reviewed {
         border-left-color: #4caf50;
-        background-color: #f1f8e9;
+        background-color: #1a3320;
     }
     .ref-tag {
         display: inline-block;
