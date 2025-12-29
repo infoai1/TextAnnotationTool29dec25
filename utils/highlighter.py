@@ -41,6 +41,19 @@ def get_highlight_css() -> str:
         padding: 2px 6px !important;
         border-radius: 3px !important;
     }
+    div.paragraph-box span.highlight-keyword {
+        background-color: #ff9800 !important;
+        color: #000000 !important;
+        padding: 2px 4px !important;
+        border-radius: 3px !important;
+        font-weight: 500 !important;
+    }
+    div.paragraph-box span.highlight-number {
+        background-color: #9c27b0 !important;
+        color: #ffffff !important;
+        padding: 1px 4px !important;
+        border-radius: 3px !important;
+    }
     .ref-tag {
         display: inline-block;
         padding: 2px 8px;
@@ -72,6 +85,53 @@ def get_highlight_css() -> str:
     }
     </style>
     """
+
+
+# Default keywords to highlight
+DEFAULT_KEYWORDS = [
+    "Quran", "Qur'an", "Hadith", "Prophet", "Surah", "Ayah", "Verse",
+    "Allah", "Muhammad", "Sunnah", "Sahih", "Bukhari", "Muslim"
+]
+
+
+def find_keyword_positions(text: str, keywords: List[str]) -> List[Tuple[int, int, str]]:
+    """
+    Find positions of keywords in text.
+
+    Returns list of (start, end, type) tuples.
+    """
+    positions = []
+
+    # Find keywords (case-insensitive)
+    for keyword in keywords:
+        if not keyword.strip():
+            continue
+        pattern = re.compile(re.escape(keyword), re.IGNORECASE)
+        for match in pattern.finditer(text):
+            positions.append((match.start(), match.end(), 'keyword'))
+
+    return positions
+
+
+def find_number_positions(text: str) -> List[Tuple[int, int, str]]:
+    """
+    Find positions of numbers/numerical references in text.
+
+    Returns list of (start, end, type) tuples.
+    """
+    positions = []
+
+    # Pattern for numbers: standalone numbers, X:Y format, ranges
+    patterns = [
+        r'\b\d{1,3}:\d{1,3}(?:-\d{1,3})?\b',  # 3:195 or 4:11-12
+        r'\b\d+\b',  # standalone numbers
+    ]
+
+    for pattern in patterns:
+        for match in re.finditer(pattern, text):
+            positions.append((match.start(), match.end(), 'number'))
+
+    return positions
 
 
 def highlight_text(
@@ -122,49 +182,83 @@ def highlight_text(
 def highlight_text_simple(
     text: str,
     quran_refs: List[Dict[str, Any]],
-    hadith_refs: List[Dict[str, Any]]
+    hadith_refs: List[Dict[str, Any]],
+    keywords: List[str] = None,
+    highlight_numbers: bool = False
 ) -> str:
     """
     Apply highlights using a simpler approach that handles overlapping better.
     Builds the result character by character.
-    """
-    if not quran_refs and not hadith_refs:
-        return _escape_html(text)
 
-    # Create a map of positions to highlight type
-    highlight_map = {}  # position -> (type, 'start'/'end')
+    Args:
+        text: The text to highlight
+        quran_refs: Quran reference positions
+        hadith_refs: Hadith reference positions
+        keywords: List of keywords to highlight (optional)
+        highlight_numbers: Whether to highlight numbers (optional)
+    """
+    # Collect all highlight ranges with priority
+    # Priority: quran > hadith > keyword > number
+    ranges = []  # (start, end, type, priority)
 
     for ref in quran_refs:
         if 'start_pos' in ref and 'end_pos' in ref:
-            start, end = ref['start_pos'], ref['end_pos']
-            highlight_map[start] = ('quran', 'start')
-            highlight_map[end] = ('quran', 'end')
+            ranges.append((ref['start_pos'], ref['end_pos'], 'quran', 1))
 
     for ref in hadith_refs:
         if 'start_pos' in ref and 'end_pos' in ref:
-            start, end = ref['start_pos'], ref['end_pos']
-            if start not in highlight_map:
-                highlight_map[start] = ('hadith', 'start')
-            if end not in highlight_map:
-                highlight_map[end] = ('hadith', 'end')
+            ranges.append((ref['start_pos'], ref['end_pos'], 'hadith', 2))
+
+    if keywords:
+        for start, end, htype in find_keyword_positions(text, keywords):
+            ranges.append((start, end, htype, 3))
+
+    if highlight_numbers:
+        for start, end, htype in find_number_positions(text):
+            ranges.append((start, end, htype, 4))
+
+    if not ranges:
+        return _escape_html(text)
+
+    # Sort by start position, then by priority (lower = higher priority)
+    ranges.sort(key=lambda x: (x[0], x[3]))
+
+    # Remove overlapping ranges (keep higher priority)
+    filtered_ranges = []
+    for r in ranges:
+        start, end, htype, priority = r
+        overlaps = False
+        for fr in filtered_ranges:
+            fstart, fend, _, _ = fr
+            # Check if current range overlaps with an existing one
+            if start < fend and end > fstart:
+                overlaps = True
+                break
+        if not overlaps:
+            filtered_ranges.append(r)
+
+    # Sort by start position for processing
+    filtered_ranges.sort(key=lambda x: x[0])
 
     # Build result
     result = []
-    for i, char in enumerate(text):
-        if i in highlight_map:
-            ref_type, action = highlight_map[i]
-            if action == 'start':
-                result.append(f'<span class="highlight-{ref_type}">')
-            elif action == 'end':
-                result.append('</span>')
-        result.append(_escape_html(char))
+    last_end = 0
 
-    # Handle any trailing end tags
-    final_pos = len(text)
-    if final_pos in highlight_map:
-        ref_type, action = highlight_map[final_pos]
-        if action == 'end':
-            result.append('</span>')
+    for start, end, htype, _ in filtered_ranges:
+        # Add text before this highlight
+        if start > last_end:
+            result.append(_escape_html(text[last_end:start]))
+
+        # Add highlighted text
+        result.append(f'<span class="highlight-{htype}">')
+        result.append(_escape_html(text[start:end]))
+        result.append('</span>')
+
+        last_end = end
+
+    # Add remaining text
+    if last_end < len(text):
+        result.append(_escape_html(text[last_end:]))
 
     return ''.join(result)
 

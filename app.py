@@ -13,7 +13,7 @@ from extractors import extract_paragraphs, detect_quran_refs, detect_hadith_refs
 from extractors.docx_parser import get_document_metadata
 from extractors.quran_detector import format_quran_ref
 from extractors.hadith_detector import format_hadith_ref, get_collection_list
-from utils.highlighter import get_highlight_css, highlight_text_simple
+from utils.highlighter import get_highlight_css, highlight_text_simple, DEFAULT_KEYWORDS
 
 
 # Page configuration
@@ -41,6 +41,13 @@ def init_session_state():
         st.session_state.file_uploaded = False
     if 'detected_refs' not in st.session_state:
         st.session_state.detected_refs = {}  # paragraph_id -> {'quran': [], 'hadith': []}
+    # Keyword highlighting settings
+    if 'highlight_keywords' not in st.session_state:
+        st.session_state.highlight_keywords = True
+    if 'highlight_numbers' not in st.session_state:
+        st.session_state.highlight_numbers = True
+    if 'custom_keywords' not in st.session_state:
+        st.session_state.custom_keywords = DEFAULT_KEYWORDS.copy()
 
 
 def process_uploaded_file(uploaded_file):
@@ -196,6 +203,67 @@ def render_progress():
         st.caption(f"Progress: {reviewed}/{total} paragraphs reviewed ({progress*100:.1f}%)")
 
 
+def render_sidebar():
+    """Render the sidebar with highlighting options."""
+    with st.sidebar:
+        st.header("Highlight Settings")
+
+        # Toggle switches
+        st.session_state.highlight_keywords = st.checkbox(
+            "Highlight Keywords",
+            value=st.session_state.highlight_keywords,
+            help="Highlight Islamic terms like Quran, Hadith, Prophet, etc."
+        )
+
+        st.session_state.highlight_numbers = st.checkbox(
+            "Highlight Numbers",
+            value=st.session_state.highlight_numbers,
+            help="Highlight numbers and numerical references (e.g., 3:195)"
+        )
+
+        st.divider()
+
+        # Custom keywords
+        st.subheader("Custom Keywords")
+        st.caption("Add words to highlight (one per line)")
+
+        # Text area for keywords
+        keywords_text = st.text_area(
+            "Keywords",
+            value="\n".join(st.session_state.custom_keywords),
+            height=200,
+            key="keywords_input",
+            label_visibility="collapsed"
+        )
+
+        # Parse keywords from text area
+        new_keywords = [k.strip() for k in keywords_text.split("\n") if k.strip()]
+        st.session_state.custom_keywords = new_keywords
+
+        # Quick add common keywords
+        st.caption("Quick add:")
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("Reset Defaults", use_container_width=True):
+                st.session_state.custom_keywords = DEFAULT_KEYWORDS.copy()
+                st.rerun()
+        with col2:
+            if st.button("Clear All", use_container_width=True):
+                st.session_state.custom_keywords = []
+                st.rerun()
+
+        st.divider()
+
+        # Color legend
+        st.subheader("Color Legend")
+        st.markdown("""
+        - 🟢 **Green**: Quran references
+        - 🔵 **Blue**: Hadith references
+        - 🟠 **Orange**: Keywords
+        - 🟣 **Purple**: Numbers
+        """)
+
+
 def render_paragraph(para_idx: int):
     """Render a single paragraph with its annotations."""
     para = st.session_state.paragraphs[para_idx]
@@ -209,10 +277,13 @@ def render_paragraph(para_idx: int):
         st.subheader(f"{reviewed_icon} Paragraph {para_id}")
 
         # Display text with highlights
+        keywords = st.session_state.custom_keywords if st.session_state.highlight_keywords else None
         highlighted_text = highlight_text_simple(
             para['text'],
             detected['quran'],
-            detected['hadith']
+            detected['hadith'],
+            keywords=keywords,
+            highlight_numbers=st.session_state.highlight_numbers
         )
         st.markdown(
             f'<div class="paragraph-box {"reviewed" if para.get("reviewed") else ""}">{highlighted_text}</div>',
@@ -408,6 +479,7 @@ def main():
     """Main application entry point."""
     init_session_state()
 
+    render_sidebar()
     render_header()
     render_progress()
 
