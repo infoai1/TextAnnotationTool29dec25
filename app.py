@@ -46,6 +46,8 @@ def init_session_state():
         st.session_state.highlight_keywords = True
     if 'highlight_numbers' not in st.session_state:
         st.session_state.highlight_numbers = True
+    if 'highlight_years' not in st.session_state:
+        st.session_state.highlight_years = True
     if 'custom_keywords' not in st.session_state:
         st.session_state.custom_keywords = DEFAULT_KEYWORDS.copy()
     # Paragraph grouping
@@ -303,6 +305,12 @@ def render_sidebar():
             help="Highlight numbers and numerical references (e.g., 3:195)"
         )
 
+        st.session_state.highlight_years = st.checkbox(
+            "Highlight Years/Dates",
+            value=st.session_state.highlight_years,
+            help="Highlight year references (AD, BC, CE, AH, century, etc.)"
+        )
+
         st.divider()
 
         # Custom keywords
@@ -362,6 +370,7 @@ def render_sidebar():
         st.markdown("""
         - 🟢 **Green**: Quran references
         - 🔵 **Blue**: Hadith references
+        - 🩵 **Cyan**: Years/Dates
         - 🟠 **Orange**: Keywords
         - 🟣 **Purple**: Numbers
         - 📌 Has references
@@ -406,7 +415,8 @@ def render_paragraph(para_idx: int):
             detected['quran'],
             detected['hadith'],
             keywords=keywords,
-            highlight_numbers=st.session_state.highlight_numbers
+            highlight_numbers=st.session_state.highlight_numbers,
+            highlight_years=st.session_state.highlight_years
         )
         st.markdown(
             f'<div class="paragraph-box {"reviewed" if para.get("reviewed") else ""}">{highlighted_text}</div>',
@@ -509,6 +519,7 @@ def render_paragraph(para_idx: int):
                     'verified': True
                 }
                 para['quran_refs'].append(new_ref)
+                para['reviewed'] = True  # Auto-mark as reviewed
                 st.success(f"Added Quran {surah}:{ayah_start}" + (f"-{ayah_end}" if ayah_end > 0 else ""))
                 st.rerun()
 
@@ -551,6 +562,7 @@ def render_paragraph(para_idx: int):
                         'verified': True
                     }
                     para['hadith_refs'].append(new_ref)
+                    para['reviewed'] = True  # Auto-mark as reviewed
                     st.success(f"Added {final_collection}, Hadith No. {hadith_num}")
                     st.rerun()
 
@@ -568,6 +580,7 @@ def render_paragraph(para_idx: int):
                     'detection': 'manual',
                     'verified': True
                 })
+                para['reviewed'] = True  # Auto-mark as reviewed
                 st.success("Added Seerah reference")
                 st.rerun()
 
@@ -599,6 +612,7 @@ def render_paragraph(para_idx: int):
                         'detection': 'manual',
                         'verified': True
                     })
+                    para['reviewed'] = True  # Auto-mark as reviewed
                     st.success(f"Added reference from {book_name}")
                     st.rerun()
 

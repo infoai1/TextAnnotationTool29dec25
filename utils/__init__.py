@@ -4,6 +4,7 @@ from .highlighter import (
     get_highlight_css,
     find_keyword_positions,
     find_number_positions,
+    find_year_positions,
     DEFAULT_KEYWORDS
 )
 
@@ -13,5 +14,6 @@ __all__ = [
     'get_highlight_css',
     'find_keyword_positions',
     'find_number_positions',
+    'find_year_positions',
     'DEFAULT_KEYWORDS'
 ]

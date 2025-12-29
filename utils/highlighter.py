@@ -54,6 +54,13 @@ def get_highlight_css() -> str:
         padding: 1px 4px !important;
         border-radius: 3px !important;
     }
+    div.paragraph-box span.highlight-year {
+        background-color: #00bcd4 !important;
+        color: #000000 !important;
+        padding: 1px 4px !important;
+        border-radius: 3px !important;
+        font-weight: 500 !important;
+    }
     .ref-tag {
         display: inline-block;
         padding: 2px 8px;
@@ -134,6 +141,40 @@ def find_number_positions(text: str) -> List[Tuple[int, int, str]]:
     return positions
 
 
+def find_year_positions(text: str) -> List[Tuple[int, int, str]]:
+    """
+    Find positions of year/time references in text.
+    Detects: AD, BC, CE, BCE, AH (Islamic calendar), century, year patterns.
+
+    Returns list of (start, end, type) tuples.
+    """
+    positions = []
+
+    # Patterns for year/time references
+    year_patterns = [
+        # Year followed by AD/BC/CE/BCE/AH
+        r'\b(\d{1,4})\s*(AD|BC|CE|BCE|AH|A\.D\.|B\.C\.|C\.E\.|B\.C\.E\.|A\.H\.)\b',
+        # AD/BC/CE/BCE/AH followed by year
+        r'\b(AD|BC|CE|BCE|AH|A\.D\.|B\.C\.|C\.E\.|B\.C\.E\.|A\.H\.)\s*(\d{1,4})\b',
+        # Century patterns: 7th century, 21st century, etc.
+        r'\b(\d{1,2})(st|nd|rd|th)\s+century\b',
+        # "century" alone with number before
+        r'\b(\d{1,2})\s+century\b',
+        # Year in parentheses like (1400) or (d. 1453)
+        r'\((?:d\.\s*|b\.\s*|r\.\s*)?(\d{3,4})\)',
+        # Standalone 4-digit years that look like dates (1000-2100 range)
+        r'\b(1[0-9]{3}|20[0-2][0-9])\b',
+        # Hijri year patterns
+        r'\b(\d{1,4})\s*(?:Hijri|hijri|H\.)\b',
+    ]
+
+    for pattern in year_patterns:
+        for match in re.finditer(pattern, text, re.IGNORECASE):
+            positions.append((match.start(), match.end(), 'year'))
+
+    return positions
+
+
 def highlight_text(
     text: str,
     quran_refs: List[Dict[str, Any]],
@@ -184,7 +225,8 @@ def highlight_text_simple(
     quran_refs: List[Dict[str, Any]],
     hadith_refs: List[Dict[str, Any]],
     keywords: List[str] = None,
-    highlight_numbers: bool = False
+    highlight_numbers: bool = False,
+    highlight_years: bool = False
 ) -> str:
     """
     Apply highlights using a simpler approach that handles overlapping better.
@@ -196,9 +238,10 @@ def highlight_text_simple(
         hadith_refs: Hadith reference positions
         keywords: List of keywords to highlight (optional)
         highlight_numbers: Whether to highlight numbers (optional)
+        highlight_years: Whether to highlight year/time references (optional)
     """
     # Collect all highlight ranges with priority
-    # Priority: quran > hadith > keyword > number
+    # Priority: quran > hadith > year > keyword > number
     ranges = []  # (start, end, type, priority)
 
     for ref in quran_refs:
@@ -209,13 +252,17 @@ def highlight_text_simple(
         if 'start_pos' in ref and 'end_pos' in ref:
             ranges.append((ref['start_pos'], ref['end_pos'], 'hadith', 2))
 
+    if highlight_years:
+        for start, end, htype in find_year_positions(text):
+            ranges.append((start, end, htype, 3))
+
     if keywords:
         for start, end, htype in find_keyword_positions(text, keywords):
-            ranges.append((start, end, htype, 3))
+            ranges.append((start, end, htype, 4))
 
     if highlight_numbers:
         for start, end, htype in find_number_positions(text):
-            ranges.append((start, end, htype, 4))
+            ranges.append((start, end, htype, 5))
 
     if not ranges:
         return _escape_html(text)
