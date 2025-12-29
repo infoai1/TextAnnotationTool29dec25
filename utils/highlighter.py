@@ -11,34 +11,35 @@ def get_highlight_css() -> str:
     """Return CSS styles for highlights."""
     return """
     <style>
-    .highlight-quran {
-        background-color: #c8e6c9;
-        color: #1b5e20 !important;
-        padding: 2px 4px;
-        border-radius: 3px;
-        border-bottom: 2px solid #4caf50;
+    div.paragraph-box {
+        background-color: #3a3a3a !important;
+        color: #ffffff !important;
+        padding: 20px !important;
+        border-radius: 8px !important;
+        margin: 10px 0 !important;
+        border-left: 4px solid #9e9e9e !important;
+        line-height: 1.8 !important;
+        min-height: 80px !important;
+        font-size: 1.05em !important;
     }
-    .highlight-hadith {
-        background-color: #bbdefb;
-        color: #0d47a1 !important;
-        padding: 2px 4px;
-        border-radius: 3px;
-        border-bottom: 2px solid #2196f3;
+    div.paragraph-box * {
+        color: #ffffff !important;
     }
-    .paragraph-box {
-        background-color: #2d2d2d;
-        color: #e0e0e0 !important;
-        padding: 20px;
-        border-radius: 8px;
-        margin: 10px 0;
-        border-left: 4px solid #9e9e9e;
-        line-height: 1.8;
-        min-height: 80px;
-        font-size: 1.05em;
+    div.paragraph-box.reviewed {
+        border-left-color: #4caf50 !important;
+        background-color: #2d4a32 !important;
     }
-    .paragraph-box.reviewed {
-        border-left-color: #4caf50;
-        background-color: #1a3320;
+    div.paragraph-box span.highlight-quran {
+        background-color: #4caf50 !important;
+        color: #ffffff !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
+    }
+    div.paragraph-box span.highlight-hadith {
+        background-color: #2196f3 !important;
+        color: #ffffff !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
     }
     .ref-tag {
         display: inline-block;
