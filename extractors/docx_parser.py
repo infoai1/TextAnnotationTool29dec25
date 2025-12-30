@@ -9,9 +9,14 @@ from typing import List, Dict, Any, Optional
 from io import BytesIO
 
 
-def detect_paragraph_type(text: str, next_text: Optional[str] = None) -> Dict[str, Any]:
+def detect_paragraph_type(text: str, next_text: Optional[str] = None, prev_type: Optional[str] = None) -> Dict[str, Any]:
     """
     Detect the type of a paragraph based on its content and context.
+
+    Args:
+        text: The paragraph text
+        next_text: The next paragraph's text (for context)
+        prev_type: The previous paragraph's detected type (to avoid double-detection)
 
     Returns dict with: type, level, quote_type
     """
@@ -75,10 +80,16 @@ def detect_paragraph_type(text: str, next_text: Optional[str] = None) -> Dict[st
             "quote_type": quote_type
         }
 
-    # Check if it's a subheading (short, possibly bold in original, no period)
+    # Check if it's a subheading (short, no period, not immediately after chapter heading)
     if word_count <= 8 and not text.endswith('.'):
-        # Could be a subheading - but default to paragraph, let user correct
-        pass
+        # Avoid detecting as subheading if previous was chapter_heading
+        # (the chapter_heading detection uses "short + long next" pattern)
+        if prev_type != 'chapter_heading':
+            return {
+                "type": "subheading",
+                "level": 2,
+                "quote_type": None
+            }
 
     # Default to paragraph
     return {
@@ -110,13 +121,14 @@ def extract_paragraphs(file_content: BytesIO) -> List[Dict[str, Any]]:
     paragraphs = []
     current_chapter_id = None
     para_id = 1
+    prev_type = None
 
     # Second pass: detect types and assign parent chapters
     for i, text in enumerate(raw_paragraphs):
         next_text = raw_paragraphs[i + 1] if i + 1 < len(raw_paragraphs) else None
 
-        # Detect paragraph type
-        type_info = detect_paragraph_type(text, next_text)
+        # Detect paragraph type (pass prev_type to avoid double-detection)
+        type_info = detect_paragraph_type(text, next_text, prev_type)
 
         # Track current chapter
         if type_info["type"] == "chapter_heading":
@@ -141,6 +153,7 @@ def extract_paragraphs(file_content: BytesIO) -> List[Dict[str, Any]]:
             "manual_notes": ""
         })
         para_id += 1
+        prev_type = type_info["type"]  # Track for next iteration
 
     return paragraphs
 
