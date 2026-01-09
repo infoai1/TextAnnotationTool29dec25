@@ -184,6 +184,23 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-dark) !important;
 }
 
+/* ===== GROUP CONTAINERS ===== */
+.group-container {
+    transition: all 0.3s ease;
+}
+
+.group-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.group-bg-even {
+    background-color: #f0f9ff;
+}
+
+.group-bg-odd {
+    background-color: #f8fafc;
+}
+
 /* ===== EXPANDERS AS DARK CARDS ===== */
 [data-testid="stExpander"] {
     background: rgba(30, 41, 59, 0.4) !important;
@@ -801,6 +818,7 @@ def load_saved_book(fpath):
     with open(fpath) as f:
         data = json.load(f)
     st.session_state.paragraphs = data.get('paragraphs', [])
+    st.session_state.groups = data.get('groups', [])
     st.session_state.book_title = data.get('book_title', '')
     st.session_state.author = data.get('author', '')
     st.session_state.annotator = data.get('annotator', '')
@@ -819,6 +837,18 @@ def load_saved_book(fpath):
             'year': para.get('year_refs', []),
             'footnotes': para.get('footnote_refs', [])
         }
+
+    # Rebuild paragraph group_id references if groups exist
+    if st.session_state.groups:
+        for group in st.session_state.groups:
+            for para_id in group.get('para_ids', []):
+                for para in st.session_state.paragraphs:
+                    if para['id'] == para_id:
+                        para['group_id'] = group['group_id']
+                        break
+    else:
+        # Auto-generate groups on book load if they don't exist
+        generate_groups()
 
 
 # ============= BOOK LIBRARY FUNCTIONS =============
@@ -1399,6 +1429,218 @@ def create_groups_for_chapter(paragraphs, chapter_title, group_counter_start):
     flush_group()
 
     return groups, group_counter
+
+
+# ============= GROUP VISUALIZATION HELPER FUNCTIONS =============
+
+def find_paragraph(para_id: int) -> dict:
+    """Find paragraph by numeric ID."""
+    for p in st.session_state.paragraphs:
+        if p['id'] == para_id:
+            return p
+    return None
+
+
+def find_paragraph_index(para_id: int) -> int:
+    """Find paragraph array index by numeric ID."""
+    for i, p in enumerate(st.session_state.paragraphs):
+        if p['id'] == para_id:
+            return i
+    return -1
+
+
+def find_group(group_id: str) -> dict:
+    """Find group by group_id."""
+    for g in st.session_state.groups:
+        if g['group_id'] == group_id:
+            return g
+    return None
+
+
+def recalculate_group_stats(group: dict):
+    """Recalculate token count, page range for group."""
+    total_tokens = 0
+    page_start = None
+    page_end = None
+
+    for para_id in group['para_ids']:
+        para = find_paragraph(para_id)
+        if para and not para.get('deleted'):
+            total_tokens += estimate_tokens(para.get('text', ''))
+            page_num = para.get('page_info', {}).get('page_number')
+            if page_num:
+                if page_start is None or page_num < page_start:
+                    page_start = page_num
+                if page_end is None or page_num > page_end:
+                    page_end = page_num
+
+    group['token_count'] = total_tokens
+    group['page_start'] = page_start
+    group['page_end'] = page_end
+
+
+def generate_next_group_id() -> str:
+    """Generate next available group ID."""
+    if not st.session_state.groups:
+        return "g_001"
+    existing_ids = [g['group_id'] for g in st.session_state.groups]
+    counter = 1
+    while f"g_{counter:03d}" in existing_ids:
+        counter += 1
+    return f"g_{counter:03d}"
+
+
+def generate_groups():
+    """Generate groups from current paragraphs using smart algorithm."""
+    # Get active paragraphs (not deleted, not manually merged, not headings)
+    active_paras = [p for p in st.session_state.paragraphs
+                    if not p.get('deleted')
+                    and not p.get('grouped_into')
+                    and p.get('type') != 'chapter_heading']
+
+    if not active_paras:
+        st.session_state.groups = []
+        return
+
+    # Use existing smart grouping algorithm
+    groups, _ = create_groups_for_chapter(active_paras, "Main", 0)
+
+    # Convert para_ids from "p_001" format to numeric
+    for group in groups:
+        group['para_ids'] = [int(pid.split('_')[1]) for pid in group['para_ids']]
+        group['collapsed'] = False  # Add UI state
+
+    st.session_state.groups = groups
+
+    # Update paragraph group_id references
+    for group in groups:
+        for para_id in group['para_ids']:
+            para = find_paragraph(para_id)
+            if para:
+                para['group_id'] = group['group_id']
+
+    mark_unsaved()
+
+
+def cleanup_empty_groups():
+    """Remove groups with no paragraphs."""
+    st.session_state.groups = [g for g in st.session_state.groups if g['para_ids']]
+
+
+def get_group_validation_status(group):
+    """Return 'optimal', 'acceptable', or 'warning'."""
+    tokens = group['token_count']
+    if 512 <= tokens <= 800:
+        return 'optimal'
+    elif 200 <= tokens < 512 or 800 < tokens <= 1000:
+        return 'acceptable'
+    else:
+        return 'warning'
+
+
+# ============= GROUP OPERATIONS =============
+
+def move_paragraph_to_group(para_id: int, target_group_id: str):
+    """Move paragraph from current group to target group."""
+    para = find_paragraph(para_id)
+    if not para:
+        return
+
+    old_group_id = para.get('group_id')
+
+    # Remove from old group
+    if old_group_id:
+        old_group = find_group(old_group_id)
+        if old_group and para_id in old_group['para_ids']:
+            old_group['para_ids'].remove(para_id)
+            recalculate_group_stats(old_group)
+
+    # Add to new group
+    new_group = find_group(target_group_id)
+    if new_group:
+        new_group['para_ids'].append(para_id)
+        para['group_id'] = target_group_id
+        recalculate_group_stats(new_group)
+
+    cleanup_empty_groups()
+    mark_unsaved()
+
+
+def merge_groups(group_id_1: str, group_id_2: str):
+    """Merge two groups into one."""
+    g1 = find_group(group_id_1)
+    g2 = find_group(group_id_2)
+
+    if not g1 or not g2:
+        return
+
+    # Combine para_ids (maintain order)
+    g1['para_ids'].extend(g2['para_ids'])
+
+    # Update paragraphs to point to g1
+    for para_id in g2['para_ids']:
+        para = find_paragraph(para_id)
+        if para:
+            para['group_id'] = group_id_1
+
+    # Recalculate stats
+    recalculate_group_stats(g1)
+
+    # Remove g2
+    st.session_state.groups.remove(g2)
+
+    mark_unsaved()
+
+
+def split_group_at_paragraph(para_id: int):
+    """Split group into two at specified paragraph."""
+    para = find_paragraph(para_id)
+    if not para or not para.get('group_id'):
+        return
+
+    old_group = find_group(para['group_id'])
+    if not old_group:
+        return
+
+    # Find split index
+    try:
+        split_idx = old_group['para_ids'].index(para_id)
+    except ValueError:
+        return
+
+    if split_idx == 0:
+        st.error("Cannot split at first paragraph")
+        return
+
+    # Create new group with paragraphs after split point
+    new_group_id = generate_next_group_id()
+    new_group = {
+        'group_id': new_group_id,
+        'para_ids': old_group['para_ids'][split_idx:],
+        'token_count': 0,
+        'page_start': None,
+        'page_end': None,
+        'chapter': old_group.get('chapter', 'Main'),
+        'collapsed': False
+    }
+
+    # Update old group
+    old_group['para_ids'] = old_group['para_ids'][:split_idx]
+
+    # Update paragraph references
+    for pid in new_group['para_ids']:
+        p = find_paragraph(pid)
+        if p:
+            p['group_id'] = new_group_id
+
+    # Recalculate stats
+    recalculate_group_stats(old_group)
+    recalculate_group_stats(new_group)
+
+    # Add new group
+    st.session_state.groups.append(new_group)
+
+    mark_unsaved()
 
 
 def build_hierarchical_structure():
@@ -2072,6 +2314,81 @@ def render_sidebar():
 
             st.divider()
 
+            # GROUP OVERVIEW SECTION
+            st.subheader("📦 Group Overview")
+
+            if st.session_state.get('groups'):
+                # Stats summary
+                total_groups = len(st.session_state.groups)
+                avg_tokens = sum(g['token_count'] for g in st.session_state.groups) / total_groups if total_groups > 0 else 0
+                st.caption(f"{total_groups} groups | Avg: {avg_tokens:.0f} tokens")
+
+                # Regenerate button
+                if st.button("🔄 Regenerate Groups", use_container_width=True):
+                    generate_groups()
+                    st.success("Groups regenerated!")
+                    st.rerun()
+
+                st.markdown("---")
+
+                # Validation summary
+                optimal = sum(1 for g in st.session_state.groups if get_group_validation_status(g) == 'optimal')
+                acceptable = sum(1 for g in st.session_state.groups if get_group_validation_status(g) == 'acceptable')
+                warning = sum(1 for g in st.session_state.groups if get_group_validation_status(g) == 'warning')
+                st.caption(f"🟢 {optimal} optimal | 🟡 {acceptable} acceptable | 🔴 {warning} needs review")
+
+                st.markdown("**Groups:**")
+
+                # Scrollable group list
+                for group in st.session_state.groups:
+                    col_cb, col_info = st.columns([0.5, 4.5])
+
+                    with col_cb:
+                        # Checkbox for merge selection
+                        is_selected = group['group_id'] in st.session_state.selected_groups
+                        if st.checkbox("", value=is_selected, key=f"sel_{group['group_id']}",
+                                      label_visibility="collapsed"):
+                            st.session_state.selected_groups.add(group['group_id'])
+                        else:
+                            st.session_state.selected_groups.discard(group['group_id'])
+
+                    with col_info:
+                        # Group info with validation color
+                        status = get_group_validation_status(group)
+                        token_color = "🟢" if status == 'optimal' else "🟡" if status == 'acceptable' else "🔴"
+
+                        # Clickable group label
+                        if st.button(
+                            f"{token_color} **{group['group_id']}** | {group['token_count']}t | "
+                            f"{len(group['para_ids'])}p | {group.get('page_start', '?')}-{group.get('page_end', '?')}",
+                            key=f"nav_{group['group_id']}",
+                            use_container_width=True
+                        ):
+                            st.session_state.scroll_to_group = group['group_id']
+                            st.rerun()
+
+                # Merge button (appears when exactly 2 groups selected)
+                selected_count = len(st.session_state.selected_groups)
+                if selected_count == 2:
+                    st.markdown("---")
+                    if st.button("🔗 Merge Selected Groups", use_container_width=True, type="primary"):
+                        g1, g2 = list(st.session_state.selected_groups)
+                        merge_groups(g1, g2)
+                        st.session_state.selected_groups.clear()
+                        st.success("Groups merged!")
+                        st.rerun()
+                elif selected_count > 2:
+                    st.info("ℹ️ Select exactly 2 groups to merge")
+
+            else:
+                st.caption("No groups yet")
+                if st.button("📦 Generate Groups", use_container_width=True, type="primary"):
+                    generate_groups()
+                    st.success("Groups created!")
+                    st.rerun()
+
+            st.divider()
+
         # Footnotes section
         if st.session_state.file_uploaded:
             all_footnotes = st.session_state.document_footnotes + st.session_state.endnotes
@@ -2135,6 +2452,79 @@ def toggle_group(para_id):
 
 
 @st.fragment
+def render_group(group_idx: int):
+    """Render an entire group with header and paragraphs."""
+    if group_idx >= len(st.session_state.groups):
+        return
+
+    group = st.session_state.groups[group_idx]
+
+    # Alternating background colors
+    bg_color = "#f0f9ff" if group_idx % 2 == 0 else "#f8fafc"
+
+    # Group container with ID for scrolling
+    st.markdown(f"""
+    <div id='group-{group['group_id']}' class='group-container' style='
+        background-color:{bg_color};
+        padding:20px;
+        border-radius:12px;
+        margin-bottom:20px;
+        border: 1px solid #e2e8f0;
+    '>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Group header
+    col1, col2, col3, col4 = st.columns([2, 1.5, 1, 0.5])
+
+    with col1:
+        st.markdown(f"### 📦 {group['group_id'].upper()}")
+
+    with col2:
+        # Token count with validation color
+        status = get_group_validation_status(group)
+        if status == 'optimal':
+            st.success(f"✓ {group['token_count']} tokens")
+        elif status == 'acceptable':
+            st.warning(f"⚠ {group['token_count']} tokens")
+        else:
+            st.error(f"⚠ {group['token_count']} tokens")
+
+    with col3:
+        para_count = len(group['para_ids'])
+        page_range = f"{group.get('page_start', '?')}-{group.get('page_end', '?')}"
+        st.caption(f"**{para_count}** paras | p.{page_range}")
+
+    with col4:
+        # Collapse/expand toggle
+        collapse_key = f"toggle_{group['group_id']}"
+        is_collapsed = group.get('collapsed', False)
+        if st.button("▼" if not is_collapsed else "►", key=collapse_key):
+            group['collapsed'] = not is_collapsed
+            st.rerun(scope="fragment")
+
+    # Validation warnings
+    tokens = group['token_count']
+    if tokens > 800:
+        if tokens > 1000:
+            st.error(f"⚠️ Group too large ({tokens} tokens) - Target: 512-800 tokens")
+        else:
+            st.warning(f"⚠️ Group size acceptable but large ({tokens} tokens)")
+    elif tokens < 200:
+        st.info(f"ℹ️ Group too small ({tokens} tokens) - Consider merging")
+
+    # Render paragraphs (if not collapsed)
+    if not group.get('collapsed', False):
+        st.markdown("---")
+        for para_id in group['para_ids']:
+            para_idx = find_paragraph_index(para_id)
+            if para_idx >= 0:
+                render_paragraph(para_idx)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
+@st.fragment
 def render_paragraph(para_idx: int):
     """Render a single paragraph with its annotations (fragment for fast updates)."""
     para = st.session_state.paragraphs[para_idx]
@@ -2157,9 +2547,12 @@ def render_paragraph(para_idx: int):
         para_level = para.get('level')
         quote_type = para.get('quote_type')
 
-        # Row 1: Header | Type | Page | Bookmark
-        # Layout: [Paragraph X • [80w·482c]] [Type ▼] [p.5 ✏️] [📖]
-        col_header, col_type, col_page = st.columns([4, 2, 1.5])
+        # Row 1: Header | Type | Page | Group Controls
+        # Layout: [Paragraph X • [80w·482c]] [Type ▼] [p.5 ✏️] [Group ▼]
+        if st.session_state.get('groups'):
+            col_header, col_type, col_page, col_group = st.columns([3, 1.5, 1.2, 1.8])
+        else:
+            col_header, col_type, col_page = st.columns([4, 2, 1.5])
 
         with col_header:
             junk_badge = "🔴 " if para.get('potential_delete') else ""
@@ -2230,6 +2623,39 @@ def render_paragraph(para_idx: int):
                               on_click=toggle_page_edit, args=(para_id,))
                 else:
                     st.caption(f"p.{current_page}")
+
+        # Group controls (move to group, split button)
+        if st.session_state.get('groups'):
+            with col_group:
+                current_group_id = para.get('group_id')
+                group_ids = [g['group_id'] for g in st.session_state.groups]
+
+                if current_group_id in group_ids:
+                    current_idx = group_ids.index(current_group_id)
+                else:
+                    current_idx = 0 if group_ids else -1
+
+                if group_ids:
+                    selected_group = st.selectbox(
+                        "Move to",
+                        group_ids,
+                        index=max(0, current_idx),
+                        key=f"move_group_{para_id}",
+                        label_visibility="collapsed"
+                    )
+
+                    if selected_group != current_group_id:
+                        move_paragraph_to_group(para_id, selected_group)
+                        st.rerun()
+
+                    # Split button (only if group has 2+ paragraphs and not first para)
+                    if current_group_id:
+                        group = find_group(current_group_id)
+                        if group and len(group['para_ids']) > 1 and para_id != group['para_ids'][0]:
+                            if st.button("✂️", key=f"split_{para_id}", help="Split group here"):
+                                split_group_at_paragraph(para_id)
+                                st.success("Group split!")
+                                st.rerun()
 
         # Additional options for quotes
         if para.get('type') == 'quote':
@@ -3179,6 +3605,24 @@ def main():
         )
         st.session_state.scroll_to_para = None  # Clear after use
 
+    # Handle scroll to group (if set from sidebar navigation)
+    scroll_group = st.session_state.get('scroll_to_group')
+    if scroll_group:
+        components.html(
+            f'''<script>
+            setTimeout(function(){{
+                var el = parent.document.getElementById("group-{scroll_group}");
+                if(el) {{
+                    el.scrollIntoView({{behavior: "smooth", block: "start"}});
+                    el.style.border = "3px solid #3b82f6";
+                    setTimeout(function(){{ el.style.border = "1px solid #e2e8f0"; }}, 2000);
+                }}
+            }}, 300);
+            </script>''',
+            height=0
+        )
+        st.session_state.scroll_to_group = None  # Clear after use
+
     # Jump to last worked paragraph button
     last_para = st.session_state.get('last_worked_para')
     if last_para:
@@ -3191,9 +3635,15 @@ def main():
     # Junk cleanup panel
     render_junk_approval()
 
-    # Render all paragraphs
-    for i in range(len(st.session_state.paragraphs)):
-        render_paragraph(i)
+    # Render all paragraphs (by groups if available)
+    if st.session_state.get('groups'):
+        # Render by groups
+        for i in range(len(st.session_state.groups)):
+            render_group(i)
+    else:
+        # Fallback: render paragraphs without groups
+        for i in range(len(st.session_state.paragraphs)):
+            render_paragraph(i)
 
     # Status workflow buttons (for annotator/reviewer)
     st.markdown("---")
