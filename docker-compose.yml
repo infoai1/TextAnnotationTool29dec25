@@ -1,0 +1,35 @@
+services:
+  annotation-tool:
+    build: .
+    container_name: islamic_annotation_tool
+    ports:
+      - "8502:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./exports:/app/exports
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+      - ./books:/app/books
+    environment:
+      - STREAMLIT_SERVER_MAX_UPLOAD_SIZE=50
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_API_KEY_1=${GEMINI_API_KEY_1:-}
+      - GEMINI_API_KEY_2=${GEMINI_API_KEY_2:-}
+      - GEMINI_API_KEY_3=${GEMINI_API_KEY_3:-}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+networks:
+  default:
+    name: annotation_network

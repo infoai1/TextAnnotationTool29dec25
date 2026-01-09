@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Peace in Kashmir",
+      "filename": null,
+      "status": "not_started",
+      "assigned_to": null,
+      "assigned_date": null,
+      "started_date": null,
+      "completed_date": null,
+      "approved_date": null,
+      "approved_by": null,
+      "quran_refs": 0,
+      "hadith_refs": 0,
+      "paragraphs_reviewed": 0,
+      "total_paragraphs": 0,
+      "notes": []
+    },
+    {
+      "id": 2,
+      "title": "Peace ",
+      "filename": null,
+      "status": "not_started",
+      "assigned_to": null,
+      "assigned_date": null,
+      "started_date": null,
+      "completed_date": null,
+      "approved_date": null,
+      "approved_by": null,
+      "quran_refs": 0,
+      "hadith_refs": 0,
+      "paragraphs_reviewed": 0,
+      "total_paragraphs": 0,
+      "notes": []
+    }
+  ],
+  "last_updated": "2026-01-03T12:48:42.208231"
+}

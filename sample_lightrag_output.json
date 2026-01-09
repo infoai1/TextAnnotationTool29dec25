@@ -1,0 +1,131 @@
+{
+  "chunks": [
+    {
+      "content": "The Quran emphasizes patience and gratitude as central virtues. In Surah Al-Imran, verse 195, we read: 'Their Lord responded to them...' This verse teaches that divine response comes to those who persevere.\n\nPatience (sabr) is not passive waiting but active engagement with difficulty while maintaining faith. The companions of the Prophet showed this quality during their migration from Mecca to Medina.",
+      "source_ids": ["p_001", "p_002"],
+      "source_id": "peace-in-kashmir/p_001",
+      "full_doc_id": "peace-in-kashmir/p_001",
+      "source_chunk_index": 0
+    },
+    {
+      "content": "...maintaining faith. The companions of the Prophet showed this quality during their migration from Mecca to Medina.\n\nTrue peace comes from internal transformation rather than external circumstances. When a person develops patience, they are no longer disturbed by worldly events.",
+      "source_ids": ["p_003", "p_004"],
+      "source_id": "peace-in-kashmir/p_003",
+      "full_doc_id": "peace-in-kashmir/p_003",
+      "source_chunk_index": 1
+    }
+  ],
+  "entities": [
+    {
+      "entity_name": "peace-in-kashmir",
+      "entity_type": "BOOK",
+      "description": "Peace in Kashmir by Maulana Wahiduddin Khan",
+      "source_id": "book:peace-in-kashmir"
+    },
+    {
+      "entity_name": "3:195",
+      "entity_type": "QURAN_REF",
+      "description": "Quran verse 3:195",
+      "source_id": "quran:3:195"
+    },
+    {
+      "entity_name": "bukhari:6137",
+      "entity_type": "HADITH_REF",
+      "description": "Hadith bukhari:6137",
+      "source_id": "hadith:bukhari:6137"
+    },
+    {
+      "entity_name": "patience",
+      "entity_type": "CONCEPT",
+      "description": "Theme: patience",
+      "source_id": "concept:patience"
+    },
+    {
+      "entity_name": "3:195_patience",
+      "entity_type": "VERSE_ASPECT",
+      "description": "Using migration of companions to illustrate patience in adversity",
+      "source_id": "verse_aspect:3:195_patience"
+    },
+    {
+      "entity_name": "muhammad_pbuh",
+      "entity_type": "PERSON",
+      "description": "Person: Prophet Muhammad",
+      "source_id": "person:muhammad_pbuh"
+    },
+    {
+      "entity_name": "mecca",
+      "entity_type": "PLACE",
+      "description": "Location: Mecca",
+      "source_id": "place:mecca"
+    }
+  ],
+  "relationships": [
+    {
+      "src_id": "peace-in-kashmir/p_001",
+      "tgt_id": "peace-in-kashmir",
+      "description": "belongs_to",
+      "keywords": "structure, contains",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    },
+    {
+      "src_id": "peace-in-kashmir/p_001",
+      "tgt_id": "3:195",
+      "description": "cites",
+      "keywords": "quran, verse, citation",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    },
+    {
+      "src_id": "peace-in-kashmir/p_001",
+      "tgt_id": "patience",
+      "description": "discusses",
+      "keywords": "theme, concept, topic",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    },
+    {
+      "src_id": "peace-in-kashmir/p_001",
+      "tgt_id": "3:195_patience",
+      "description": "illustrates",
+      "keywords": "interpretation, teaching, aspect",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    },
+    {
+      "src_id": "3:195_patience",
+      "tgt_id": "3:195",
+      "description": "aspect_of",
+      "keywords": "interpretation, meaning",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    },
+    {
+      "src_id": "peace-in-kashmir/p_001",
+      "tgt_id": "muhammad_pbuh",
+      "description": "mentions",
+      "keywords": "person, name, figure",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    },
+    {
+      "src_id": "peace-in-kashmir/p_001",
+      "tgt_id": "mecca",
+      "description": "mentions",
+      "keywords": "place, location, geography",
+      "weight": 1.0,
+      "source_id": "peace-in-kashmir/p_001"
+    }
+  ],
+  "metadata": {
+    "book_slug": "peace-in-kashmir",
+    "book_title": "Peace in Kashmir",
+    "total_chunks": 2,
+    "total_entities": 7,
+    "total_relationships": 7,
+    "use_merged_chunks": true,
+    "target_tokens": 512,
+    "overlap_tokens": 75,
+    "_note": "This is a SAMPLE. Real export uses your annotation data."
+  }
+}
