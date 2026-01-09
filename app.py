@@ -16,6 +16,7 @@ import yaml
 import json
 import base64
 import os
+import tempfile
 import asyncio
 from datetime import datetime
 from io import BytesIO
@@ -183,18 +184,19 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-dark) !important;
 }
 
-/* ===== EXPANDERS AS WHITE CARDS ===== */
+/* ===== EXPANDERS AS DARK CARDS ===== */
 [data-testid="stExpander"] {
-    background: var(--card-bg) !important;
-    border: none !important;
+    background: rgba(30, 41, 59, 0.4) !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
     border-radius: var(--card-radius) !important;
-    box-shadow: var(--card-shadow) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
     margin-bottom: 0.75rem !important;
     overflow: hidden !important;
 }
 
 [data-testid="stExpander"]:hover {
-    box-shadow: var(--card-shadow-hover) !important;
+    background: rgba(30, 41, 59, 0.6) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
 }
 
 [data-testid="stExpander"] details {
@@ -202,13 +204,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-testid="stExpander"] summary {
-    color: var(--text-dark) !important;
+    color: var(--text-light) !important;
     font-weight: 500 !important;
     padding: 0.75rem 1rem !important;
 }
 
 [data-testid="stExpander"] summary:hover {
-    background: #f8fafc !important;
+    background: rgba(51, 65, 85, 0.5) !important;
 }
 
 [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
@@ -216,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-testid="stExpander"] [data-testid="stExpanderDetails"] * {
-    color: var(--text-dark) !important;
+    color: var(--text-light) !important;
 }
 
 /* ===== BUTTONS ===== */
@@ -578,23 +580,23 @@ hr {
     gap: 0.25rem !important;
 }
 
-</style>
-<script>
-// Fix Material Icons text showing instead of icons
-function fixExpanderIcons() {
-    document.querySelectorAll('[data-testid="stExpanderToggleIcon"]').forEach(el => {
-        if (el.textContent.includes('keyboard_double_arrow')) {
-            const isOpen = el.closest('details')?.hasAttribute('open');
-            el.textContent = isOpen ? '▼' : '▶';
-            el.style.fontFamily = 'inherit';
-        }
-    });
+/* Fix broken Material Icons - CSS only approach */
+[data-testid="stExpanderToggleIcon"] {
+    font-size: 0 !important;
+    visibility: hidden !important;
+    position: relative !important;
 }
-// Run on load and observe for changes
-fixExpanderIcons();
-const observer = new MutationObserver(fixExpanderIcons);
-observer.observe(document.body, {childList: true, subtree: true, characterData: true});
-</script>
+[data-testid="stExpanderToggleIcon"]::after {
+    content: "→";
+    font-size: 14px !important;
+    visibility: visible !important;
+    font-family: inherit !important;
+}
+details[open] > summary [data-testid="stExpanderToggleIcon"]::after {
+    content: "↓";
+}
+
+</style>
 """, unsafe_allow_html=True)
 
 
@@ -705,8 +707,8 @@ def save_progress():
             'last_saved': datetime.now().isoformat(),
             'last_worked_para': st.session_state.get('last_worked_para')
         }
-        os.makedirs('/app/data', exist_ok=True)
-        with open(f'/app/data/{filename}', 'w') as f:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(os.path.join(DATA_DIR, filename), 'w') as f:
             json.dump(data, f, indent=2)
 
         # Update auto-save tracking
@@ -746,14 +748,13 @@ def load_last_read_position():
 def get_saved_books():
     """Get list of saved in-progress books for current user."""
     saved = []
-    data_dir = '/app/data'
     current_user = st.session_state.get('current_user', 'guest')
     user_role = st.session_state.get('user_role', 'annotator')
 
-    if os.path.exists(data_dir):
-        for fname in os.listdir(data_dir):
+    if os.path.exists(DATA_DIR):
+        for fname in os.listdir(DATA_DIR):
             if fname.endswith('_progress.json'):
-                fpath = os.path.join(data_dir, fname)
+                fpath = os.path.join(DATA_DIR, fname)
                 try:
                     with open(fpath) as f:
                         data = json.load(f)
@@ -814,7 +815,16 @@ def load_saved_book(fpath):
 
 # ============= BOOK LIBRARY FUNCTIONS =============
 
-BOOKS_DIR = '/app/books'
+# Use /tmp for Streamlit Cloud (read-only filesystem)
+if os.path.exists("/mount/src"):  # Streamlit Cloud
+    BOOKS_DIR = os.path.join(tempfile.gettempdir(), "books")
+    DATA_DIR = os.path.join(tempfile.gettempdir(), "data")
+else:  # Local/Docker
+    BOOKS_DIR = '/app/books'
+    DATA_DIR = '/app/data'
+
+os.makedirs(BOOKS_DIR, exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
 
 def load_meta(book_folder):
     """Load meta.json from book folder."""
@@ -903,7 +913,7 @@ def load_book_from_library(book_folder):
     # Check for existing progress in data folder
     username = st.session_state.get('current_user', 'guest')
     slug = book_folder.replace(' ', '_').lower()
-    progress_file = f"/app/data/{slug}_{username}_progress.json"
+    progress_file = os.path.join(DATA_DIR, f"{slug}_{username}_progress.json")
 
     if os.path.exists(progress_file):
         # Resume from saved progress
@@ -1209,43 +1219,49 @@ def render_junk_approval():
             st.markdown("### Pending Deletions")
 
             # Action buttons at top
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3 = st.columns([2, 2, 1])
             with col1:
                 if st.button("🗑️ DELETE ALL", type="primary", key="delete_all_junk"):
                     for p in junk:
                         p['deleted'] = True
                         p['potential_delete'] = False
+                        st.session_state[f"pdel_{p['id']}"] = False
+                    save_progress()
                     st.rerun()
             with col2:
                 if st.button("❎ Clear All", key="clear_all_junk"):
                     for p in junk:
                         p['potential_delete'] = False
+                        st.session_state[f"pdel_{p['id']}"] = False
+                    save_progress()
                     st.rerun()
             with col3:
                 st.caption(f"{len(junk)} items")
 
             st.divider()
 
-            # List with jump links
+            # List with clear button per item (no checkbox, controlled via paragraph DEL only)
             for p in junk:
                 page_num = p.get('page_info', {}).get('page_number', '?')
                 reason = p.get('delete_reason', 'auto')
                 text_preview = p['text'][:60].replace('\n', ' ')
 
-                col1, col2, col3 = st.columns([3, 1, 1])
-                with col1:
-                    # Anchor link for instant jump (no rerun)
+                col_text, col_reason, col_action = st.columns([3.5, 1, 0.7])
+                with col_text:
                     st.markdown(
                         f'<a href="#para-{p["id"]}" style="text-decoration:none;color:#6ee7b7;'
                         f'font-size:0.9em;display:block;padding:4px 0;">'
                         f'#{p["id"]} | p.{page_num} | {text_preview}...</a>',
                         unsafe_allow_html=True
                     )
-                with col2:
+                with col_reason:
                     st.caption(reason)
-                with col3:
-                    if st.button("✓", key=f"remove_{p['id']}", help="Remove from list"):
+                with col_action:
+                    # Clear button to remove from queue
+                    if st.button("❌", key=f"clear_{p['id']}", help="Remove from queue"):
                         p['potential_delete'] = False
+                        st.session_state[f"pdel_{p['id']}"] = False
+                        save_progress()
                         st.rerun()
 
         # Deleted items
@@ -2001,19 +2017,35 @@ def render_sidebar():
                 with col_exp2:
                     if st.button("Export", use_container_width=True):
                         # Build book data from session state
+                        book_slug = st.session_state.get('book_slug', 'unknown-book')
                         book_data = {
                             "book_metadata": {
                                 "title": st.session_state.get('book_title', 'Unknown'),
                                 "author": "Maulana Wahiduddin Khan",
-                                "slug": st.session_state.get('book_slug', 'unknown-book'),
+                                "slug": book_slug,
                             },
-                            "structure": []
+                            "structure": [],
+                            "groups": []
                         }
                         # Rebuild structure from paragraphs
                         current_chapter = {"title": "Main", "paragraphs": []}
                         for para in st.session_state.paragraphs:
                             current_chapter["paragraphs"].append(para)
                         book_data["structure"].append(current_chapter)
+
+                        # Create groups for citation linking
+                        chapter_paras = []
+                        for para in st.session_state.paragraphs:
+                            if not para.get('deleted') and not para.get('grouped_into'):
+                                chapter_paras.append({
+                                    'id': para.get('id'),
+                                    'text': para.get('text', ''),
+                                    'type': para.get('type', 'paragraph'),
+                                    'is_subheading': para.get('type') == 'subheading',
+                                    'page_info': para.get('page_info', {})
+                                })
+                        groups, _ = create_groups_for_chapter(chapter_paras, "Main", 0)
+                        book_data["groups"] = groups
 
                         # Export
                         lightrag_data = export_for_lightrag(book_data, use_merged_chunks=merge_chunks)
@@ -2119,7 +2151,7 @@ def render_paragraph(para_idx: int):
 
         # Row 1: Header | Type | Page | Bookmark
         # Layout: [Paragraph X • [80w·482c]] [Type ▼] [p.5 ✏️] [📖]
-        col_header, col_type, col_page, col_bookmark = st.columns([4, 2, 1.2, 0.5])
+        col_header, col_type, col_page = st.columns([4, 2, 1.5])
 
         with col_header:
             junk_badge = "🔴 " if para.get('potential_delete') else ""
@@ -2190,16 +2222,6 @@ def render_paragraph(para_idx: int):
                               on_click=toggle_page_edit, args=(para_id,))
                 else:
                     st.caption(f"p.{current_page}")
-
-        with col_bookmark:
-            # Mark as last read button
-            is_current_bookmark = st.session_state.get('last_read_para') == para_id
-            btn_label = "📖 Last" if is_current_bookmark else "📄 Mark"
-            if st.button(btn_label, key=f"mark_read_{para_id}", help="Mark as last read position"):
-                st.session_state.last_read_para = para_id
-                save_last_read_position(para_id)
-                st.toast(f"Marked para {para_id} as last read", icon="📖")
-                st.rerun()
 
         # Additional options for quotes
         if para.get('type') == 'quote':
@@ -3035,7 +3057,7 @@ def render_portal():
 
 def load_auth_config():
     """Load authentication configuration."""
-    config_path = '/app/data/users.yaml'
+    config_path = os.path.join(DATA_DIR, 'users.yaml')
     if not os.path.exists(config_path):
         # Fallback for local development
         config_path = os.path.join(os.path.dirname(__file__), 'data', 'users.yaml')
