@@ -630,9 +630,16 @@ def init_session_state():
         st.session_state.highlight_years = True
     if 'custom_keywords' not in st.session_state:
         st.session_state.custom_keywords = DEFAULT_KEYWORDS.copy()
-    # Paragraph grouping
+    # Paragraph grouping (manual merge - legacy feature)
     if 'selected_for_grouping' not in st.session_state:
         st.session_state.selected_for_grouping = set()
+    # Visual grouping for LightRAG export
+    if 'groups' not in st.session_state:
+        st.session_state.groups = []
+    if 'selected_groups' not in st.session_state:
+        st.session_state.selected_groups = set()
+    if 'scroll_to_group' not in st.session_state:
+        st.session_state.scroll_to_group = None
     # PDF support (for page number extraction only)
     if 'pdf_pages' not in st.session_state:
         st.session_state.pdf_pages = []
@@ -698,6 +705,7 @@ def save_progress():
 
         data = {
             'paragraphs': st.session_state.paragraphs,
+            'groups': st.session_state.get('groups', []),
             'book_title': st.session_state.book_title,
             'author': st.session_state.author,
             'annotator': st.session_state.annotator,
@@ -2276,10 +2284,12 @@ def render_paragraph(para_idx: int):
                 para['delete_reason'] = "manual"
                 mark_activity(para_id)
                 save_progress()
+                st.rerun()
             elif not del_checked and is_marked and para.get('delete_reason') == 'manual':
                 para['potential_delete'] = False
                 mark_activity(para_id)
                 save_progress()
+                st.rerun()
         with grp_col:
             is_selected = para_id in st.session_state.selected_for_grouping
             # Use checkbox instead of button to avoid white text issue
