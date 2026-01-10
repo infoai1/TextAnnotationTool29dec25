@@ -86,6 +86,7 @@ st.markdown(get_highlight_css(), unsafe_allow_html=True)
 
 # Load Material Icons font FIRST via <link> tag (more reliable than @import)
 st.markdown('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">', unsafe_allow_html=True)
+st.markdown('<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">', unsafe_allow_html=True)
 
 # ============= MODERN UI THEME v2.5.1 =============
 st.markdown("""
@@ -686,6 +687,11 @@ def mark_activity(para_id=None):
     # Remember last worked paragraph
     if para_id is not None:
         st.session_state.last_worked_para = para_id
+
+
+def mark_unsaved():
+    """Mark that there are unsaved changes (for group operations)."""
+    st.session_state.has_unsaved_changes = True
 
 
 def check_auto_save():
@@ -1643,6 +1649,286 @@ def split_group_at_paragraph(para_id: int):
     mark_unsaved()
 
 
+def render_group_dashboard():
+    """Render world-class group visualization dashboard with Material Design."""
+    if not st.session_state.get('groups'):
+        st.info("📦 No groups generated yet. Click 'Generate Groups' in the sidebar.")
+        return
+
+    # Custom CSS for Material Design cards
+    st.markdown("""
+    <style>
+    .group-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-left: 5px solid #3b82f6;
+        transition: all 0.3s ease;
+    }
+    .group-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+    }
+    .group-card.optimal { border-left-color: #22c55e; }
+    .group-card.acceptable { border-left-color: #f59e0b; }
+    .group-card.warning { border-left-color: #ef4444; }
+    .group-card.quran-rich { background: linear-gradient(135deg, #f0fdf4 0%, white 100%); }
+    .group-card.hadith-rich { background: linear-gradient(135deg, #eff6ff 0%, white 100%); }
+    .group-card.concept-rich { background: linear-gradient(135deg, #fef3c7 0%, white 100%); }
+    .stat-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 16px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-right: 8px;
+        margin-bottom: 4px;
+    }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-orange { background: #fed7aa; color: #9a3412; }
+    .badge-purple { background: #e9d5ff; color: #6b21a8; }
+    .badge-gray { background: #f1f5f9; color: #475569; }
+    .stat-card {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: white;
+        padding: 24px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    .stat-number {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+    }
+    .stat-label {
+        font-size: 0.9em;
+        opacity: 0.9;
+        margin-top: 8px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    groups = st.session_state.groups
+
+    # === STATS DASHBOARD ===
+    st.markdown("### 📊 Group Analytics Dashboard")
+
+    total_groups = len(groups)
+    avg_tokens = sum(g['token_count'] for g in groups) / total_groups if total_groups > 0 else 0
+    optimal_count = sum(1 for g in groups if get_group_validation_status(g) == 'optimal')
+    acceptable_count = sum(1 for g in groups if get_group_validation_status(g) == 'acceptable')
+    warning_count = sum(1 for g in groups if get_group_validation_status(g) == 'warning')
+
+    # Count reference types across all groups
+    total_quran = 0
+    total_hadith = 0
+    total_concepts = 0
+
+    for g in groups:
+        for para_id in g['para_ids']:
+            para = find_paragraph(para_id)
+            if para and not para.get('deleted'):
+                total_quran += len(para.get('quran_refs', []))
+                total_hadith += len(para.get('hadith_refs', []))
+                total_concepts += len(para.get('concepts', []))
+
+    # Top row: Key metrics
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    with col1:
+        st.markdown(f"""
+        <div class="stat-card" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+            <div class="stat-number">{total_groups}</div>
+            <div class="stat-label">Total Groups</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown(f"""
+        <div class="stat-card" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">
+            <div class="stat-number">{optimal_count}</div>
+            <div class="stat-label">Optimal</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col3:
+        st.markdown(f"""
+        <div class="stat-card" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+            <div class="stat-number">{acceptable_count}</div>
+            <div class="stat-label">Acceptable</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col4:
+        st.markdown(f"""
+        <div class="stat-card" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+            <div class="stat-number">{warning_count}</div>
+            <div class="stat-label">Needs Review</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col5:
+        st.markdown(f"""
+        <div class="stat-card" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+            <div class="stat-number">{int(avg_tokens)}</div>
+            <div class="stat-label">Avg Tokens</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Second row: Content metrics
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("🟢 Quran References", total_quran)
+    with col2:
+        st.metric("🔵 Hadith References", total_hadith)
+    with col3:
+        st.metric("🟡 Concepts Tagged", total_concepts)
+
+    st.markdown("---")
+
+    # === FILTERS & SORT ===
+    col1, col2, col3 = st.columns([2, 2, 2])
+
+    with col1:
+        filter_status = st.selectbox(
+            "Filter by Status",
+            ["All", "Optimal (512-800t)", "Acceptable", "Needs Review"],
+            key="group_filter_status"
+        )
+
+    with col2:
+        sort_by = st.selectbox(
+            "Sort By",
+            ["Group ID", "Token Count (High→Low)", "Token Count (Low→High)", "Paragraph Count"],
+            key="group_sort"
+        )
+
+    with col3:
+        show_mode = st.radio(
+            "Show",
+            ["Cards Only", "Cards + Paragraphs"],
+            key="group_show_mode",
+            horizontal=True
+        )
+
+    st.markdown("---")
+
+    # Filter groups
+    filtered_groups = groups.copy()
+
+    if filter_status == "Optimal (512-800t)":
+        filtered_groups = [g for g in filtered_groups if get_group_validation_status(g) == 'optimal']
+    elif filter_status == "Acceptable":
+        filtered_groups = [g for g in filtered_groups if get_group_validation_status(g) == 'acceptable']
+    elif filter_status == "Needs Review":
+        filtered_groups = [g for g in filtered_groups if get_group_validation_status(g) == 'warning']
+
+    # Sort groups
+    if sort_by == "Token Count (High→Low)":
+        filtered_groups.sort(key=lambda g: g['token_count'], reverse=True)
+    elif sort_by == "Token Count (Low→High)":
+        filtered_groups.sort(key=lambda g: g['token_count'])
+    elif sort_by == "Paragraph Count":
+        filtered_groups.sort(key=lambda g: len(g['para_ids']), reverse=True)
+
+    st.caption(f"Showing {len(filtered_groups)} of {total_groups} groups")
+
+    # === GROUP CARDS ===
+    for group in filtered_groups:
+        status = get_group_validation_status(group)
+
+        # Count references in this group
+        group_quran = 0
+        group_hadith = 0
+        group_concepts = 0
+        group_people = 0
+        group_places = 0
+
+        for para_id in group['para_ids']:
+            para = find_paragraph(para_id)
+            if para and not para.get('deleted'):
+                group_quran += len(para.get('quran_refs', []))
+                group_hadith += len(para.get('hadith_refs', []))
+                group_concepts += len(para.get('concepts', []))
+                group_people += len(para.get('people', []))
+                group_places += len(para.get('places', []))
+
+        # Determine card theme
+        card_class = f"group-card {status}"
+        if group_quran >= 3:
+            card_class += " quran-rich"
+        elif group_hadith >= 2:
+            card_class += " hadith-rich"
+        elif group_concepts >= 5:
+            card_class += " concept-rich"
+
+        # Card header
+        st.markdown(f'<div class="{card_class}">', unsafe_allow_html=True)
+
+        col1, col2, col3 = st.columns([2, 3, 1])
+
+        with col1:
+            status_emoji = "🟢" if status == "optimal" else "🟡" if status == "acceptable" else "🔴"
+            st.markdown(f"### {status_emoji} {group['group_id'].upper()}")
+
+        with col2:
+            # Token badge
+            token_color = "badge-green" if status == "optimal" else "badge-orange" if status == "acceptable" else "badge-gray"
+            st.markdown(
+                f'<span class="stat-badge {token_color}">{group["token_count"]} tokens</span>'
+                f'<span class="stat-badge badge-gray">{len(group["para_ids"])} paragraphs</span>'
+                f'<span class="stat-badge badge-gray">p.{group.get("page_start", "?")}-{group.get("page_end", "?")}</span>',
+                unsafe_allow_html=True
+            )
+
+        with col3:
+            expand_key = f"expand_{group['group_id']}"
+            is_expanded = st.session_state.get(expand_key, False)
+            if st.button("▼ Expand" if not is_expanded else "▲ Collapse", key=f"btn_{expand_key}"):
+                st.session_state[expand_key] = not is_expanded
+                st.rerun()
+
+        # Reference badges
+        if group_quran or group_hadith or group_concepts or group_people or group_places:
+            st.markdown("<br>", unsafe_allow_html=True)
+            badges_html = ""
+            if group_quran > 0:
+                badges_html += f'<span class="stat-badge badge-green">🟢 {group_quran} Quran</span>'
+            if group_hadith > 0:
+                badges_html += f'<span class="stat-badge badge-blue">🔵 {group_hadith} Hadith</span>'
+            if group_concepts > 0:
+                badges_html += f'<span class="stat-badge badge-orange">🟡 {group_concepts} Concepts</span>'
+            if group_people > 0:
+                badges_html += f'<span class="stat-badge badge-purple">👤 {group_people} People</span>'
+            if group_places > 0:
+                badges_html += f'<span class="stat-badge badge-purple">📍 {group_places} Places</span>'
+            st.markdown(badges_html, unsafe_allow_html=True)
+
+        # Show paragraphs if expanded or mode is "Cards + Paragraphs"
+        if show_mode == "Cards + Paragraphs" or st.session_state.get(expand_key, False):
+            st.markdown("---")
+            for para_id in group['para_ids']:
+                para_idx = find_paragraph_index(para_id)
+                if para_idx >= 0:
+                    para = st.session_state.paragraphs[para_idx]
+                    # Show condensed paragraph info
+                    st.markdown(f"**Para {para_id}** • p.{para.get('page_info', {}).get('page_number', '?')}")
+                    st.caption(para['text'][:200] + "..." if len(para['text']) > 200 else para['text'])
+                    st.markdown("<br>", unsafe_allow_html=True)
+
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown("---")
+    st.caption(f"💡 Groups are auto-generated to optimize retrieval (target: 512-800 tokens)")
+
+
 def build_hierarchical_structure():
     """Build hierarchical structure: chapters containing paragraphs."""
     active_paragraphs = [p for p in st.session_state.paragraphs
@@ -2311,6 +2597,19 @@ def render_sidebar():
                                   f"{lightrag_data['metadata']['total_entities']} entities")
             else:
                 st.caption("Upload a book first")
+
+            st.divider()
+
+            # VIEW MODE SELECTOR
+            st.subheader("📑 View Mode")
+            view_mode = st.radio(
+                "Display Mode",
+                ["Paragraph View", "Group Dashboard"],
+                key="view_mode",
+                help="Toggle between paragraph editing and group visualization",
+                label_visibility="collapsed"
+            )
+            st.session_state.view_mode = view_mode
 
             st.divider()
 
@@ -3632,18 +3931,24 @@ def main():
                 st.session_state.scroll_to_para = last_para
                 st.rerun()  # Rerun to inject the scroll JS
 
-    # Junk cleanup panel
-    render_junk_approval()
+    # Junk cleanup panel (only in paragraph view)
+    if st.session_state.get('view_mode') != "Group Dashboard":
+        render_junk_approval()
 
-    # Render all paragraphs (by groups if available)
-    if st.session_state.get('groups'):
-        # Render by groups
-        for i in range(len(st.session_state.groups)):
-            render_group(i)
+    # Render content based on view mode
+    if st.session_state.get('view_mode') == "Group Dashboard":
+        # Show world-class group dashboard
+        render_group_dashboard()
     else:
-        # Fallback: render paragraphs without groups
-        for i in range(len(st.session_state.paragraphs)):
-            render_paragraph(i)
+        # Render all paragraphs (by groups if available)
+        if st.session_state.get('groups'):
+            # Render by groups
+            for i in range(len(st.session_state.groups)):
+                render_group(i)
+        else:
+            # Fallback: render paragraphs without groups
+            for i in range(len(st.session_state.paragraphs)):
+                render_paragraph(i)
 
     # Status workflow buttons (for annotator/reviewer)
     st.markdown("---")
