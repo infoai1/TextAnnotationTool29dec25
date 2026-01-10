@@ -679,6 +679,9 @@ def init_session_state():
     # Remember last worked paragraph for resume
     if 'last_worked_para' not in st.session_state:
         st.session_state.last_worked_para = None
+    # View mode for group visualization
+    if 'view_mode' not in st.session_state:
+        st.session_state.view_mode = 'Paragraph View'
 
 
 def mark_activity(para_id=None):
@@ -2600,18 +2603,19 @@ def render_sidebar():
 
             st.divider()
 
-            # VIEW MODE SELECTOR
-            st.subheader("📑 View Mode")
-            view_mode = st.radio(
-                "Display Mode",
-                ["Paragraph View", "Group Dashboard"],
-                key="view_mode",
-                help="Toggle between paragraph editing and group visualization",
-                label_visibility="collapsed"
-            )
-            st.session_state.view_mode = view_mode
+            # VIEW MODE SELECTOR (only show when book is loaded)
+            if st.session_state.file_uploaded:
+                st.subheader("📑 View Mode")
+                view_mode = st.radio(
+                    "Display Mode",
+                    ["Paragraph View", "Group Dashboard"],
+                    key="view_mode",
+                    help="Toggle between paragraph editing and group visualization",
+                    label_visibility="collapsed"
+                )
+                st.session_state.view_mode = view_mode
 
-            st.divider()
+                st.divider()
 
             # GROUP OVERVIEW SECTION
             st.subheader("📦 Group Overview")
