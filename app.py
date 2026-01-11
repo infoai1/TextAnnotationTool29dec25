@@ -44,6 +44,27 @@ from extractors.quran_detector import format_quran_ref
 from extractors.hadith_detector import format_hadith_ref, get_collection_list
 from utils.highlighter import get_highlight_css, highlight_text_simple, DEFAULT_KEYWORDS, find_year_positions
 
+# Refactored modules
+from config import (
+    DATA_DIR,
+    BOOKS_DIR,
+    AUTO_SAVE_INTERVAL,
+    VERSION_KEEP_COUNT,
+    LOCK_TIMEOUT_HOURS,
+    GROUP_TOKEN_MIN,
+    GROUP_TOKEN_TARGET,
+    GROUP_TOKEN_MAX
+)
+from helpers import (
+    slugify,
+    humanize_time_ago as helpers_humanize_time_ago,
+    estimate_tokens as helpers_estimate_tokens,
+    count_tokens as helpers_count_tokens,
+    validate_para_id,
+    validate_group_id
+)
+import db
+
 # PDF handling imports
 try:
     from services.pdf_handler import extract_pdf_pages, match_all_paragraphs_to_pages
@@ -822,107 +843,57 @@ def check_auto_save():
 
 
 def count_tokens(text: str) -> dict:
-    """Count words and characters in text."""
-    words = len(text.split())
-    chars = len(text)
-    return {'words': words, 'chars': chars}
+    """Wrapper for helpers.count_tokens()."""
+    return helpers_count_tokens(text)
 
 
 def save_progress():
-    """Auto-save current work to disk for resume later."""
+    """Auto-save current work to disk for resume later. Now uses db module."""
     button_logger.info(f"[SAVE] starting book={st.session_state.get('book_title', 'unknown')}")
-    if st.session_state.book_title and st.session_state.paragraphs:
-        # Use current_book_folder for consistent slug generation
-        book_folder = st.session_state.get('current_book_folder')
-        if book_folder:
-            slug = book_folder  # Use folder name directly (no spaces, already clean)
-        else:
-            # Fallback for manual uploads before folder is set
-            slug = st.session_state.book_title.strip().lower().replace(' ', '_').replace('/', '_')[:50]
 
-        user = st.session_state.get('current_user', 'guest')
+    if not st.session_state.book_title or not st.session_state.paragraphs:
+        button_logger.warning(f"[SAVE] skipped - no book loaded")
+        return
 
-        # Debug logging
-        button_logger.info(f"[SAVE] slug={slug} folder={book_folder} title={st.session_state.get('book_title', '')[:30]}")
+    # Get book folder and user
+    book_folder = st.session_state.get('current_book_folder')
+    if not book_folder:
+        # Fallback for manual uploads before folder is set
+        book_folder = slugify(st.session_state.book_title, max_length=50)
 
-        # Include user in filename to prevent collisions
-        filename = f"{slug}_{user}_progress.json"
+    user = st.session_state.get('current_user', 'guest')
 
-        data = {
-            'paragraphs': st.session_state.paragraphs,
-            'groups': st.session_state.get('groups', []),
-            'book_title': st.session_state.book_title,
-            'author': st.session_state.author,
-            'annotator': st.session_state.annotator,
-            'pdf_loaded': st.session_state.pdf_loaded,
-            'pdf_pages': st.session_state.get('pdf_pages', []),
-            'book_status': st.session_state.get('book_status', 'pending'),
-            'last_saved_by': user,
-            'last_saved': datetime.now().isoformat(),
-            'last_worked_para': st.session_state.get('last_worked_para')
-        }
-        os.makedirs(DATA_DIR, exist_ok=True)
-        with open(os.path.join(DATA_DIR, filename), 'w') as f:
-            json.dump(data, f, indent=2)
+    button_logger.info(f"[SAVE] folder={book_folder} user={user} title={st.session_state.get('book_title', '')[:30]}")
 
-        file_size_kb = os.path.getsize(os.path.join(DATA_DIR, filename)) / 1024
-        button_logger.info(f"[SAVE] success file={filename} size={file_size_kb:.1f}KB")
+    # Prepare data
+    data = {
+        'paragraphs': st.session_state.paragraphs,
+        'groups': st.session_state.get('groups', []),
+        'book_title': st.session_state.book_title,
+        'author': st.session_state.author,
+        'annotator': st.session_state.annotator,
+        'pdf_loaded': st.session_state.pdf_loaded,
+        'pdf_pages': st.session_state.get('pdf_pages', []),
+        'book_status': st.session_state.get('book_status', 'pending'),
+        'last_worked_para': st.session_state.get('last_worked_para')
+    }
 
+    # Save progress using db module
+    if db.save_progress(data, book_folder, user):
         # Create version snapshot
-        version_dir = os.path.join(DATA_DIR, 'versions', f"{slug}_{user}")
-        os.makedirs(version_dir, exist_ok=True)
-
-        # Generate version filename with timestamp
-        timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        version_file = os.path.join(version_dir, f"v_{timestamp}.json")
-
-        # Save version snapshot
-        with open(version_file, 'w') as f:
-            json.dump(data, f, indent=2)
-
-        # Get file size for logging
-        file_size_kb = os.path.getsize(version_file) / 1024
-
-        # Keep only last 10 versions (delete older ones)
-        version_files = sorted(glob.glob(os.path.join(version_dir, "v_*.json")))
-        deleted_count = 0
-        if len(version_files) > 10:
-            for old_file in version_files[:-10]:  # Keep last 10, delete rest
-                os.remove(old_file)
-                deleted_count += 1
-
-        # Log version operations
-        version_num = len(version_files) if len(version_files) <= 10 else 10
-        logger.info(f"[VERSION_SAVE] book={slug}, version={version_num}, file_size={file_size_kb:.1f}kb")
-        if deleted_count > 0:
-            logger.info(f"[VERSION_CLEANUP] book={slug}, deleted={deleted_count}")
+        db.create_version(book_folder, user, data)
 
         # Update auto-save tracking
         st.session_state.last_save_time = datetime.now()
         st.session_state.has_unsaved_changes = False
+        button_logger.info(f"[SAVE] success via db module")
     else:
-        button_logger.warning(f"[SAVE] skipped - no book loaded")
+        button_logger.error(f"[SAVE] failed via db module")
 
 
 def humanize_time_ago(dt):
-    """Convert datetime to '2 hours ago' format."""
-    now = datetime.now()
-    diff = now - dt
-
-    seconds = diff.total_seconds()
-    if seconds < 60:
-        return "just now"
-    elif seconds < 3600:
-        mins = int(seconds / 60)
-        return f"{mins} min ago" if mins == 1 else f"{mins} mins ago"
-    elif seconds < 86400:
-        hours = int(seconds / 3600)
-        return f"{hours} hour ago" if hours == 1 else f"{hours} hours ago"
-    elif seconds < 604800:
-        days = int(seconds / 86400)
-        return f"{days} day ago" if days == 1 else f"{days} days ago"
-    else:
-        return dt.strftime("%b %d, %Y")
+    """Wrapper for helpers.humanize_time_ago()."""
+    return helpers_humanize_time_ago(dt)
 
 
 def load_last_read_position():
@@ -942,46 +913,10 @@ def load_last_read_position():
 
 
 def get_saved_books():
-    """Get list of saved in-progress books for current user."""
-    saved = []
+    """Wrapper for db.list_saved_books()."""
     current_user = st.session_state.get('current_user', 'guest')
     user_role = st.session_state.get('user_role', 'annotator')
-
-    if os.path.exists(DATA_DIR):
-        for fname in os.listdir(DATA_DIR):
-            if fname.endswith('_progress.json'):
-                fpath = os.path.join(DATA_DIR, fname)
-                try:
-                    with open(fpath) as f:
-                        data = json.load(f)
-
-                    saved_by = data.get('last_saved_by', 'unknown')
-                    status = data.get('book_status', 'pending')
-
-                    # Filter based on role:
-                    # - Admin sees all
-                    # - Annotator sees own work
-                    # - Reviewer sees 'annotated' status
-                    show = False
-                    if user_role == 'admin':
-                        show = True
-                    elif user_role == 'annotator' and saved_by == current_user:
-                        show = True
-                    elif user_role == 'reviewer' and status == 'annotated':
-                        show = True
-
-                    if show:
-                        saved.append({
-                            'file': fpath,
-                            'title': data.get('book_title', 'Unknown'),
-                            'last_saved': data.get('last_saved', ''),
-                            'para_count': len(data.get('paragraphs', [])),
-                            'status': status,
-                            'saved_by': saved_by
-                        })
-                except:
-                    pass
-    return sorted(saved, key=lambda x: x['last_saved'], reverse=True)
+    return db.list_saved_books(current_user, user_role)
 
 
 def load_saved_book(fpath):
@@ -1025,86 +960,31 @@ def load_saved_book(fpath):
 
 # ============= BOOK LIBRARY FUNCTIONS =============
 
-# Use /tmp for Streamlit Cloud (read-only filesystem)
-if os.path.exists("/mount/src"):  # Streamlit Cloud
-    BOOKS_DIR = os.path.join(tempfile.gettempdir(), "books")
-    DATA_DIR = os.path.join(tempfile.gettempdir(), "data")
-else:  # Local/Docker
-    BOOKS_DIR = '/app/books'
-    DATA_DIR = '/app/data'
-
-os.makedirs(BOOKS_DIR, exist_ok=True)
-os.makedirs(DATA_DIR, exist_ok=True)
+# DATA_DIR and BOOKS_DIR now imported from config.py (handles environment detection)
 
 def load_meta(book_folder):
-    """Load meta.json from book folder."""
-    meta_path = os.path.join(BOOKS_DIR, book_folder, 'meta.json')
-    if os.path.exists(meta_path):
-        with open(meta_path) as f:
-            return json.load(f)
-    return {}
+    """Wrapper for db.load_meta()."""
+    return db.load_meta(book_folder)
 
 def save_meta(book_folder, meta):
-    """Save meta.json to book folder."""
-    meta_path = os.path.join(BOOKS_DIR, book_folder, 'meta.json')
-    with open(meta_path, 'w') as f:
-        json.dump(meta, f, indent=2)
+    """Wrapper for db.save_meta()."""
+    return db.save_meta(book_folder, meta)
 
 def get_library_books():
-    """Get list of all books in library."""
-    books = []
-    if os.path.exists(BOOKS_DIR):
-        for name in os.listdir(BOOKS_DIR):
-            folder_path = os.path.join(BOOKS_DIR, name)
-            if os.path.isdir(folder_path):
-                meta = load_meta(name)
-                if meta:
-                    meta['folder'] = name
-                    # Check if files exist
-                    meta['has_docx'] = os.path.exists(os.path.join(folder_path, 'document.docx'))
-                    meta['has_pdf'] = os.path.exists(os.path.join(folder_path, 'document.pdf'))
-                    books.append(meta)
-    return sorted(books, key=lambda x: x.get('title', ''))
+    """Wrapper for db.get_library_books()."""
+    return db.get_library_books()
 
 def can_lock_book(book_folder, username):
-    """Check if user can lock this book."""
-    from datetime import timedelta
-    meta = load_meta(book_folder)
-
-    # Already locked by this user
-    if meta.get('locked_by') == username:
-        return True
-
-    # Not locked
-    if meta.get('locked_by') is None:
-        return True
-
-    # Locked by someone else - check timeout (2 hours)
-    if meta.get('locked_at'):
-        try:
-            locked_at = datetime.fromisoformat(meta['locked_at'])
-            if datetime.now() - locked_at > timedelta(hours=2):
-                return True  # Lock expired
-        except:
-            return True  # Invalid date, allow lock
-
-    return False
+    """Wrapper for db.can_lock_book()."""
+    return db.can_lock_book(book_folder, username)
 
 def lock_book(book_folder, username):
-    """Lock book for user."""
-    meta = load_meta(book_folder)
-    meta['locked_by'] = username
-    meta['locked_at'] = datetime.now().isoformat()
-    if meta.get('status') == 'pending':
-        meta['status'] = 'in_progress'
-    save_meta(book_folder, meta)
+    """Wrapper for db.lock_book()."""
+    return db.lock_book(book_folder, username)
 
 def release_lock(book_folder):
-    """Release lock when done or cancelled."""
-    meta = load_meta(book_folder)
-    meta['locked_by'] = None
-    meta['locked_at'] = None
-    save_meta(book_folder, meta)
+    """Wrapper for db.release_lock()."""
+    return db.release_lock(book_folder)
 
 def load_book_from_library(book_folder):
     """Load a book from the library for annotation."""
@@ -1689,10 +1569,8 @@ def generate_slug(title: str) -> str:
 
 
 def estimate_tokens(text):
-    """Estimate token count: words * 1.3"""
-    if not text or not text.strip():
-        return 0
-    return int(len(text.split()) * 1.3)
+    """Wrapper for helpers.estimate_tokens()."""
+    return helpers_estimate_tokens(text)
 
 
 def create_groups_for_chapter(paragraphs, chapter_title, group_counter_start):
