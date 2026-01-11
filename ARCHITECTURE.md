@@ -190,7 +190,7 @@ session_state.view_mode
 - [x] Section 2: config.py (paths, constants)
 - [x] Section 3: helpers.py (pure helpers)
 - [x] Section 4: db.py (persistence)
-- [ ] Section 5: Wire db.py into app.py
+- [x] Section 5: Wire db.py into app.py
 - [ ] Section 6: Documentation
 - [ ] Section 7: Verification
 
