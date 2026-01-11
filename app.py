@@ -3307,7 +3307,7 @@ def render_paragraph(para_idx: int):
                             if st.button("✂️", key=f"split_{para_id}", help="Split group here"):
                                 split_group_at_paragraph(para_id)
                                 st.success("Group split!")
-                                st.rerun()
+                                st.rerun(scope="fragment")
 
         # Additional options for quotes
         if para.get('type') == 'quote':
