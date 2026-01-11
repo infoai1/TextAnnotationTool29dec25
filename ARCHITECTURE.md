@@ -53,7 +53,7 @@
 
 ---
 
-### Utilities (→ utils.py in Phase 1)
+### Utilities (→ helpers.py in Phase 1)
 | Function | Line | Purpose |
 |----------|------|---------|
 | humanize_time_ago | 907 | Convert datetime to "2 hours ago" |
@@ -61,7 +61,9 @@
 | estimate_tokens | 1691 | Estimate token count |
 | count_tokens | 824 | Accurate token count |
 
-**Total: 4 functions → utils.py**
+**Total: 4 functions → helpers.py**
+
+**Note:** Renamed to helpers.py to avoid conflict with existing utils/ package.
 
 ---
 
@@ -185,8 +187,8 @@ session_state.view_mode
 ### Phase 1 (Current): Extract Pure Logic
 - [x] Section 0: Backup
 - [x] Section 1: Map functions
-- [ ] Section 2: config.py (paths, constants)
-- [ ] Section 3: utils.py (pure helpers)
+- [x] Section 2: config.py (paths, constants)
+- [x] Section 3: helpers.py (pure helpers)
 - [ ] Section 4: db.py (persistence)
 - [ ] Section 5: Wire db.py into app.py
 - [ ] Section 6: Documentation
@@ -208,11 +210,14 @@ session_state.view_mode
 ```
 annotation_tool/
 ├── app.py (UI + routing) - ~3000 lines
-├── config.py (constants) - ~30 lines
-├── utils.py (helpers) - ~50 lines
+├── config.py (constants) - ~53 lines ✓
+├── helpers.py (pure helpers) - ~185 lines ✓
 ├── db.py (persistence) - ~150 lines
 ├── processors.py (future) - ~400 lines
 ├── components.py (future) - ~500 lines
+├── utils/ (existing package)
+│   ├── highlighter.py
+│   └── text_utils.py
 └── ARCHITECTURE.md (this file)
 ```
 
