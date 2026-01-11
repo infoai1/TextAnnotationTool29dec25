@@ -3364,11 +3364,11 @@ def render_paragraph(para_idx: int):
                 para['potential_delete'] = True
                 para['delete_reason'] = "manual"
                 mark_activity(para_id)
-                st.rerun(scope="fragment")
+                st.rerun()  # Full rerun to update junk panel
             elif not del_checked and is_marked and para.get('delete_reason') == 'manual':
                 para['potential_delete'] = False
                 mark_activity(para_id)
-                st.rerun(scope="fragment")
+                st.rerun()  # Full rerun to update junk panel
         with grp_col:
             is_selected = para_id in st.session_state.selected_for_grouping
             # Use checkbox instead of button to avoid white text issue
