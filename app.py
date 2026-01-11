@@ -1501,14 +1501,14 @@ def render_junk_approval():
                         p['deleted'] = True
                         p['potential_delete'] = False
                         st.session_state[f"pdel_{p['id']}"] = False
-                    save_progress()
+                    mark_activity()
                     st.rerun()
             with col2:
                 if st.button("❎ Clear All", key="clear_all_junk"):
                     for p in junk:
                         p['potential_delete'] = False
                         st.session_state[f"pdel_{p['id']}"] = False
-                    save_progress()
+                    mark_activity()
                     st.rerun()
             with col3:
                 st.caption(f"{len(junk)} items")
@@ -1536,7 +1536,7 @@ def render_junk_approval():
                     if st.button("❌", key=f"clear_{p['id']}", help="Remove from queue"):
                         p['potential_delete'] = False
                         st.session_state[f"pdel_{p['id']}"] = False
-                        save_progress()
+                        mark_activity(p['id'])
                         st.rerun()
 
         # Deleted items
