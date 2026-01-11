@@ -3674,7 +3674,6 @@ def render_paragraph(para_idx: int):
                     para['quran_refs'].append(new_ref)
                     para['reviewed'] = True
                     mark_activity(para_id)
-                    save_progress()
                     st.success(f"Added Quran {surah}:{ayah_start}" + (f"-{ayah_end}" if ayah_end > 0 else ""))
                     st.rerun(scope="fragment")
 
@@ -3717,7 +3716,6 @@ def render_paragraph(para_idx: int):
                         para['hadith_refs'].append(new_ref)
                         para['reviewed'] = True
                         mark_activity(para_id)
-                        save_progress()
                         st.success(f"Added {final_collection}, No. {hadith_num}")
                         st.rerun(scope="fragment")
 
@@ -3738,7 +3736,6 @@ def render_paragraph(para_idx: int):
                     })
                     para['reviewed'] = True
                     mark_activity(para_id)
-                    save_progress()
                     st.success("Added Seerah reference")
                     st.rerun(scope="fragment")
 
@@ -3770,7 +3767,6 @@ def render_paragraph(para_idx: int):
                         })
                         para['reviewed'] = True
                         mark_activity(para_id)
-                        save_progress()
                         st.success(f"Added: {book_name}")
                         st.rerun(scope="fragment")
 
@@ -3804,7 +3800,6 @@ def render_paragraph(para_idx: int):
                     if st.button("❌", key=f"del_quran_{para_id}_{i}_{ref_key}", help="Delete"):
                         para['quran_refs'] = [r for r in para.get('quran_refs', []) if r != ref]
                         mark_activity(para_id)
-                        save_progress()
                         st.rerun(scope="fragment")
 
             # Hadith refs with tight delete button
@@ -3818,7 +3813,6 @@ def render_paragraph(para_idx: int):
                     if st.button("❌", key=f"del_hadith_{para_id}_{i}_{ref_key}", help="Delete"):
                         para['hadith_refs'] = [r for r in para.get('hadith_refs', []) if r != ref]
                         mark_activity(para_id)
-                        save_progress()
                         st.rerun(scope="fragment")
 
             # Seerah refs with tight delete button
@@ -3832,7 +3826,6 @@ def render_paragraph(para_idx: int):
                     if st.button("❌", key=f"del_seerah_{para_id}_{i}_{ref_key}", help="Delete"):
                         para['seerah_refs'] = [r for r in para.get('seerah_refs', []) if r != ref]
                         mark_activity(para_id)
-                        save_progress()
                         st.rerun(scope="fragment")
 
             # Other book refs with tight delete button
@@ -3846,7 +3839,6 @@ def render_paragraph(para_idx: int):
                     if st.button("❌", key=f"del_book_{para_id}_{i}_{ref_key}", help="Delete"):
                         para['other_book_refs'] = [r for r in para.get('other_book_refs', []) if r != ref]
                         mark_activity(para_id)
-                        save_progress()
                         st.rerun(scope="fragment")
 
         st.divider()
