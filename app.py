@@ -3518,7 +3518,7 @@ def render_paragraph(para_idx: int):
                     if i < len(para.get('footnote_refs', [])):
                         if para['footnote_refs'][i].get('verified') != new_verified:
                             para['footnote_refs'][i]['verified'] = new_verified
-                            save_progress()  # Auto-save on verify
+                            mark_activity(para_id)
                             st.rerun(scope="fragment")  # Instant UI update
                 with col2:
                     marker = ref.get('marker', f"[{ref.get('number', '?')}]")
@@ -3544,7 +3544,6 @@ def render_paragraph(para_idx: int):
                             ref_deleted = para['footnote_refs'][i]
                             para['footnote_refs'].pop(i)
                             mark_activity(para_id)
-                            save_progress()
                             button_logger.info(f"[DELETE_REF] success type=footnote para={para_id} after_count={len(para['footnote_refs'])} rerun=fragment")
                             st.rerun(scope="fragment")
                         else:
