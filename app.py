@@ -3239,7 +3239,6 @@ def render_paragraph(para_idx: int):
                 else:
                     para['level'] = None
                 mark_activity(para_id)
-                save_progress()  # Auto-save on type change
 
         with col_page:
             # Page number with edit button - simple inline layout
