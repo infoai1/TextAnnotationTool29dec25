@@ -3239,6 +3239,7 @@ def render_paragraph(para_idx: int):
                 else:
                     para['level'] = None
                 mark_activity(para_id)
+                st.rerun(scope="fragment")
 
         with col_page:
             # Page number with edit button - simple inline layout
@@ -3323,6 +3324,8 @@ def render_paragraph(para_idx: int):
                 )
                 if new_quote_type != quote_type:
                     para['quote_type'] = new_quote_type
+                    mark_activity(para_id)
+                    st.rerun(scope="fragment")
 
         # Build CSS classes for paragraph box
         css_classes = ["paragraph-box"]
