@@ -3272,7 +3272,7 @@ def render_paragraph(para_idx: int):
                     # Toggle edit mode inline
                     if st.button(f"p.{current_page} ✏️", key=f"pedit_{para_id}"):
                         st.session_state[edit_key] = True
-                        st.rerun()
+                        st.rerun(scope="fragment")
                 else:
                     st.caption(f"p.{current_page}")
 
