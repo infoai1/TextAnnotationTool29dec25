@@ -3471,7 +3471,7 @@ def render_paragraph(para_idx: int):
                     if i < len(para.get('year_refs', [])):
                         if para['year_refs'][i].get('verified') != new_verified:
                             para['year_refs'][i]['verified'] = new_verified
-                            save_progress()  # Auto-save on verify
+                            mark_activity(para_id)
                             st.rerun(scope="fragment")  # Instant UI update
                 with col2:
                     # Get year text - prefer stored 'text' field, fallback to slicing
@@ -3495,7 +3495,6 @@ def render_paragraph(para_idx: int):
                             ref_deleted = para['year_refs'][i]
                             para['year_refs'].pop(i)
                             mark_activity(para_id)
-                            save_progress()
                             button_logger.info(f"[DELETE_REF] success type=year para={para_id} after_count={len(para['year_refs'])} rerun=fragment")
                             st.rerun(scope="fragment")
                         else:
