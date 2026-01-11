@@ -3298,7 +3298,7 @@ def render_paragraph(para_idx: int):
 
                     if selected_group != current_group_id:
                         move_paragraph_to_group(para_id, selected_group)
-                        st.rerun()
+                        st.rerun(scope="fragment")
 
                     # Split button (only if group has 2+ paragraphs and not first para)
                     if current_group_id:
