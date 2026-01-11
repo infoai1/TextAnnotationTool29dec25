@@ -53,7 +53,8 @@ from config import (
     LOCK_TIMEOUT_HOURS,
     GROUP_TOKEN_MIN,
     GROUP_TOKEN_TARGET,
-    GROUP_TOKEN_MAX
+    GROUP_TOKEN_MAX,
+    get_ist_now
 )
 from helpers import (
     slugify,
@@ -793,7 +794,7 @@ def init_session_state():
         st.session_state.user_role = 'annotator'
     # Auto-save tracking
     if 'last_save_time' not in st.session_state:
-        st.session_state.last_save_time = datetime.now()
+        st.session_state.last_save_time = get_ist_now()
     if 'has_unsaved_changes' not in st.session_state:
         st.session_state.has_unsaved_changes = False
     # Remember last worked paragraph for resume
@@ -831,7 +832,7 @@ def check_auto_save():
     if not st.session_state.get('has_unsaved_changes'):
         return
 
-    now = datetime.now()
+    now = get_ist_now()
     last_save = st.session_state.get('last_save_time', now)
     seconds_since_save = (now - last_save).total_seconds()
 
@@ -884,7 +885,7 @@ def save_progress():
         db.create_version(book_folder, user, data)
 
         # Update auto-save tracking
-        st.session_state.last_save_time = datetime.now()
+        st.session_state.last_save_time = get_ist_now()
         st.session_state.has_unsaved_changes = False
         button_logger.info(f"[SAVE] success via db module")
     else:
@@ -1070,7 +1071,7 @@ def submit_book_for_review():
         meta = load_meta(book_folder)
         meta['status'] = 'submitted'
         meta['annotated_by'] = st.session_state.get('current_user')
-        meta['submitted_at'] = datetime.now().isoformat()
+        meta['submitted_at'] = get_ist_now().isoformat()
         meta['progress'] = 100
         release_lock(book_folder)
         save_meta(book_folder, meta)
@@ -1082,7 +1083,7 @@ def approve_book(book_folder):
     meta = load_meta(book_folder)
     meta['status'] = 'approved'
     meta['approved_by'] = st.session_state.get('current_user')
-    meta['approved_at'] = datetime.now().isoformat()
+    meta['approved_at'] = get_ist_now().isoformat()
     save_meta(book_folder, meta)
 
 def delete_book(book_folder):
@@ -2371,7 +2372,7 @@ def export_json():
             'annotation_status': annotation_status,
             'annotated_by': st.session_state.annotator or None,
             'approved_date': None,
-            'export_date': datetime.now().isoformat()
+            'export_date': get_ist_now().isoformat()
         },
         'structure': structure,
         'groups': all_groups,
@@ -3889,7 +3890,7 @@ def render_portal():
             if book.get('status') == 'approved' and book.get('approved_at'):
                 try:
                     approved_at = datetime.fromisoformat(book['approved_at'])
-                    if datetime.now() - approved_at < timedelta(hours=24):
+                    if get_ist_now() - approved_at < timedelta(hours=24):
                         new_approvals.append(book)
                 except:
                     pass
@@ -3961,7 +3962,7 @@ def render_portal():
                     "locked_by": None,
                     "locked_at": None,
                     "progress": 0,
-                    "created_at": datetime.now().isoformat()
+                    "created_at": get_ist_now().isoformat()
                 }
                 save_meta(slug, meta)
                 st.success(f"✅ Added '{title}' to library!")

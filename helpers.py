@@ -5,6 +5,7 @@ All functions here should be testable independently.
 import re
 from datetime import datetime
 from typing import Optional
+from config import get_ist_now
 
 
 def slugify(text: str, max_length: int = 50) -> str:
@@ -48,7 +49,7 @@ def humanize_time_ago(dt: Optional[datetime]) -> str:
     if not dt:
         return "Never"
 
-    now = datetime.now()
+    now = get_ist_now()
     diff = now - dt
 
     seconds = diff.total_seconds()

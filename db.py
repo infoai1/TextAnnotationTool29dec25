@@ -17,7 +17,8 @@ from config import (
     BOOKS_DIR,
     VERSIONS_DIR,
     VERSION_KEEP_COUNT,
-    LOCK_TIMEOUT_HOURS
+    LOCK_TIMEOUT_HOURS,
+    get_ist_now
 )
 from helpers import slugify
 
@@ -54,7 +55,7 @@ def save_progress(data: dict, book_folder: str, user: str) -> bool:
 
     try:
         # Add save metadata
-        data['last_saved'] = datetime.now().isoformat()
+        data['last_saved'] = get_ist_now().isoformat()
         data['last_saved_by'] = user
         data['current_book_folder'] = book_folder
 
@@ -180,7 +181,7 @@ def create_version(book_folder: str, user: str, data: dict) -> Optional[str]:
         Version timestamp string or None if failed
     """
     versions_dir = get_versions_dir(book_folder, user)
-    timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+    timestamp = get_ist_now().strftime("%Y-%m-%dT%H:%M:%S")
     version_path = versions_dir / f"v_{timestamp}.json"
 
     try:
@@ -357,7 +358,7 @@ def can_lock_book(book_folder: str, username: str) -> bool:
     if meta.get('locked_at'):
         try:
             locked_at = datetime.fromisoformat(meta['locked_at'])
-            if datetime.now() - locked_at > timedelta(hours=LOCK_TIMEOUT_HOURS):
+            if get_ist_now() - locked_at > timedelta(hours=LOCK_TIMEOUT_HOURS):
                 logger.info(f"[LOCK] expired lock for {book_folder}")
                 return True  # Lock expired
         except Exception as e:
@@ -380,7 +381,7 @@ def lock_book(book_folder: str, username: str) -> bool:
     """
     meta = load_meta(book_folder)
     meta['locked_by'] = username
-    meta['locked_at'] = datetime.now().isoformat()
+    meta['locked_at'] = get_ist_now().isoformat()
 
     # Update status from pending to in_progress
     if meta.get('status') == 'pending':

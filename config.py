@@ -51,3 +51,11 @@ AUTH_CONFIG_FILE = DATA_DIR / "users.yaml"
 
 # Export formats
 EXPORT_INDENT = 2  # JSON indentation for exports
+
+# IST Timezone (India Standard Time - UTC+5:30)
+from datetime import datetime, timedelta
+IST_OFFSET = timedelta(hours=5, minutes=30)
+
+def get_ist_now():
+    """Get current datetime in IST timezone."""
+    return datetime.utcnow() + IST_OFFSET
