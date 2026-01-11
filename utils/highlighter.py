@@ -232,51 +232,6 @@ def find_year_positions(text: str) -> List[Tuple[int, int, str]]:
     return positions
 
 
-def highlight_text(
-    text: str,
-    quran_refs: List[Dict[str, Any]],
-    hadith_refs: List[Dict[str, Any]]
-) -> str:
-    """
-    Apply color-coded highlights to text based on detected references.
-
-    Args:
-        text: The original text
-        quran_refs: List of Quran reference dictionaries with start_pos and end_pos
-        hadith_refs: List of Hadith reference dictionaries with start_pos and end_pos
-
-    Returns:
-        HTML string with highlighted references
-    """
-    if not quran_refs and not hadith_refs:
-        return _escape_html(text)
-
-    # Combine all references with their type
-    all_refs = []
-    for ref in quran_refs:
-        if 'start_pos' in ref and 'end_pos' in ref:
-            all_refs.append((ref['start_pos'], ref['end_pos'], 'quran', ref))
-    for ref in hadith_refs:
-        if 'start_pos' in ref and 'end_pos' in ref:
-            all_refs.append((ref['start_pos'], ref['end_pos'], 'hadith', ref))
-
-    # Sort by start position (descending to replace from end first)
-    all_refs.sort(key=lambda x: x[0], reverse=True)
-
-    # Apply highlights from end to start to preserve positions
-    result = text
-    for start, end, ref_type, ref in all_refs:
-        matched_text = result[start:end]
-        css_class = f"highlight-{ref_type}"
-        highlighted = f'<span class="{css_class}">{_escape_html(matched_text)}</span>'
-        result = result[:start] + highlighted + result[end:]
-
-    # Escape remaining HTML but preserve our highlights
-    # We already escaped the matched text, now escape the rest
-    # This is a simplified approach - the text between highlights needs escaping
-    return result
-
-
 def highlight_text_simple(
     text: str,
     quran_refs: List[Dict[str, Any]],
@@ -366,35 +321,6 @@ def highlight_text_simple(
 
     return ''.join(result)
 
-
-def format_paragraph_html(
-    paragraph: Dict[str, Any],
-    quran_refs: List[Dict[str, Any]],
-    hadith_refs: List[Dict[str, Any]]
-) -> str:
-    """
-    Format a complete paragraph box with highlights.
-
-    Args:
-        paragraph: Paragraph dictionary
-        quran_refs: Detected Quran references
-        hadith_refs: Detected Hadith references
-
-    Returns:
-        Complete HTML for the paragraph display
-    """
-    text = paragraph.get('text', '')
-    reviewed = paragraph.get('reviewed', False)
-
-    highlighted_text = highlight_text_simple(text, quran_refs, hadith_refs)
-
-    reviewed_class = 'reviewed' if reviewed else ''
-
-    return f'''
-    <div class="paragraph-box {reviewed_class}">
-        {highlighted_text}
-    </div>
-    '''
 
 
 def _escape_html(text: str) -> str:

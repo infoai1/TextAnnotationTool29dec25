@@ -243,22 +243,3 @@ def link_markers_to_footnotes(
     return markers
 
 
-def format_footnote_ref(ref: Dict[str, Any]) -> str:
-    """Format a footnote reference for display."""
-    marker = ref.get('marker', f"[{ref.get('number', '?')}]")
-    fn_type = ref.get('footnote_type', 'unknown')
-    linked = ref.get('linked_footnote', '')
-
-    type_emoji = {
-        'quran': '🟢',
-        'hadith': '🔵',
-        'book': '📚',
-        'other': '📝'
-    }.get(fn_type, '❓')
-
-    if linked:
-        # Truncate long footnotes
-        display_text = linked[:80] + '...' if len(linked) > 80 else linked
-        return f"{type_emoji} {marker} → {display_text}"
-    else:
-        return f"❓ {marker} (unlinked)"

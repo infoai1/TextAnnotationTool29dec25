@@ -5,9 +5,7 @@ from .footnote_detector import (
     detect_footnote_markers,
     extract_docx_footnotes,
     extract_endnotes_from_text,
-    link_markers_to_footnotes,
-    classify_footnote,
-    format_footnote_ref
+    link_markers_to_footnotes
 )
 
 __all__ = [
@@ -17,7 +15,5 @@ __all__ = [
     'detect_footnote_markers',
     'extract_docx_footnotes',
     'extract_endnotes_from_text',
-    'link_markers_to_footnotes',
-    'classify_footnote',
-    'format_footnote_ref'
+    'link_markers_to_footnotes'
 ]

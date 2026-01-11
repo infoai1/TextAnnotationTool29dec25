@@ -102,7 +102,8 @@ def standardize_hadith_ref(ref: str) -> str:
 
 def merge_paragraphs_to_chunks(
     paragraphs: List[Dict],
-    book_slug: str
+    book_slug: str,
+    para_to_group: Dict[int, str] = None
 ) -> List[Dict]:
     """
     Merge small paragraphs to ~512 tokens with overlap.
@@ -111,7 +112,10 @@ def merge_paragraphs_to_chunks(
     - content: merged text
     - source_ids: list of original paragraph IDs
     - source_id: primary paragraph ID for LightRAG
+    - group_id: group ID for citation linking (if available)
     """
+    if para_to_group is None:
+        para_to_group = {}
     chunks = []
     buffer = []
     buffer_tokens = 0
@@ -130,13 +134,17 @@ def merge_paragraphs_to_chunks(
         if buffer_tokens + para_tokens > TARGET_TOKENS and buffer:
             # Create chunk from buffer
             chunk_text = "\n\n".join(buffer)
-            chunks.append({
+            chunk_data = {
                 "content": chunk_text,
                 "source_ids": buffer_ids.copy(),
                 "source_id": f"{book_slug}/{buffer_ids[0]}",
                 "full_doc_id": f"{book_slug}/{buffer_ids[0]}",
                 "source_chunk_index": len(chunks)  # LightRAG expects this
-            })
+            }
+            # Add group_id if first paragraph has one
+            if buffer_ids[0] in para_to_group:
+                chunk_data["group_id"] = para_to_group[buffer_ids[0]]
+            chunks.append(chunk_data)
 
             # Keep overlap: last portion of previous chunk
             overlap_text = get_last_n_tokens(chunk_text, OVERLAP_TOKENS)
@@ -151,13 +159,17 @@ def merge_paragraphs_to_chunks(
     # Flush remaining buffer
     if buffer:
         chunk_text = "\n\n".join(buffer)
-        chunks.append({
+        chunk_data = {
             "content": chunk_text,
             "source_ids": buffer_ids.copy(),
             "source_id": f"{book_slug}/{buffer_ids[0]}",
             "full_doc_id": f"{book_slug}/{buffer_ids[0]}",
             "source_chunk_index": len(chunks)
-        })
+        }
+        # Add group_id if first paragraph has one
+        if buffer_ids[0] in para_to_group:
+            chunk_data["group_id"] = para_to_group[buffer_ids[0]]
+        chunks.append(chunk_data)
 
     return chunks
 
@@ -188,12 +200,15 @@ def build_contextual_chunk(
     all_paras: List[Dict],
     idx: int,
     book_slug: str,
-    chunk_index: int = 0
+    chunk_index: int = 0,
+    para_to_group: Dict[int, str] = None
 ) -> Dict:
     """
     Build a chunk with contextual snippets (for paragraph-level chunks).
     Adds ~150 chars before and after for context.
     """
+    if para_to_group is None:
+        para_to_group = {}
     text = para.get('text', '')
     para_id = para.get('id', 'unknown')
 
@@ -218,13 +233,17 @@ def build_contextual_chunk(
     if next_text:
         content = f"{content}\n\n[{next_text}...]"
 
-    return {
+    chunk_data = {
         "content": content,
         "source_ids": [para_id],
         "source_id": f"{book_slug}/{para_id}",
         "full_doc_id": f"{book_slug}/{para_id}",
         "source_chunk_index": chunk_index
     }
+    # Add group_id if paragraph has one
+    if para_id in para_to_group:
+        chunk_data["group_id"] = para_to_group[para_id]
+    return chunk_data
 
 
 def export_for_lightrag(
@@ -268,15 +287,23 @@ def export_for_lightrag(
         for para in chapter.get('paragraphs', []):
             all_paras.append(para)
 
+    # Build para_id → group_id mapping from groups
+    para_to_group = {}
+    for group in book_data.get('groups', []):
+        group_id = group.get('id') or group.get('group_id')  # Support both key names
+        if group_id:
+            for para_id in group.get('paragraph_ids', []) or group.get('para_ids', []):
+                para_to_group[para_id] = group_id
+
     # Build chunks
     if use_merged_chunks:
-        chunks = merge_paragraphs_to_chunks(all_paras, book_slug)
+        chunks = merge_paragraphs_to_chunks(all_paras, book_slug, para_to_group)
     else:
         # Paragraph-level with context
         for idx, para in enumerate(all_paras):
             if para.get('deleted') or para.get('grouped_into'):
                 continue
-            chunk = build_contextual_chunk(para, all_paras, idx, book_slug, len(chunks))
+            chunk = build_contextual_chunk(para, all_paras, idx, book_slug, len(chunks), para_to_group)
             chunks.append(chunk)
 
     # Process each paragraph for entities and relations
@@ -536,7 +563,7 @@ def export_book_file(
     print(f"Exported to: {output_path}")
     print(f"  Chunks: {lightrag_data['metadata']['total_chunks']}")
     print(f"  Entities: {lightrag_data['metadata']['total_entities']}")
-    print(f"  Relations: {lightrag_data['metadata']['total_relations']}")
+    print(f"  Relations: {lightrag_data['metadata']['total_relationships']}")
 
     return output_path
 

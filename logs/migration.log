@@ -1,0 +1,12 @@
+2026-01-11 07:08:38,503 - INFO - SKIP (already new format): abc_annotator_progress.json
+2026-01-11 07:08:38,503 - INFO - SKIP (already new format): peace_in_kashmir_book_admin_progress.json
+2026-01-11 07:08:38,503 - INFO - SKIP (already new format): peace_in_kashmir_book_annotator_progress.json
+2026-01-11 07:08:38,516 - INFO - RENAMED: _____women_in_islam___annotator_progress.json → women_in_islam_annotator_progress.json
+2026-01-11 07:08:38,518 - WARNING - SKIP (no matching folder): _______peace_in_kashmir_book___annotator_progress.json title=       Peace in Kashmir Book  
+2026-01-11 07:08:38,518 - INFO - SKIP (already new format): peace_in_kashmir_admin_progress.json
+2026-01-11 07:08:38,529 - INFO - RENAMED: _____women_in_islam___admin_progress.json → women_in_islam_admin_progress.json
+2026-01-11 07:08:38,531 - WARNING - SKIP (no matching folder): _______peace_in_kashmir_book___admin_progress.json title=       Peace in Kashmir Book  
+2026-01-11 07:08:38,531 - INFO - SKIP (already new format): polygamy_admin_progress.json
+2026-01-11 07:08:38,532 - WARNING - SKIP (no matching folder): _______in_search_of_truth_________admin_progress.json title=       IN SEARCH OF TRUTH        
+2026-01-11 07:08:38,532 - INFO - 
+Migration complete: 2 renamed, 8 skipped

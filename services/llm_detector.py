@@ -5,7 +5,6 @@ Uses Gemini (primary) or GPT-4o-mini (fallback) to detect prose references.
 
 import os
 import json
-import re
 from typing import Dict, Any, List, Optional
 import streamlit as st
 

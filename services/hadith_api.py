@@ -170,9 +170,9 @@ class HadithAPI:
                     return results
 
         except Exception as e:
-            st.warning(f"Hadith search error: {e}")
-
-        return []
+            error_msg = f"Hadith search error: {str(e)}"
+            st.warning(error_msg)
+            return []
 
     def _parse_hadith_response(self, data: Dict, collection_key: str = "") -> Dict[str, Any]:
         """Parse hadith API response into standardized format."""

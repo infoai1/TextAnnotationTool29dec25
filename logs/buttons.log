@@ -1,0 +1,4 @@
+2026-01-11 06:44:06 - INFO - [DELETE_REF] type=quran para=test_para_1 idx=0 before_count=1
+2026-01-11 06:44:06 - INFO - [DELETE_REF] success type=quran para=test_para_1 after_count=0 rerun=fragment ref=2:255
+2026-01-11 06:44:06 - INFO - [SAVE] starting book=test_book
+2026-01-11 06:44:06 - INFO - [SAVE] success file=test_progress.json size=1.5KB
