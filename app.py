@@ -3258,7 +3258,7 @@ def render_paragraph(para_idx: int):
                     if st.button("✓", key=f"psave_{para_id}", help="Save"):
                         if new_page != current_page:
                             para['page_info'] = {'page_number': new_page, 'confidence': 1.0, 'match_type': 'manual'}
-                        save_progress()
+                            mark_activity(para_id)
                         st.session_state[edit_key] = False
                         st.session_state[saved_key] = True
                         st.rerun(scope="fragment")
