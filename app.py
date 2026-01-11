@@ -2854,7 +2854,7 @@ def render_sidebar():
                             ))
                             # Merge results
                             merge_extractions_to_paragraphs(all_paras, results)
-                            save_progress()
+                            mark_activity()
                             st.success(f"Extracted {len(results)} paragraphs!")
                             st.rerun()
 
@@ -2876,7 +2876,7 @@ def render_sidebar():
                             progress_callback=update_progress
                         ))
                         merge_extractions_to_paragraphs(all_paras, results)
-                        save_progress()
+                        mark_activity()
                         st.success(f"Extracted {len(results)} paragraphs!")
                         st.rerun()
 
