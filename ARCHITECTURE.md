@@ -189,7 +189,7 @@ session_state.view_mode
 - [x] Section 1: Map functions
 - [x] Section 2: config.py (paths, constants)
 - [x] Section 3: helpers.py (pure helpers)
-- [ ] Section 4: db.py (persistence)
+- [x] Section 4: db.py (persistence)
 - [ ] Section 5: Wire db.py into app.py
 - [ ] Section 6: Documentation
 - [ ] Section 7: Verification
@@ -212,7 +212,7 @@ annotation_tool/
 ├── app.py (UI + routing) - ~3000 lines
 ├── config.py (constants) - ~53 lines ✓
 ├── helpers.py (pure helpers) - ~185 lines ✓
-├── db.py (persistence) - ~150 lines
+├── db.py (persistence) - ~465 lines ✓
 ├── processors.py (future) - ~400 lines
 ├── components.py (future) - ~500 lines
 ├── utils/ (existing package)
