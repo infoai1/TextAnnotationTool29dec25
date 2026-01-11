@@ -3399,7 +3399,7 @@ def render_paragraph(para_idx: int):
                     if i < len(para['quran_refs']):
                         if para['quran_refs'][i].get('verified') != new_verified:
                             para['quran_refs'][i]['verified'] = new_verified
-                            save_progress()  # Auto-save on verify
+                            mark_activity(para_id)
                             st.rerun(scope="fragment")  # Instant UI update
                 with col2:
                     ref_text = format_quran_ref(ref)
@@ -3415,7 +3415,6 @@ def render_paragraph(para_idx: int):
                             ref_deleted = para['quran_refs'][i]
                             para['quran_refs'].pop(i)
                             mark_activity(para_id)
-                            save_progress()
                             button_logger.info(f"[DELETE_REF] success type=quran para={para_id} after_count={len(para['quran_refs'])} rerun=fragment ref={ref_deleted.get('surah')}:{ref_deleted.get('ayah_start')}")
                             st.rerun(scope="fragment")
                         else:
