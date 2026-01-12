@@ -1098,6 +1098,34 @@ def delete_book(book_folder):
 # ============= END LIBRARY FUNCTIONS =============
 
 
+def is_toc_entry(text: str) -> bool:
+    """Detect TOC/Index entries. Returns False on any error (fail-safe)."""
+    try:
+        text = text.strip()
+
+        # Early exits (fast)
+        if len(text) > 80 or len(text) < 5:
+            return False
+        if not text[-1].isdigit():
+            return False
+
+        # Must have leader pattern (dots or spaces)
+        has_dots = bool(re.search(r'\.{3,}\s*\d+$', text))
+        has_spaces = bool(re.search(r'\s{5,}\d+$', text))
+
+        if not (has_dots or has_spaces):
+            return False
+
+        # Reject normal sentences (contains sentence-ending punctuation mid-text)
+        if re.search(r'\.\s+[A-Z]', text[:-10]):
+            return False
+
+        return True
+
+    except Exception:
+        return False  # Fail-safe: don't flag on error
+
+
 def detect_junk_paragraphs(paragraphs):
     """Auto-detect cover, index, copyright, etc. Mark as potential_delete."""
     import re
@@ -1153,6 +1181,11 @@ def detect_junk_paragraphs(paragraphs):
                 is_junk = True
                 reason = "pattern_match"
                 break
+
+        # TOC detection (fail-safe)
+        if not is_junk and is_toc_entry(para.get('text', '')):
+            is_junk = True
+            reason = "toc_entry"
 
         # Very short paragraphs that are likely page numbers or headers
         if len(text) < 20 and not any(c.isalpha() for c in text):
