@@ -1087,13 +1087,42 @@ def approve_book(book_folder):
     save_meta(book_folder, meta)
 
 def delete_book(book_folder):
-    """Delete a book from library (admin action)."""
+    """Delete a book and ALL associated data."""
     import shutil
+    import glob
+
+    # 1. Delete book folder (/books/{folder}/)
     folder_path = os.path.join(BOOKS_DIR, book_folder)
-    if os.path.exists(folder_path):
-        shutil.rmtree(folder_path)
-        return True
-    return False
+    shutil.rmtree(folder_path, ignore_errors=True)
+
+    # 2. Delete progress files (/data/{folder}_*_progress.json)
+    progress_pattern = os.path.join(DATA_DIR, f"{book_folder}_*_progress.json")
+    for progress_file in glob.glob(progress_pattern):
+        try:
+            os.remove(progress_file)
+            logger.info(f"[DELETE] Removed progress file: {progress_file}")
+        except Exception as e:
+            logger.error(f"[DELETE] Failed to remove progress: {e}")
+
+    # 3. Delete version snapshots (/data/versions/{folder}_*/)
+    versions_pattern = os.path.join(VERSIONS_DIR, f"{book_folder}_*")
+    for version_dir in glob.glob(versions_pattern):
+        if os.path.isdir(version_dir):
+            try:
+                shutil.rmtree(version_dir)
+                logger.info(f"[DELETE] Removed versions: {version_dir}")
+            except Exception as e:
+                logger.error(f"[DELETE] Failed to remove versions: {e}")
+
+    # 4. Clear session state if current book is being deleted
+    if st.session_state.get('current_book_folder') == book_folder:
+        st.session_state.paragraphs = []
+        st.session_state.groups = []
+        st.session_state.current_book_folder = None
+        st.session_state.file_uploaded = False
+        logger.info(f"[DELETE] Cleared session state for {book_folder}")
+
+    return True
 
 # ============= END LIBRARY FUNCTIONS =============
 
