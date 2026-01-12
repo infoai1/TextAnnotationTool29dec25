@@ -1527,6 +1527,68 @@ def render_junk_approval():
         if junk:
             st.markdown("### Pending Deletions")
 
+            # Range Selection Tool
+            st.markdown("**Bulk Mark by ID Range:**")
+            range_col1, range_col2, range_col3, range_col4 = st.columns([1.5, 1.5, 2, 1])
+
+            total_paras = len(st.session_state.paragraphs)
+
+            with range_col1:
+                start_id = st.number_input(
+                    "From #",
+                    min_value=1,
+                    max_value=total_paras,
+                    value=1,
+                    key="range_start",
+                    help="Starting paragraph ID"
+                )
+
+            with range_col2:
+                end_id = st.number_input(
+                    "To #",
+                    min_value=1,
+                    max_value=total_paras,
+                    value=min(10, total_paras),
+                    key="range_end",
+                    help="Ending paragraph ID"
+                )
+
+            with range_col3:
+                # Calculate preview info
+                if start_id <= end_id:
+                    range_count = end_id - start_id + 1
+
+                    # Get first and last paragraph in range for preview
+                    first_para = next((p for p in st.session_state.paragraphs if p['id'] == start_id), None)
+                    last_para = next((p for p in st.session_state.paragraphs if p['id'] == end_id), None)
+
+                    if first_para and last_para:
+                        first_text = first_para['text'][:30].replace('\n', ' ')
+                        last_text = last_para['text'][:30].replace('\n', ' ')
+                        preview_text = f"#{start_id}: {first_text}... → #{end_id}: {last_text}..."
+                    else:
+                        preview_text = f"Range: #{start_id} to #{end_id}"
+
+                    st.caption(f"📊 {range_count} paragraphs\n{preview_text}")
+                else:
+                    st.warning("Invalid range: Start must be ≤ End")
+
+            with range_col4:
+                if st.button("🗑️ Mark Range", key="mark_range", disabled=(start_id > end_id)):
+                    count = 0
+                    for p in st.session_state.paragraphs:
+                        if start_id <= p['id'] <= end_id:
+                            p['potential_delete'] = True
+                            p['delete_reason'] = "range_select"
+                            st.session_state[f"pdel_{p['id']}"] = True
+                            count += 1
+
+                    mark_activity()
+                    st.success(f"✅ Marked {count} paragraphs for deletion (#{start_id}-#{end_id})")
+                    st.rerun()
+
+            st.divider()
+
             # Action buttons at top
             col1, col2, col3 = st.columns([2, 2, 1])
             with col1:
