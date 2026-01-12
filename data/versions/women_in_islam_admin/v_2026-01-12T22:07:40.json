@@ -24273,7 +24273,7 @@
       "chapter": "Main",
       "page_start": 9,
       "page_end": 11,
-      "collapsed": false
+      "collapsed": true
     },
     {
       "group_id": "g_002",
@@ -27758,7 +27758,7 @@
   ],
   "book_status": "pending",
   "last_worked_para": 46,
-  "last_saved": "2026-01-12T22:08:14.865663",
+  "last_saved": "2026-01-12T22:07:40.817898",
   "last_saved_by": "admin",
   "current_book_folder": "women_in_islam"
 }

@@ -409,7 +409,7 @@
         }
       ],
       "extraction_status": "extracted",
-      "potential_delete": false,
+      "potential_delete": true,
       "delete_reason": "manual"
     },
     {
@@ -441,7 +441,7 @@
       "islamic_terms": [],
       "verse_aspects": [],
       "extraction_status": "extracted",
-      "potential_delete": false,
+      "potential_delete": true,
       "delete_reason": "manual"
     },
     {
@@ -539,7 +539,7 @@
         "match_type": "estimated"
       },
       "group_id": "g_002",
-      "potential_delete": false,
+      "potential_delete": true,
       "delete_reason": "manual"
     },
     {
@@ -620,9 +620,9 @@
       "manual_notes": "",
       "footnote_refs": [],
       "page_info": {
-        "page_number": 10,
+        "page_number": 15,
         "confidence": 1.0,
-        "match_type": "manual"
+        "match_type": "exact"
       },
       "group_id": "g_002"
     },
@@ -835,7 +835,7 @@
         "match_type": "exact"
       },
       "group_id": "g_003",
-      "potential_delete": false,
+      "potential_delete": true,
       "delete_reason": "manual"
     },
     {
@@ -1283,9 +1283,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_005",
-      "potential_delete": true,
-      "delete_reason": "manual"
+      "group_id": "g_005"
     },
     {
       "id": 47,
@@ -24273,7 +24271,7 @@
       "chapter": "Main",
       "page_start": 9,
       "page_end": 11,
-      "collapsed": false
+      "collapsed": true
     },
     {
       "group_id": "g_002",
@@ -27757,8 +27755,8 @@
     }
   ],
   "book_status": "pending",
-  "last_worked_para": 46,
-  "last_saved": "2026-01-12T22:08:14.865663",
+  "last_worked_para": 14,
+  "last_saved": "2026-01-11T17:36:36.022366",
   "last_saved_by": "admin",
   "current_book_folder": "women_in_islam"
 }
