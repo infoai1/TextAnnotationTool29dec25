@@ -1161,6 +1161,10 @@ def detect_junk_paragraphs(paragraphs):
         if para.get('reviewed') or para.get('deleted'):
             continue
 
+        # NEVER mark chapter headings as junk
+        if para.get('type') == 'chapter_heading':
+            continue
+
         is_junk = False
         reason = None
 
