@@ -48,6 +48,7 @@ from utils.highlighter import get_highlight_css, highlight_text_simple, DEFAULT_
 from config import (
     DATA_DIR,
     BOOKS_DIR,
+    VERSIONS_DIR,
     AUTO_SAVE_INTERVAL,
     VERSION_KEEP_COUNT,
     LOCK_TIMEOUT_HOURS,
@@ -3269,6 +3270,13 @@ def close_add_ref_form(para_id: str):
     add_ref_key = f"show_add_ref_{para_id}"
     st.session_state[add_ref_key] = False
 
+# Callback function for View Book button (prevents race conditions)
+def on_view_book_click(book_folder: str):
+    """Callback to load a book from library."""
+    logger.info(f"[CALLBACK] on_view_book_click called for {book_folder}")
+    load_book_from_library(book_folder)
+    logger.info(f"[CALLBACK] after load_book, file_uploaded={st.session_state.file_uploaded}")
+
 
 @st.fragment
 def render_paragraph(para_idx: int):
@@ -4104,10 +4112,13 @@ def render_portal():
                     if cols[4].button("📥", key=f"dl_{book['folder']}", help="Download JSON"):
                         st.info(f"Export JSON for {book['title']}")
                 else:
-                    if cols[4].button("👁", key=f"view_{book['folder']}", help="View"):
-                        with st.spinner(f"Loading {book['title']}..."):
-                            load_book_from_library(book['folder'])
-                        st.rerun()
+                    cols[4].button(
+                        "👁",
+                        key=f"view_{book['folder']}",
+                        help="View",
+                        on_click=on_view_book_click,
+                        args=(book['folder'],)
+                    )
 
                 # Delete button
                 if cols[5].button("🗑", key=f"del_{book['folder']}", help="Delete"):
@@ -4161,10 +4172,12 @@ def render_portal():
                     st.write(f"**{book['title']}**")
                     st.caption(f"By: {book.get('annotated_by', '?')} | Submitted: {book.get('submitted_at', '?')[:10] if book.get('submitted_at') else '?'}")
                 with col3:
-                    if st.button("👁 View", key=f"view_sub_{book['folder']}"):
-                        with st.spinner(f"Loading {book['title']}..."):
-                            load_book_from_library(book['folder'])
-                        st.rerun()
+                    st.button(
+                        "👁 View",
+                        key=f"view_sub_{book['folder']}",
+                        on_click=on_view_book_click,
+                        args=(book['folder'],)
+                    )
                 with col4:
                     if st.button("✅", key=f"approve_{book['folder']}", help="Approve"):
                         with st.spinner("Approving..."):
@@ -4360,10 +4373,13 @@ def main():
                 st.warning(f"Could not restore session for '{book_from_url}'. Showing dashboard.")
 
     # Show role-based portal if no book loaded
+    logger.info(f"[MAIN] file_uploaded={st.session_state.file_uploaded}, current_book={st.session_state.get('current_book_folder')}")
     if not st.session_state.file_uploaded:
+        logger.info(f"[MAIN] Showing portal (file_uploaded=False)")
         render_portal()
         return
 
+    logger.info(f"[MAIN] Showing annotation view (file_uploaded=True)")
     # Book is loaded - show annotation view
     # Back button to return to dashboard
     back_col, title_col = st.columns([1, 5])
