@@ -408,7 +408,9 @@
           "interpretation": "Men and women created from same soul, equal in substance"
         }
       ],
-      "extraction_status": "extracted"
+      "extraction_status": "extracted",
+      "potential_delete": false,
+      "delete_reason": "manual"
     },
     {
       "id": 14,
@@ -438,7 +440,9 @@
       "places": [],
       "islamic_terms": [],
       "verse_aspects": [],
-      "extraction_status": "extracted"
+      "extraction_status": "extracted",
+      "potential_delete": false,
+      "delete_reason": "manual"
     },
     {
       "id": 15,
@@ -534,7 +538,9 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_002"
+      "group_id": "g_002",
+      "potential_delete": false,
+      "delete_reason": "manual"
     },
     {
       "id": 19,
@@ -592,9 +598,9 @@
       "manual_notes": "",
       "footnote_refs": [],
       "page_info": {
-        "page_number": 47,
+        "page_number": 4,
         "confidence": 1.0,
-        "match_type": "exact"
+        "match_type": "manual"
       },
       "group_id": "g_002"
     },
@@ -614,9 +620,9 @@
       "manual_notes": "",
       "footnote_refs": [],
       "page_info": {
-        "page_number": 15,
+        "page_number": 10,
         "confidence": 1.0,
-        "match_type": "exact"
+        "match_type": "manual"
       },
       "group_id": "g_002"
     },
@@ -802,9 +808,9 @@
       "manual_notes": "",
       "footnote_refs": [],
       "page_info": {
-        "page_number": 169,
-        "confidence": 0.0,
-        "match_type": "estimated"
+        "page_number": 1,
+        "confidence": 1.0,
+        "match_type": "manual"
       },
       "group_id": "g_003"
     },
@@ -828,7 +834,9 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_003"
+      "group_id": "g_003",
+      "potential_delete": false,
+      "delete_reason": "manual"
     },
     {
       "id": 30,
@@ -1275,7 +1283,9 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_005"
+      "group_id": "g_005",
+      "potential_delete": true,
+      "delete_reason": "manual"
     },
     {
       "id": 47,
@@ -24263,7 +24273,7 @@
       "chapter": "Main",
       "page_start": 9,
       "page_end": 11,
-      "collapsed": true
+      "collapsed": false
     },
     {
       "group_id": "g_002",
@@ -27747,8 +27757,8 @@
     }
   ],
   "book_status": "pending",
-  "last_worked_para": 34,
-  "last_saved": "2026-01-11T17:26:27.445061",
+  "last_worked_para": 46,
+  "last_saved": "2026-01-12T23:12:37.511846",
   "last_saved_by": "admin",
   "current_book_folder": "women_in_islam"
 }

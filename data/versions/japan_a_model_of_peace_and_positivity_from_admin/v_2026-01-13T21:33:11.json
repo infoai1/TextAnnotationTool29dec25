@@ -16,7 +16,7 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "front_matter",
       "page_info": {
         "page_number": 1,
         "confidence": 0.0,
@@ -40,13 +40,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "front_matter",
       "page_info": {
         "page_number": 1,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -65,13 +64,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "front_matter",
       "page_info": {
         "page_number": 1,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -90,13 +88,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "front_matter",
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -115,13 +112,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "front_matter",
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -144,10 +140,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 7,
@@ -169,10 +162,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 8,
@@ -194,10 +184,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 9,
@@ -223,13 +210,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "pattern_match",
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -252,10 +238,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 11,
@@ -277,10 +260,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 12,
@@ -298,13 +278,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "pattern_match",
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -323,13 +302,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "pattern_match",
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -348,13 +326,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "pattern_match",
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -373,13 +350,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "pattern_match",
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -398,13 +374,12 @@
       "manual_notes": "",
       "footnote_refs": [],
       "potential_delete": false,
-      "delete_reason": "range_select",
+      "delete_reason": "pattern_match",
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
       "deleted": true
     },
     {
@@ -427,10 +402,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 18,
@@ -452,10 +424,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 19,
@@ -477,10 +446,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 20,
@@ -502,10 +468,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 21,
@@ -527,10 +490,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 22,
@@ -552,10 +512,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 23,
@@ -577,10 +534,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 24,
@@ -602,10 +556,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 25,
@@ -627,10 +578,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 26,
@@ -652,10 +600,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 27,
@@ -677,10 +622,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 28,
@@ -702,10 +644,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 29,
@@ -727,10 +666,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 30,
@@ -752,10 +688,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 31,
@@ -777,10 +710,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 32,
@@ -802,10 +732,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 33,
@@ -827,10 +754,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 34,
@@ -852,10 +776,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 35,
@@ -877,10 +798,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 36,
@@ -902,10 +820,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 37,
@@ -927,10 +842,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 38,
@@ -952,10 +864,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 39,
@@ -977,10 +886,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 40,
@@ -1002,10 +908,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 41,
@@ -1027,10 +930,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 42,
@@ -1052,10 +952,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 43,
@@ -1077,10 +974,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 44,
@@ -1102,10 +996,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 45,
@@ -1127,10 +1018,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 46,
@@ -1152,10 +1040,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 47,
@@ -1177,10 +1062,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 48,
@@ -1202,10 +1084,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 49,
@@ -1227,10 +1106,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 50,
@@ -1252,10 +1128,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 51,
@@ -1277,10 +1150,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 52,
@@ -1302,10 +1172,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 53,
@@ -1327,10 +1194,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 54,
@@ -1352,10 +1216,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 55,
@@ -1377,10 +1238,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 56,
@@ -1402,10 +1260,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 57,
@@ -1427,10 +1282,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 58,
@@ -1452,10 +1304,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 59,
@@ -1477,10 +1326,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 60,
@@ -1502,10 +1348,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      "group_id": "g_001"
     },
     {
       "id": 61,
@@ -1719,7 +1562,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_002"
+      "group_id": "g_001"
     },
     {
       "id": 68,
@@ -1969,7 +1812,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_003"
+      "group_id": "g_002"
     },
     {
       "id": 77,
@@ -1991,7 +1834,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_003"
+      "group_id": "g_002"
     },
     {
       "id": 78,
@@ -2034,7 +1877,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_003"
+      "group_id": "g_002"
     },
     {
       "id": 80,
@@ -10294,7 +10137,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_030"
+      "deleted": true
     },
     {
       "id": 429,
@@ -10484,7 +10327,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_031"
+      "group_id": "g_030"
     },
     {
       "id": 437,
@@ -10506,7 +10349,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_031"
+      "group_id": "g_030"
     },
     {
       "id": 438,
@@ -10774,7 +10617,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_032"
+      "group_id": "g_031"
     },
     {
       "id": 449,
@@ -10796,7 +10639,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_032"
+      "group_id": "g_031"
     },
     {
       "id": 450,
@@ -10818,7 +10661,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_032"
+      "group_id": "g_031"
     },
     {
       "id": 451,
@@ -11023,7 +10866,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_033"
+      "group_id": "g_032"
     },
     {
       "id": 460,
@@ -11045,7 +10888,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_033"
+      "group_id": "g_032"
     },
     {
       "id": 461,
@@ -11067,7 +10910,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_033"
+      "group_id": "g_032"
     },
     {
       "id": 462,
@@ -11089,7 +10932,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_033"
+      "group_id": "g_032"
     },
     {
       "id": 463,
@@ -11286,7 +11129,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_034"
+      "group_id": "g_033"
     },
     {
       "id": 472,
@@ -11308,7 +11151,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_034"
+      "group_id": "g_033"
     },
     {
       "id": 473,
@@ -11502,7 +11345,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_035"
+      "group_id": "g_034"
     },
     {
       "id": 481,
@@ -11524,7 +11367,7 @@
         "confidence": 1.0,
         "match_type": "exact"
       },
-      "group_id": "g_035"
+      "group_id": "g_034"
     },
     {
       "id": 482,
@@ -11677,7 +11520,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_036"
+      "group_id": "g_035"
     },
     {
       "id": 489,
@@ -11699,7 +11542,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_036"
+      "group_id": "g_035"
     },
     {
       "id": 490,
@@ -11721,7 +11564,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_036"
+      "group_id": "g_035"
     },
     {
       "id": 491,
@@ -11743,7 +11586,7 @@
         "confidence": 0.0,
         "match_type": "estimated"
       },
-      "group_id": "g_036"
+      "group_id": "g_035"
     },
     {
       "id": 492,
@@ -11794,21 +11637,11 @@
     {
       "group_id": "g_001",
       "para_ids": [
-        2,
-        3,
-        4,
-        5,
         6,
         7,
         8,
-        9,
         10,
         11,
-        12,
-        13,
-        14,
-        15,
-        16,
         17,
         18,
         19,
@@ -11857,19 +11690,19 @@
         63,
         64,
         65,
-        66
+        66,
+        67
       ],
-      "combined_text": "A Model of Peace\n\nand Positivity\n\nMaulana \nWahiduddin Khan\n\nCompiled by\n\nDr. Stuti Malhotra\n\nEdited by\n\nDr. Farida Khanam\n\nFirst published 2024\n\nThis book is copyright free\n\nThis booklet has been compiled from the writings of Maulana Wahiduddin Khan.\n\nGoodword Books\nA-21, Sector 4, Noida-201301, Delhi NCR, India\nTel. +91 120 4131448, Mob. +91 8588822672\nemail: info@goodwordbooks.com\nwww.goodwordbooks.com\n\nCPS International\nCentre for Peace and Spirituality International\n1, Nizamuddin West Market, New Delhi-110 013, India\nMob. +91-9999944119\ne-mail: info@cpsglobal.org\nwww.cpsglobal.org\n\nCenter for Peace and Spirituality USA\n2665 Byberry Road, Bensalem, PA 19020, USA\nCell: 617-960-7156\nemail: kkaleemuddin@gmail.com\n\nPrinted in India\n\nContents\n\nThe Secret of Life\t5\n\nAn Economic Pearl Harbour\t9\n\nJapanese—A Model of Peace\t12\n\nAccepting Defeat\t15\n\nVictory Without War\t16\n\nThe Condition For Success\t17\n\nWe Have the Ability to Bounce Back\t19\n\nA Comparison\t22\n\nPaths to Success: Hard Work After Defeat\t25\n\nPlanning Based on Remnant\t26\n\nThe Greatest Good\t29\n\nThe Temperament of Japan\t32\n\nTwenty Years Later\t35\n\nPer Ardua Ad Astra\t37\n\nAwareness of Purpose\t39\n\nCharacter Builds the Nation\t41\n\nMoral State\t43\n\nConstructive Temperament\t44\n\nCollective Action\t46\n\nThe Only Path\t47\n\nLiving in the Culture of Discovery\t49\n\nDiscovery, Discovery, Discovery\t50\n\nPrice of Excellence\t51\n\nThe Highest Standard\t52\n\nImpartiality: The Secret of Success\t53\n\nLearning from the Enemy\t55\n\nThe System of Nature\t56\n\nThe Second Chance\t58\n\nAction, Not Reaction\t60\n\nElevated Thinking\t61\n\nMaking History\t62\n\nThe Example of Japan\t63\n\nSigns of God\t66\n\nEvidence of God\t68\n\nScience Towards Oneness of God\t71\n\nThe Testimony of Science\t75\n\nUnveiling the Unseen: The Essential Journey of \nDiscovery in Faith\t77\n\nSecurity and Truth\t78\n\nAnother Potential\t79\n\nZero Defect Universe is Under God’s Control\t71\n\nJapan’s Target of ‘Zero-Defect’ Introduces Paradise\t85\n\nThe Life of Paradise\t87\n\nDeserving of Paradise\t90\n\nOnly Positive Personalities \nWill Find Entry into Paradise\t95\n\nAwareness of one’s lagging position ignites the courage to push forward. Those who fail to acknowledge their lagging position will remain perpetually behind, with progress always out of reach.\n\nThe Japanese people consider themselves descendants of the sun, believing that their lineage is superior to others, granting them the right to dominate other nations. This belief gave rise to the slogan ‘East Asia for Japan.’ This sense of superiority and entitlement fostered a militant attitude throughout Japanese history, particularly between 1937 and 1945, as they fought other nations to assert this self-declared right. Initially, Japan experienced success in this war, capturing Manila in 1942, as well as Singapore, the Netherlands, and Rangoon. However, in the pursuit of further conquest, Japan ultimately lost everything it had gained.\n\nDuring World War II, Japan and the United States were adversaries. Japan had conventional bombs, while the U.S. developed atomic bombs, disrupting the balance of power. In July 1945, the U.S. dropped two nuclear bombs on Japan, which shattered Japan’s military might. America emerged victorious, leaving Japan with no choice but to accept what one observer described as a “humiliating surrender” (Time, April 13, 1987, p. 15).\n\nIn response, Japan demonstrated realism. On August 14, 1945, Emperor Hirohito addressed the nation with a radio broadcast, stating that they had resolved “to pave the way for a grand peace for all generations to come by enduring the unendurable and suffering that is unsufferable.”\n\nIn accordance with this decision, Japan formally signed surrender documents on September 2, 1945, acknowledging U.S. supremacy.",
-      "token_count": 710,
+      "combined_text": "Dr. Stuti Malhotra\n\nEdited by\n\nDr. Farida Khanam\n\nThis book is copyright free\n\nThis booklet has been compiled from the writings of Maulana Wahiduddin Khan.\n\nThe Secret of Life\t5\n\nAn Economic Pearl Harbour\t9\n\nJapanese—A Model of Peace\t12\n\nAccepting Defeat\t15\n\nVictory Without War\t16\n\nThe Condition For Success\t17\n\nWe Have the Ability to Bounce Back\t19\n\nA Comparison\t22\n\nPaths to Success: Hard Work After Defeat\t25\n\nPlanning Based on Remnant\t26\n\nThe Greatest Good\t29\n\nThe Temperament of Japan\t32\n\nTwenty Years Later\t35\n\nPer Ardua Ad Astra\t37\n\nAwareness of Purpose\t39\n\nCharacter Builds the Nation\t41\n\nMoral State\t43\n\nConstructive Temperament\t44\n\nCollective Action\t46\n\nThe Only Path\t47\n\nLiving in the Culture of Discovery\t49\n\nDiscovery, Discovery, Discovery\t50\n\nPrice of Excellence\t51\n\nThe Highest Standard\t52\n\nImpartiality: The Secret of Success\t53\n\nLearning from the Enemy\t55\n\nThe System of Nature\t56\n\nThe Second Chance\t58\n\nAction, Not Reaction\t60\n\nElevated Thinking\t61\n\nMaking History\t62\n\nThe Example of Japan\t63\n\nSigns of God\t66\n\nEvidence of God\t68\n\nScience Towards Oneness of God\t71\n\nThe Testimony of Science\t75\n\nUnveiling the Unseen: The Essential Journey of \nDiscovery in Faith\t77\n\nSecurity and Truth\t78\n\nAnother Potential\t79\n\nZero Defect Universe is Under God’s Control\t71\n\nJapan’s Target of ‘Zero-Defect’ Introduces Paradise\t85\n\nThe Life of Paradise\t87\n\nDeserving of Paradise\t90\n\nOnly Positive Personalities \nWill Find Entry into Paradise\t95\n\nAwareness of one’s lagging position ignites the courage to push forward. Those who fail to acknowledge their lagging position will remain perpetually behind, with progress always out of reach.\n\nThe Japanese people consider themselves descendants of the sun, believing that their lineage is superior to others, granting them the right to dominate other nations. This belief gave rise to the slogan ‘East Asia for Japan.’ This sense of superiority and entitlement fostered a militant attitude throughout Japanese history, particularly between 1937 and 1945, as they fought other nations to assert this self-declared right. Initially, Japan experienced success in this war, capturing Manila in 1942, as well as Singapore, the Netherlands, and Rangoon. However, in the pursuit of further conquest, Japan ultimately lost everything it had gained.\n\nDuring World War II, Japan and the United States were adversaries. Japan had conventional bombs, while the U.S. developed atomic bombs, disrupting the balance of power. In July 1945, the U.S. dropped two nuclear bombs on Japan, which shattered Japan’s military might. America emerged victorious, leaving Japan with no choice but to accept what one observer described as a “humiliating surrender” (Time, April 13, 1987, p. 15).\n\nIn response, Japan demonstrated realism. On August 14, 1945, Emperor Hirohito addressed the nation with a radio broadcast, stating that they had resolved “to pave the way for a grand peace for all generations to come by enduring the unendurable and suffering that is unsufferable.”\n\nIn accordance with this decision, Japan formally signed surrender documents on September 2, 1945, acknowledging U.S. supremacy.\n\nThis was no small decision for Japan, a nation that had long stood on a foundation of perceived superiority. Now, it had to stand on the foundation of realism. Instead of anti-foreign sentiments, Japan needed to find the secret to life through self-reflection. At that time, Japan was in ruins, its industries destroyed. General MacArthur, a “war criminal” in Japanese eyes, was placed in authority over Japan in violation of their sovereignty. In addition to losing Korea, Burma, Singapore, Taiwan, and other foreign possessions, Japan lost parts of its territory, including the islands of Karafuto and Okinawa. In 1946, the “MacArthur Constitution” was implemented, designed to keep Japan under the control of foreign powers.",
+      "token_count": 766,
       "chapter": "Main",
-      "page_start": 1,
+      "page_start": 2,
       "page_end": 6,
       "collapsed": false
     },
     {
       "group_id": "g_002",
       "para_ids": [
-        67,
         68,
         69,
         70,
@@ -11877,21 +11710,21 @@
         72,
         73,
         74,
-        75
+        75,
+        76,
+        77,
+        79
       ],
-      "combined_text": "This was no small decision for Japan, a nation that had long stood on a foundation of perceived superiority. Now, it had to stand on the foundation of realism. Instead of anti-foreign sentiments, Japan needed to find the secret to life through self-reflection. At that time, Japan was in ruins, its industries destroyed. General MacArthur, a “war criminal” in Japanese eyes, was placed in authority over Japan in violation of their sovereignty. In addition to losing Korea, Burma, Singapore, Taiwan, and other foreign possessions, Japan lost parts of its territory, including the islands of Karafuto and Okinawa. In 1946, the “MacArthur Constitution” was implemented, designed to keep Japan under the control of foreign powers.\n\nThese circumstances represented the essence of “enduring the unendurable.” Many Japanese found it unbearable, leading some to take their own lives. According to an article in the Encyclopaedia Britannica (1984), many military extremists attempted to prevent Emperor Hirohito’s message from being broadcast. When they failed, several nationalists and military officers, feeling dishonoured, committed suicide:\n\n“There were a number of suicides among the military officers and nationalists who felt dishonoured.” (Encyclopaedia Britannica, Vol. 10, p. 86)\n\nJapan adopted a pragmatic approach, accepting a secondary position (“Number 2”) after World War II. However, this did not mean Japan was content to remain in this position forever. Rather, it sought a period of rebuilding without directly confronting the powerful United States. Under this policy, Japan accepted U.S. dominance politically and economically while focusing all its energies on science and technology. Over time, this approach bore fruit. Within thirty years, Japan transformed from a defeated nation into an economic powerhouse. Japan produced high-quality electronics and other products that even Americans preferred over their domestic options due to better quality and lower cost. This situation deeply unsettled American policymakers, as one American politician, Pete Wilson, remarked, “The Japanese semiconductor Godzilla is now destroying everything but Tokyo.”\n\nAfter World War II, Japan was indebted to the U.S., but by 1986, the situation had reversed. Japan became America’s creditor. In 1986, American goods imported into Japan were worth $26 billion, while Japanese exports to America reached $ 85 billion, creating a significant trade imbalance. By 1986, Japan had a trade surplus of over $ 85 billion with the U.S., making America the world’s largest debtor and Japan the largest creditor (Time, April 13 and April 27, 1987).\n\nThis shift has inspired numerous books. In the U.S., a popular book titled Japan—Number One became a bestseller. In 1945, Japan accepted being “Number 2” to the U.S. Forty years later, America acknowledged Japan’s success in reclaiming the top position.\n\nThe Japanese first wrote their story as “Japan Number 2,” which paved the way for others to write Japan—Number One. This reflects a key principle of progress in the modern world: those willing to accept defeat are often the ones who eventually win. Those who are ready to step back will one day secure a place at the front. This principle, first discovered by Muslims in the Treaty of Hudaybiyyah 1,400 years ago, has been mirrored in recent times by the Japanese in their context.\n\nIn essence, this world is one of competition. Everyone is striving to get ahead, and this race is the driving force behind human progress. Every advancement in history has emerged from this spirit of competition. America’s pursuit of leadership led humanity to nuclear power, while Japan’s resurgence created the era of electronics.\n\nIn this race, one nation inevitably falls behind while another moves forward. If the lagging nation spends its time in complaints and protests, it merely wastes valuable time. The only way forward is to acknowledge that others have progressed while they have fallen behind.",
-      "token_count": 796,
+      "combined_text": "These circumstances represented the essence of “enduring the unendurable.” Many Japanese found it unbearable, leading some to take their own lives. According to an article in the Encyclopaedia Britannica (1984), many military extremists attempted to prevent Emperor Hirohito’s message from being broadcast. When they failed, several nationalists and military officers, feeling dishonoured, committed suicide:\n\n“There were a number of suicides among the military officers and nationalists who felt dishonoured.” (Encyclopaedia Britannica, Vol. 10, p. 86)\n\nJapan adopted a pragmatic approach, accepting a secondary position (“Number 2”) after World War II. However, this did not mean Japan was content to remain in this position forever. Rather, it sought a period of rebuilding without directly confronting the powerful United States. Under this policy, Japan accepted U.S. dominance politically and economically while focusing all its energies on science and technology. Over time, this approach bore fruit. Within thirty years, Japan transformed from a defeated nation into an economic powerhouse. Japan produced high-quality electronics and other products that even Americans preferred over their domestic options due to better quality and lower cost. This situation deeply unsettled American policymakers, as one American politician, Pete Wilson, remarked, “The Japanese semiconductor Godzilla is now destroying everything but Tokyo.”\n\nAfter World War II, Japan was indebted to the U.S., but by 1986, the situation had reversed. Japan became America’s creditor. In 1986, American goods imported into Japan were worth $26 billion, while Japanese exports to America reached $ 85 billion, creating a significant trade imbalance. By 1986, Japan had a trade surplus of over $ 85 billion with the U.S., making America the world’s largest debtor and Japan the largest creditor (Time, April 13 and April 27, 1987).\n\nThis shift has inspired numerous books. In the U.S., a popular book titled Japan—Number One became a bestseller. In 1945, Japan accepted being “Number 2” to the U.S. Forty years later, America acknowledged Japan’s success in reclaiming the top position.\n\nThe Japanese first wrote their story as “Japan Number 2,” which paved the way for others to write Japan—Number One. This reflects a key principle of progress in the modern world: those willing to accept defeat are often the ones who eventually win. Those who are ready to step back will one day secure a place at the front. This principle, first discovered by Muslims in the Treaty of Hudaybiyyah 1,400 years ago, has been mirrored in recent times by the Japanese in their context.\n\nIn essence, this world is one of competition. Everyone is striving to get ahead, and this race is the driving force behind human progress. Every advancement in history has emerged from this spirit of competition. America’s pursuit of leadership led humanity to nuclear power, while Japan’s resurgence created the era of electronics.\n\nIn this race, one nation inevitably falls behind while another moves forward. If the lagging nation spends its time in complaints and protests, it merely wastes valuable time. The only way forward is to acknowledge that others have progressed while they have fallen behind.\n\nThis recognition directs one’s efforts in the right direction, allowing them to rebuild without engaging in fruitless confrontation. Eventually, the day comes when they can reclaim their lost position.\n\nAwareness of being behind instils the courage to advance again. Those who fail to recognise their lagging status will remain perpetually behind, with progress forever beyond their reach.\n\nWith patience and perseverance, the Japanese redirected their efforts toward peaceful endeavours, prioritising economic growth over retaliatory actions, ultimately achieving success in the aftermath of their military defeat.",
+      "token_count": 757,
       "chapter": "Main",
       "page_start": 6,
-      "page_end": 8,
+      "page_end": 9,
       "collapsed": false
     },
     {
       "group_id": "g_003",
       "para_ids": [
-        76,
-        77,
-        79,
         80,
         81,
         82,
@@ -11900,10 +11733,10 @@
         85,
         86
       ],
-      "combined_text": "This recognition directs one’s efforts in the right direction, allowing them to rebuild without engaging in fruitless confrontation. Eventually, the day comes when they can reclaim their lost position.\n\nAwareness of being behind instils the courage to advance again. Those who fail to recognise their lagging status will remain perpetually behind, with progress forever beyond their reach.\n\nWith patience and perseverance, the Japanese redirected their efforts toward peaceful endeavours, prioritising economic growth over retaliatory actions, ultimately achieving success in the aftermath of their military defeat.\n\nIn December 1941, during World War II, the U.S.A.’s top naval base, Pearl Harbour, on the Pacific island of Hawaii, was attacked without prior warning by the Japanese. So severe was the bombardment that, of the hundred-odd naval vessels anchored there, only a handful survived. This had the immediate effect of bringing America into the war as one of the Allied Powers. Up till that point, the U.S.A. had no direct involvement in hostilities save as a supplier of armaments to the enemies of Japan. The Japanese attack had been uncalled for and ill-considered. However, they did not realise the magnitude of their error until 1945, when America finally took its revenge by dropping the first-ever atomic bombs on two of Japan’s major industrial centres, Hiroshima and Nagasaki, thus annihilating Japan as a military power. The Americans then kept a tight military and political hold over Japan. But the latter country, astonishingly, recuperated from the horror of large-scale atomic devastation and proceeded to adapt itself to an entirely new set of circumstances. Before the Second World War, it had relied on the power of weapons.\n\nBut after witnessing the destruction they caused, it relinquished their use and set about reconstructing the country along entirely peaceful lines. Having once adopted this course,  the Japanese showed great versatility, resilience and assiduity, and their success has been such that Japan is now considered the third greatest industrial power in the entire world today. Its industrial output in 2016 was $ 1.368 billion.\n\nIn the field of industry, the victors have been defeated by the vanquished. Simply by accepting the fact that aggression could not pay dividends and then channelling its potential into the field of industry, Japan has managed quite miraculously to supersede most of the other nations of the world.\n\nThe Americans are greatly upset at this state of affairs and refer to the present ‘invasion’ of Japanese goods as an Economic Pearl Harbour. A book recently published in America, entitled “Japan Number One,” has become a best-seller. It clearly shows that Japan has far outrun the U.S.A. in business and will soon supersede Britain. So far as foreign exchange is concerned, Japan is the wealthiest country in the world, its foreign exchange reserves totalling 74 billion dollars in 1984 (The Times of India, June 13-14, 1985)\n\nHow did Japan turn its military defeat into an economic victory? By encouraging patience and perseverance and avoiding provocation, it concentrated its energies on peaceful (and, of course. remunerative) fields rather than indulging in retaliatory violence.\n\nIt initially accepted the military and political supremacy of other nations, quickly adapting itself to new scales of values, then set about the economic rehabilitation of the country without wasting a single moment on bewailing lost opportunities, blaming others for its misfortunes or on pointless nostalgia. Rather than make further mistakes, Pearl Harbour, having been the worst, concentrated all of its attention on seizing existing opportunities.\n\nIn short, Japan accepted the blame for its destruction and, once having done so, was able seriously to launch itself on its economic uplift.",
-      "token_count": 770,
+      "combined_text": "In December 1941, during World War II, the U.S.A.’s top naval base, Pearl Harbour, on the Pacific island of Hawaii, was attacked without prior warning by the Japanese. So severe was the bombardment that, of the hundred-odd naval vessels anchored there, only a handful survived. This had the immediate effect of bringing America into the war as one of the Allied Powers. Up till that point, the U.S.A. had no direct involvement in hostilities save as a supplier of armaments to the enemies of Japan. The Japanese attack had been uncalled for and ill-considered. However, they did not realise the magnitude of their error until 1945, when America finally took its revenge by dropping the first-ever atomic bombs on two of Japan’s major industrial centres, Hiroshima and Nagasaki, thus annihilating Japan as a military power. The Americans then kept a tight military and political hold over Japan. But the latter country, astonishingly, recuperated from the horror of large-scale atomic devastation and proceeded to adapt itself to an entirely new set of circumstances. Before the Second World War, it had relied on the power of weapons.\n\nBut after witnessing the destruction they caused, it relinquished their use and set about reconstructing the country along entirely peaceful lines. Having once adopted this course,  the Japanese showed great versatility, resilience and assiduity, and their success has been such that Japan is now considered the third greatest industrial power in the entire world today. Its industrial output in 2016 was $ 1.368 billion.\n\nIn the field of industry, the victors have been defeated by the vanquished. Simply by accepting the fact that aggression could not pay dividends and then channelling its potential into the field of industry, Japan has managed quite miraculously to supersede most of the other nations of the world.\n\nThe Americans are greatly upset at this state of affairs and refer to the present ‘invasion’ of Japanese goods as an Economic Pearl Harbour. A book recently published in America, entitled “Japan Number One,” has become a best-seller. It clearly shows that Japan has far outrun the U.S.A. in business and will soon supersede Britain. So far as foreign exchange is concerned, Japan is the wealthiest country in the world, its foreign exchange reserves totalling 74 billion dollars in 1984 (The Times of India, June 13-14, 1985)\n\nHow did Japan turn its military defeat into an economic victory? By encouraging patience and perseverance and avoiding provocation, it concentrated its energies on peaceful (and, of course. remunerative) fields rather than indulging in retaliatory violence.\n\nIt initially accepted the military and political supremacy of other nations, quickly adapting itself to new scales of values, then set about the economic rehabilitation of the country without wasting a single moment on bewailing lost opportunities, blaming others for its misfortunes or on pointless nostalgia. Rather than make further mistakes, Pearl Harbour, having been the worst, concentrated all of its attention on seizing existing opportunities.\n\nIn short, Japan accepted the blame for its destruction and, once having done so, was able seriously to launch itself on its economic uplift.",
+      "token_count": 661,
       "chapter": "Main",
-      "page_start": 8,
+      "page_start": 9,
       "page_end": 11,
       "collapsed": false
     },
@@ -12495,16 +12328,17 @@
       "group_id": "g_030",
       "para_ids": [
         427,
-        428,
         429,
         430,
         431,
         433,
         434,
-        435
+        435,
+        436,
+        437
       ],
-      "combined_text": "The material world, governed directly by the Creator, operates under a flawless cosmic order, with zero-defect management from the outset. In contrast, in the human world, where individuals implement their plans—such as in industry—a zero-defect management system remains elusive.\n\nDuring World War II (1939-1945), the concept of Zero Defect Management emerged. Numerous articles and books were published on this topic, and soon, the idea spread rapidly in developed countries. Several nations, such as the United States and Japan, attempted to implement this concept on a large scale. However, after extensive experience, it was concluded that achieving zero defects in management was impossible. You can read more about this topic, for example, in the article The Concept of Zero Defects in Quality Management by Chandana Das. (https://www.simplilearn.com/concept-of-zero-defects-quality-management-article)\n\nIn modern times, industrially developed countries have made extensive efforts to establish zero-defect management. A substantial amount of research has been conducted, and books have been written on the subject. Throughout most of the twentieth century, this work continued, yet the goal remained elusive, even though the most advanced nations, like the United States and Japan, participated. At the same time, modern scientific studies have shown that the system of nature is established with a remarkable level of precision—for example, the orbits of stars and planets. If you want to know the exact time the sun will rise and set tomorrow, you can accurately calculate it today.\n\nOn one hand, human experience shows that the concept of zero-defect management in the human world has completely failed. On the other hand, in the material world, excluding humans, this concept exists in full. For example, if you want to know the sunrise and sunset times on April 15, 2025, you can accurately determine that on April 15, 2025, in Delhi, the sunrise and sunset times will be as follows:\n\nSunrise: 05:56\n\nThe times of sunrise and sunset can be calculated with the same accuracy for any place in the world. Similarly, the entire system of the material world runs with perfect precision. The science of the material world, known as astronomy, physics, chemistry, and so on, can record data from thousands of years ago to thousands of years into the future without any discrepancy. No difference has ever been recorded in this world’s functioning.\n\nConsider that the material world, which operates directly under the Creator’s management, has followed the principle of zero-defect management from the beginning. In contrast, in the human world, where people implement their plans, such as in industry, the zero-defect management system could not be established despite intense efforts. On one side, observe Divine Management in space, which continuously operates on the principle of zero defects; on the other side, look at Human Management, where, despite almost a century of continuous effort, zero-defect management could not be achieved. To gain more insight into the human management experience on this matter, you may refer to the article available on the internet.\n\nZero Defects, a term coined by Mr. Philip Crosby in his book “Absolutes of Quality Management,” has emerged as a popular and highly-regarded concept in quality management—so much so that Six Sigma is adopting it as one of its major theories.",
-      "token_count": 683,
+      "combined_text": "The material world, governed directly by the Creator, operates under a flawless cosmic order, with zero-defect management from the outset. In contrast, in the human world, where individuals implement their plans—such as in industry—a zero-defect management system remains elusive.\n\nIn modern times, industrially developed countries have made extensive efforts to establish zero-defect management. A substantial amount of research has been conducted, and books have been written on the subject. Throughout most of the twentieth century, this work continued, yet the goal remained elusive, even though the most advanced nations, like the United States and Japan, participated. At the same time, modern scientific studies have shown that the system of nature is established with a remarkable level of precision—for example, the orbits of stars and planets. If you want to know the exact time the sun will rise and set tomorrow, you can accurately calculate it today.\n\nOn one hand, human experience shows that the concept of zero-defect management in the human world has completely failed. On the other hand, in the material world, excluding humans, this concept exists in full. For example, if you want to know the sunrise and sunset times on April 15, 2025, you can accurately determine that on April 15, 2025, in Delhi, the sunrise and sunset times will be as follows:\n\nSunrise: 05:56\n\nThe times of sunrise and sunset can be calculated with the same accuracy for any place in the world. Similarly, the entire system of the material world runs with perfect precision. The science of the material world, known as astronomy, physics, chemistry, and so on, can record data from thousands of years ago to thousands of years into the future without any discrepancy. No difference has ever been recorded in this world’s functioning.\n\nConsider that the material world, which operates directly under the Creator’s management, has followed the principle of zero-defect management from the beginning. In contrast, in the human world, where people implement their plans, such as in industry, the zero-defect management system could not be established despite intense efforts. On one side, observe Divine Management in space, which continuously operates on the principle of zero defects; on the other side, look at Human Management, where, despite almost a century of continuous effort, zero-defect management could not be achieved. To gain more insight into the human management experience on this matter, you may refer to the article available on the internet.\n\nZero Defects, a term coined by Mr. Philip Crosby in his book “Absolutes of Quality Management,” has emerged as a popular and highly-regarded concept in quality management—so much so that Six Sigma is adopting it as one of its major theories.\n\nUnfortunately, the concept has also faced a fair degree of criticism, with some arguing that a state of zero defects cannot exist. Others have worked hard to prove the naysayers wrong, pointing out that  “zero defects”  in quality management doesn’t literally mean perfection but rather refers to a state where waste is eliminated and defects are reduced. This means ensuring the highest quality standards for projects. What Do We Mean by Zero Defects: From a literal standpoint, it’s pretty obvious that attaining zero defects is technically not possible in any sizable or complex manufacturing project.\n\nNow, apply the well-known formula to this two-way experience: “Things are understood by their opposites” or “It is in comparison that you understand.”",
+      "token_count": 722,
       "chapter": "Main",
       "page_start": 81,
       "page_end": 83,
@@ -12513,8 +12347,6 @@
     {
       "group_id": "g_031",
       "para_ids": [
-        436,
-        437,
         438,
         439,
         440,
@@ -12523,10 +12355,13 @@
         443,
         444,
         445,
-        447
+        447,
+        448,
+        449,
+        450
       ],
-      "combined_text": "Unfortunately, the concept has also faced a fair degree of criticism, with some arguing that a state of zero defects cannot exist. Others have worked hard to prove the naysayers wrong, pointing out that  “zero defects”  in quality management doesn’t literally mean perfection but rather refers to a state where waste is eliminated and defects are reduced. This means ensuring the highest quality standards for projects. What Do We Mean by Zero Defects: From a literal standpoint, it’s pretty obvious that attaining zero defects is technically not possible in any sizable or complex manufacturing project.\n\nNow, apply the well-known formula to this two-way experience: “Things are understood by their opposites” or “It is in comparison that you understand.”\n\nThe Quran alludes in various verses to the idea of comparing the system that human beings establish in this world to the broader system governing the rest of the universe. A comparative study of both reveals a fundamental difference between the two realms. In the human world, despite all efforts, a system of zero-defect management has not been achieved. It has come to be accepted that achieving such perfection within human systems is not possible. On the other hand, in the material world established by God, this concept of flawless order has existed with remarkable accuracy throughout history.\n\nWhen this contrast is evaluated through the formula as mentioned earlier, it becomes evident—based on human experience itself—that the Owner of this universe is a higher being, namely Allah, the Lord of all worlds. The difference between human society and the realm of the exact sciences serves as definitive proof of God’s existence. This is the truth articulated in the Quran in these words:\n\n“He created seven heavens, one above the other in layers. You will not find any flaw in the creation of the Gracious One. Then look once again: can you see any flaw? Then look again and again. Your gaze will come back to you confused and exhausted.” (67:3-4)\n\nSimilarly, another Quranic verse states:\n\n“Have they not observed the sky above them and marked how We have built it and adorned it, leaving no flaws in it?” (50:6)\n\nIn modern times, the discovery of this flawless cosmic order reinforces one of the attributes of God, the Lord of all worlds, namely:\n\n“God: there is no deity save Him, the Living, the Eternal One. Neither slumber nor sleep overtakes Him. To Him belong whatsoever is in the heavens and whatsoever is on the earth.” (2:255)\n\nEvery component of the vast universe which God controls functions under the zero-defect laws. Besides the world of man, the rest of the universe is a zero-defect universe. This is because man is on test in this world for which God Almighty has given him freedom. Due to the exigencies of trial, the ideal, zero-defect world cannot be established in this world. Man will only find the zero-defect world--Paradise-- in the Hereafter after death.\n\nGod has created an ideal world called Paradise: a world of everlasting joy and bliss that will come into existence in the Hereafter. Those individuals who pass the test in a short period in this world will reap the rewards of their actions by getting entry into eternal Paradise.",
-      "token_count": 691,
+      "combined_text": "The Quran alludes in various verses to the idea of comparing the system that human beings establish in this world to the broader system governing the rest of the universe. A comparative study of both reveals a fundamental difference between the two realms. In the human world, despite all efforts, a system of zero-defect management has not been achieved. It has come to be accepted that achieving such perfection within human systems is not possible. On the other hand, in the material world established by God, this concept of flawless order has existed with remarkable accuracy throughout history.\n\nWhen this contrast is evaluated through the formula as mentioned earlier, it becomes evident—based on human experience itself—that the Owner of this universe is a higher being, namely Allah, the Lord of all worlds. The difference between human society and the realm of the exact sciences serves as definitive proof of God’s existence. This is the truth articulated in the Quran in these words:\n\n“He created seven heavens, one above the other in layers. You will not find any flaw in the creation of the Gracious One. Then look once again: can you see any flaw? Then look again and again. Your gaze will come back to you confused and exhausted.” (67:3-4)\n\nSimilarly, another Quranic verse states:\n\n“Have they not observed the sky above them and marked how We have built it and adorned it, leaving no flaws in it?” (50:6)\n\nIn modern times, the discovery of this flawless cosmic order reinforces one of the attributes of God, the Lord of all worlds, namely:\n\n“God: there is no deity save Him, the Living, the Eternal One. Neither slumber nor sleep overtakes Him. To Him belong whatsoever is in the heavens and whatsoever is on the earth.” (2:255)\n\nEvery component of the vast universe which God controls functions under the zero-defect laws. Besides the world of man, the rest of the universe is a zero-defect universe. This is because man is on test in this world for which God Almighty has given him freedom. Due to the exigencies of trial, the ideal, zero-defect world cannot be established in this world. Man will only find the zero-defect world--Paradise-- in the Hereafter after death.\n\nGod has created an ideal world called Paradise: a world of everlasting joy and bliss that will come into existence in the Hereafter. Those individuals who pass the test in a short period in this world will reap the rewards of their actions by getting entry into eternal Paradise.\n\nThe Japanese target of ‘zero defects’ for their manufacturers—producing goods without any flaws serves as an introduction to Paradise for human beings. We cannot find Paradise in the present world. This world only serves as an introduction to Paradise. Paradise is the zero-defect world of the Hereafter, a realm of everlasting joy and bliss, unmarred by turmoil or pain. In Paradise, one is never beset by anguish or calamity. It is a trouble-free world of infinite blessings, where neither death, boredom, or grief exists. However, in this world, man faces contradictions.\n\nEvery component of the vast universe is complete in itself. Here, it is only man who lives in contradiction. Other than man, the whole of the universe is a zero-defect universe. It is only man whose life seems defective.\n\nIn the rest of the universe, satisfaction prevails, while in man’s life, dissatisfaction abounds. In the rest of the universe, all things get what they require, but man is the only creature in the world who does not always get what he wants. The rest of the universe is evil-free, but man, exceptionally, is afflicted with the ‘problem of evil.’",
+      "token_count": 785,
       "chapter": "Main",
       "page_start": 83,
       "page_end": 86,
@@ -12535,19 +12370,20 @@
     {
       "group_id": "g_032",
       "para_ids": [
-        448,
-        449,
-        450,
         451,
         452,
         453,
         454,
         455,
         457,
-        458
+        458,
+        459,
+        460,
+        461,
+        462
       ],
-      "combined_text": "The Japanese target of ‘zero defects’ for their manufacturers—producing goods without any flaws serves as an introduction to Paradise for human beings. We cannot find Paradise in the present world. This world only serves as an introduction to Paradise. Paradise is the zero-defect world of the Hereafter, a realm of everlasting joy and bliss, unmarred by turmoil or pain. In Paradise, one is never beset by anguish or calamity. It is a trouble-free world of infinite blessings, where neither death, boredom, or grief exists. However, in this world, man faces contradictions.\n\nEvery component of the vast universe is complete in itself. Here, it is only man who lives in contradiction. Other than man, the whole of the universe is a zero-defect universe. It is only man whose life seems defective.\n\nIn the rest of the universe, satisfaction prevails, while in man’s life, dissatisfaction abounds. In the rest of the universe, all things get what they require, but man is the only creature in the world who does not always get what he wants. The rest of the universe is evil-free, but man, exceptionally, is afflicted with the ‘problem of evil.’\n\nParadise is the answer to this seeming conundrum. The concept of Paradise tells us that all those good things that are there for the rest of the creation are fully available for man too, with the only difference that the rest of the universe gets what it desires in the world of ‘today,’ while man will get all that he wishes in the world of ‘tomorrow’ (the Hereafter).\n\nThe search for such an ideal world is an instinctive urge in man. Everyone seeks an invisible Paradise, yet no one can find such infinite blessings in this present, finite world. God has reserved it for the Hereafter.\n\nParadise is not granted automatically; only those who perform righteous deeds on Earth will be deserving of it. God has divided our lives into two parts: a short period on Earth and eternal life in the Hereafter. This world is for action, while the next world is for reaping the rewards of those actions.\n\nMan is free to act as he wishes on Earth, but this freedom is merely a test. He should recognize it as such and not revel in his power. Those who are not deluded by their temporary authority and never lose sight of their true position will be granted Paradise. Those who rebel based on their worldly power will abide in Hell.\n\nAll real power in this world belongs to God alone. He is the Lord of all things, and no one can escape His control for an instant. Those who acknowledge this truth will submit to God willingly. They are the ones who are worthy of Paradise. Those who deny this fact and follow their impulses wherever they lead are offenders in God’s sight and will have no share in the blessings of the Hereafter.\n\nThis world offers fleeting pleasures, while the hereafter promises true, eternal joy. In paradise, everything will be of the highest standard, fulfilling every desire in a realm of lasting happiness.\n\nDuring my trip to Japan in December 1990, I met a gentleman. I mentioned that the current world is a temporary place, while the Hereafter is the realm of eternal residence. A person should strive to build their “Paradise” in the eternal world. He responded that humans become bored with comforts or pleasures after a short time. Indeed, in our advanced modern world, there is a widespread problem of boredom. In such a situation, what is the benefit of an eternal Paradise?",
-      "token_count": 774,
+      "combined_text": "Paradise is the answer to this seeming conundrum. The concept of Paradise tells us that all those good things that are there for the rest of the creation are fully available for man too, with the only difference that the rest of the universe gets what it desires in the world of ‘today,’ while man will get all that he wishes in the world of ‘tomorrow’ (the Hereafter).\n\nThe search for such an ideal world is an instinctive urge in man. Everyone seeks an invisible Paradise, yet no one can find such infinite blessings in this present, finite world. God has reserved it for the Hereafter.\n\nParadise is not granted automatically; only those who perform righteous deeds on Earth will be deserving of it. God has divided our lives into two parts: a short period on Earth and eternal life in the Hereafter. This world is for action, while the next world is for reaping the rewards of those actions.\n\nMan is free to act as he wishes on Earth, but this freedom is merely a test. He should recognize it as such and not revel in his power. Those who are not deluded by their temporary authority and never lose sight of their true position will be granted Paradise. Those who rebel based on their worldly power will abide in Hell.\n\nAll real power in this world belongs to God alone. He is the Lord of all things, and no one can escape His control for an instant. Those who acknowledge this truth will submit to God willingly. They are the ones who are worthy of Paradise. Those who deny this fact and follow their impulses wherever they lead are offenders in God’s sight and will have no share in the blessings of the Hereafter.\n\nThis world offers fleeting pleasures, while the hereafter promises true, eternal joy. In paradise, everything will be of the highest standard, fulfilling every desire in a realm of lasting happiness.\n\nDuring my trip to Japan in December 1990, I met a gentleman. I mentioned that the current world is a temporary place, while the Hereafter is the realm of eternal residence. A person should strive to build their “Paradise” in the eternal world. He responded that humans become bored with comforts or pleasures after a short time. Indeed, in our advanced modern world, there is a widespread problem of boredom. In such a situation, what is the benefit of an eternal Paradise?\n\nThose who do not believe in the Hereafter have always expressed this view. However, this is merely a fallacy. The truth is that boredom arises from the end of the ability to enjoy, not from the end of the desire for pleasure.\n\nThese individuals assume that when we wish to enjoy pleasure, we soon become satiated and find no remaining delight in it. But this premise is inherently flawed. The reality is that humans possess an insatiable nature by their very nature. What humans find appealing is something they wish to enjoy eternally.\n\nHowever, in the present world, humans are plagued by numerous limitations. Therefore, whenever a person seeks to enjoy something desirable, its limitations soon obstruct their enjoyment. Despite their inclination, they lose the power to savour it. For instance, when we eat a delicious food, its taste does not diminish for us; rather, our stomach becomes full, which forces us to stop eating it. Similarly, many wealthy people, despite their cravings, stop indulging in certain things because they fear becoming overweight and suffering from various ailments.\n\nThe same applies to all other pleasures. The truth is that boredom or disinterest is a limit to our capacity for enjoyment, not a limitation of desire itself.",
+      "token_count": 794,
       "chapter": "Main",
       "page_start": 86,
       "page_end": 88,
@@ -12556,77 +12392,73 @@
     {
       "group_id": "g_033",
       "para_ids": [
-        459,
-        460,
-        461,
-        462,
         463,
         464,
         465,
         466,
         467,
         469,
-        470
+        470,
+        471,
+        472
       ],
-      "combined_text": "Those who do not believe in the Hereafter have always expressed this view. However, this is merely a fallacy. The truth is that boredom arises from the end of the ability to enjoy, not from the end of the desire for pleasure.\n\nThese individuals assume that when we wish to enjoy pleasure, we soon become satiated and find no remaining delight in it. But this premise is inherently flawed. The reality is that humans possess an insatiable nature by their very nature. What humans find appealing is something they wish to enjoy eternally.\n\nHowever, in the present world, humans are plagued by numerous limitations. Therefore, whenever a person seeks to enjoy something desirable, its limitations soon obstruct their enjoyment. Despite their inclination, they lose the power to savour it. For instance, when we eat a delicious food, its taste does not diminish for us; rather, our stomach becomes full, which forces us to stop eating it. Similarly, many wealthy people, despite their cravings, stop indulging in certain things because they fear becoming overweight and suffering from various ailments.\n\nThe same applies to all other pleasures. The truth is that boredom or disinterest is a limit to our capacity for enjoyment, not a limitation of desire itself.\n\nParadise is the place where not only will all pleasures be granted to humans in a more complete state, but also the limitations on their capacity to enjoy these pleasures will be removed.\n\nIn Paradise, this contradiction will cease to exist: a person desires to enjoy, but due to some limitation, they cannot indulge in their favoured things. The result will be that Paradise will become a realm of eternal happiness for humanity.\n\nThe boredom (boredom) that a person experiences in this world is, in fact, the result of a contradiction. Humans are inherently idealistic beings; they seek to attain things in their ideal form. However, in this world, everything is non-standard or non-ideal. This is the root cause of boredom.\n\nA person rushes toward something out of passion. Before obtaining it, they are under the illusion that it is precisely the ideal thing they sought. But once they attain it and experience it, they realise that it falls far short of their desired ideal. This is why, in this world, a person may find the thrill of the chase, but they do not experience the joy of possession.\n\nIn this world, there is a deceptive pleasure for a person, while the Hereafter offers true pleasure. Everything in the Hereafter will be of the highest standard. Therefore, it will become a source of genuine and limitless delight for humans. Whatever a person desires will be granted to them in Paradise, enhanced and fulfilling, so there will be no question of boredom there.\n\nParadise is a perfect, evil-free world of the hereafter, reserved for those who recognize God in the unseen, live by His principles, and develop positive personalities.\n\nLooking at the industrialised and planned cities of Japan, I often think of Paradise—the ideal world of the Hereafter. Paradise is a vast, zero-defect, evil-free universe, complete in itself. For thousands of years, man has sought Paradise on Earth due to his natural urges. With the advent of the Industrial Revolution and the age of consumerism, man thought that he could build a Paradise on Earth, believing that the Industrial Age would culminate in the perfect world—Paradise—that he longed for. However, these hopes were dashed with the arrival of pollution, acid rain, and global warming. Moreover, global warming has made it abundantly clear that man cannot build a Paradise on Earth.",
-      "token_count": 768,
+      "combined_text": "Paradise is the place where not only will all pleasures be granted to humans in a more complete state, but also the limitations on their capacity to enjoy these pleasures will be removed.\n\nIn Paradise, this contradiction will cease to exist: a person desires to enjoy, but due to some limitation, they cannot indulge in their favoured things. The result will be that Paradise will become a realm of eternal happiness for humanity.\n\nThe boredom (boredom) that a person experiences in this world is, in fact, the result of a contradiction. Humans are inherently idealistic beings; they seek to attain things in their ideal form. However, in this world, everything is non-standard or non-ideal. This is the root cause of boredom.\n\nA person rushes toward something out of passion. Before obtaining it, they are under the illusion that it is precisely the ideal thing they sought. But once they attain it and experience it, they realise that it falls far short of their desired ideal. This is why, in this world, a person may find the thrill of the chase, but they do not experience the joy of possession.\n\nIn this world, there is a deceptive pleasure for a person, while the Hereafter offers true pleasure. Everything in the Hereafter will be of the highest standard. Therefore, it will become a source of genuine and limitless delight for humans. Whatever a person desires will be granted to them in Paradise, enhanced and fulfilling, so there will be no question of boredom there.\n\nParadise is a perfect, evil-free world of the hereafter, reserved for those who recognize God in the unseen, live by His principles, and develop positive personalities.\n\nLooking at the industrialised and planned cities of Japan, I often think of Paradise—the ideal world of the Hereafter. Paradise is a vast, zero-defect, evil-free universe, complete in itself. For thousands of years, man has sought Paradise on Earth due to his natural urges. With the advent of the Industrial Revolution and the age of consumerism, man thought that he could build a Paradise on Earth, believing that the Industrial Age would culminate in the perfect world—Paradise—that he longed for. However, these hopes were dashed with the arrival of pollution, acid rain, and global warming. Moreover, global warming has made it abundantly clear that man cannot build a Paradise on Earth.\n\nParadise will only be found in a state of perfection in the Hereafter. In Paradise, man will experience a life of eternal joy, peace, and happiness. There will be no need for physical labour; pleasant intellectual activities will suffice to achieve all desired goals. Man must realize that he stands on the threshold of Paradise. The present Earth is a Paradise-in-the-making, not Paradise itself. So, how can man achieve the Paradise of his dreams?\n\nTo find an answer to this question, one must become aware of the Creation Plan of God. God has created man according to His Plan. To become acquainted with this plan, man must thoroughly understand himself. Just as the workings of a machine can only be understood when we study the engineer’s drawings, the same principle applies to understanding man. Besides the engineer’s mind, there is no other way to clarify what the machine is meant for. The case is the same for men. Only by understanding the Creation Plan of the Creator can we know the purpose of man’s life.",
+      "token_count": 729,
       "chapter": "Main",
-      "page_start": 88,
-      "page_end": 90,
+      "page_start": 89,
+      "page_end": 91,
       "collapsed": false
     },
     {
       "group_id": "g_034",
       "para_ids": [
-        471,
-        472,
         473,
         474,
         475,
         476,
         477,
         478,
-        479
+        479,
+        480,
+        481
       ],
-      "combined_text": "Paradise will only be found in a state of perfection in the Hereafter. In Paradise, man will experience a life of eternal joy, peace, and happiness. There will be no need for physical labour; pleasant intellectual activities will suffice to achieve all desired goals. Man must realize that he stands on the threshold of Paradise. The present Earth is a Paradise-in-the-making, not Paradise itself. So, how can man achieve the Paradise of his dreams?\n\nTo find an answer to this question, one must become aware of the Creation Plan of God. God has created man according to His Plan. To become acquainted with this plan, man must thoroughly understand himself. Just as the workings of a machine can only be understood when we study the engineer’s drawings, the same principle applies to understanding man. Besides the engineer’s mind, there is no other way to clarify what the machine is meant for. The case is the same for men. Only by understanding the Creation Plan of the Creator can we know the purpose of man’s life.\n\nMan’s existence is such a unique phenomenon that no comparable example can be found throughout the vastness of the cosmos. Man is rightly called the ‘best of all creations,’ which means the best and most meaningful ‘being’ among all created things. Such a ‘meaningful being’ cannot have been created without a purpose. The Creator of man has created him according to a unique plan. The Quran, the only preserved religious scripture, sheds light on this plan:\n\n“He created death and life so that He might test you, and find out which of you is best in conduct.” (67:2)\n\nAccording to this verse of the Quran, man was created as an eternal being, and ‘death and life’ represent both the pre-death and post-death periods of human life. Thus, death and life encompass the entire eternal lifespan of human beings. The Creator of man has created him according to a unique plan. His intention is for man to undergo a period of trial in this present, imperfect world, and then, based on his deeds, he will earn the right to inhabit the perfect and eternal world, which is another name for Paradise.\n\nAccording to His will, God created a perfect world called Paradise—a world that fulfils all our human desires, free of all limitations and disadvantages, free of fear and pain, and free of all imperfections. It is an eternal world with neither death nor old age, an ideal world where we can achieve fulfilment.\n\nLess-than-perfect beings cannot inhabit a perfect Paradise. Therefore, God created perfection-seeking creatures—human beings. He intended for us to spend a period of trial here on Earth. After this, we will earn the right to inhabit the perfect and eternal world according to our deeds.\n\nThe essence of God’s creation plan is to grant a person complete freedom—not as a gift, but as a test. This test enables God to judge who misuses their freedom and who uses it wisely. This is the divine scheme for humanity. In the pre-death period of life, individuals have the opportunity to qualify themselves for Paradise so that in the post-death period, they may be settled as deserving candidates in this perfect world.\n\nThis world, therefore, has all the components necessary for a test. It contains perfection-seeking beings in a less-than-perfect world who have been given complete freedom to choose their actions. Thus, we have a choice—we can misuse our freedom to do evil or use our freedom wisely, submit to God, and qualify for Paradise. Those who misuse their God-given freedom are warned in the Quran:",
-      "token_count": 776,
+      "combined_text": "Man’s existence is such a unique phenomenon that no comparable example can be found throughout the vastness of the cosmos. Man is rightly called the ‘best of all creations,’ which means the best and most meaningful ‘being’ among all created things. Such a ‘meaningful being’ cannot have been created without a purpose. The Creator of man has created him according to a unique plan. The Quran, the only preserved religious scripture, sheds light on this plan:\n\n“He created death and life so that He might test you, and find out which of you is best in conduct.” (67:2)\n\nAccording to this verse of the Quran, man was created as an eternal being, and ‘death and life’ represent both the pre-death and post-death periods of human life. Thus, death and life encompass the entire eternal lifespan of human beings. The Creator of man has created him according to a unique plan. His intention is for man to undergo a period of trial in this present, imperfect world, and then, based on his deeds, he will earn the right to inhabit the perfect and eternal world, which is another name for Paradise.\n\nAccording to His will, God created a perfect world called Paradise—a world that fulfils all our human desires, free of all limitations and disadvantages, free of fear and pain, and free of all imperfections. It is an eternal world with neither death nor old age, an ideal world where we can achieve fulfilment.\n\nLess-than-perfect beings cannot inhabit a perfect Paradise. Therefore, God created perfection-seeking creatures—human beings. He intended for us to spend a period of trial here on Earth. After this, we will earn the right to inhabit the perfect and eternal world according to our deeds.\n\nThe essence of God’s creation plan is to grant a person complete freedom—not as a gift, but as a test. This test enables God to judge who misuses their freedom and who uses it wisely. This is the divine scheme for humanity. In the pre-death period of life, individuals have the opportunity to qualify themselves for Paradise so that in the post-death period, they may be settled as deserving candidates in this perfect world.\n\nThis world, therefore, has all the components necessary for a test. It contains perfection-seeking beings in a less-than-perfect world who have been given complete freedom to choose their actions. Thus, we have a choice—we can misuse our freedom to do evil or use our freedom wisely, submit to God, and qualify for Paradise. Those who misuse their God-given freedom are warned in the Quran:\n\n“This is the Truth from your Lord. Let him who will believe in it and him who will deny it.” (18:29)\n\nThe Creator of the world has created this world as one half of a pair—the present world, in which we live after birth, is the first half; the next eternal world, where we live after death, is the other half. The Creator of man has further designed him as an eternal creature and divided his life into two periods: the pre-death period, which is life in this world, and the post-death period, or life after death. The limited period before death is meant to be a test for man, while the eternal period after his death will be a time of reward or punishment based on his performance in this life’s test.",
+      "token_count": 721,
       "chapter": "Main",
-      "page_start": 90,
-      "page_end": 92,
+      "page_start": 91,
+      "page_end": 93,
       "collapsed": false
     },
     {
       "group_id": "g_035",
       "para_ids": [
-        480,
-        481,
         482,
         483,
         484,
         485,
-        487
+        487,
+        488,
+        489,
+        490,
+        491
       ],
-      "combined_text": "“This is the Truth from your Lord. Let him who will believe in it and him who will deny it.” (18:29)\n\nThe Creator of the world has created this world as one half of a pair—the present world, in which we live after birth, is the first half; the next eternal world, where we live after death, is the other half. The Creator of man has further designed him as an eternal creature and divided his life into two periods: the pre-death period, which is life in this world, and the post-death period, or life after death. The limited period before death is meant to be a test for man, while the eternal period after his death will be a time of reward or punishment based on his performance in this life’s test.\n\nAccording to this Creation Plan of God, human beings are placed in situations where they face hardships from time to time throughout their lives as part of their test. Difficulty and sadness are integral parts of the Creator’s plan. No man has the power to extricate himself from this life of trial and tribulation. This arrangement serves as a reminder that the present world has not been made as a place of luxury and comfort but as a period of trial to determine whether he is eligible for eternal life in Paradise. This is the scheme of existence for this world devised by its Creator. The Creator aims to select those who are fit to inhabit the world of Paradise.\n\nIn this world of trials, to be eligible for Paradise, every man or woman must possess two qualifications: the acknowledgement of the truth of the one God and the commitment to leading a principled life to develop a positive personality. Those who pass this test will be granted a place in Paradise, where all their desires will be fulfilled. Those who fail will endure eternal deprivation.\n\nIn this world, man finds himself free. However, this freedom is not his by right; it is a test. Man must acknowledge the truth of the One God and surrender to Him—not by compulsion, but by his own choice. This voluntary surrender to the One God is, without doubt, the greatest sacrifice a person can make. Acknowledging the truth of the One God is an act of humility, not only before God but before others as well. Yet, it is this very virtue that will elevate man to the highest position and lead him to the very gates of Paradise.\n\nThe second critical requirement is to lead a principled life. Generally, a person’s character is shaped by emotions such as anger, revenge, jealousy, hatred, greed, selfishness, and dishonesty. These negative feelings often dominate one’s personality. However, a person must become disciplined in these matters. He should not shape his character based on external influences but rather by his own decisions rooted in higher principles to develop a divine character. To purify oneself from every negative emotion, one should develop a lofty, positive character. Only one who has developed a completely positive personality will be held deserving of living in the neighbourhood of God in Paradise.\n\nOnly a positive personality will find entry into the ideal world of Paradise in the Hereafter. Such a personality looks at the positive in everything. He finds opportunities for growth where others only see destruction. He extracts positive lessons from negative experiences.",
-      "token_count": 733,
+      "combined_text": "According to this Creation Plan of God, human beings are placed in situations where they face hardships from time to time throughout their lives as part of their test. Difficulty and sadness are integral parts of the Creator’s plan. No man has the power to extricate himself from this life of trial and tribulation. This arrangement serves as a reminder that the present world has not been made as a place of luxury and comfort but as a period of trial to determine whether he is eligible for eternal life in Paradise. This is the scheme of existence for this world devised by its Creator. The Creator aims to select those who are fit to inhabit the world of Paradise.\n\nIn this world of trials, to be eligible for Paradise, every man or woman must possess two qualifications: the acknowledgement of the truth of the one God and the commitment to leading a principled life to develop a positive personality. Those who pass this test will be granted a place in Paradise, where all their desires will be fulfilled. Those who fail will endure eternal deprivation.\n\nIn this world, man finds himself free. However, this freedom is not his by right; it is a test. Man must acknowledge the truth of the One God and surrender to Him—not by compulsion, but by his own choice. This voluntary surrender to the One God is, without doubt, the greatest sacrifice a person can make. Acknowledging the truth of the One God is an act of humility, not only before God but before others as well. Yet, it is this very virtue that will elevate man to the highest position and lead him to the very gates of Paradise.\n\nThe second critical requirement is to lead a principled life. Generally, a person’s character is shaped by emotions such as anger, revenge, jealousy, hatred, greed, selfishness, and dishonesty. These negative feelings often dominate one’s personality. However, a person must become disciplined in these matters. He should not shape his character based on external influences but rather by his own decisions rooted in higher principles to develop a divine character. To purify oneself from every negative emotion, one should develop a lofty, positive character. Only one who has developed a completely positive personality will be held deserving of living in the neighbourhood of God in Paradise.\n\nOnly a positive personality will find entry into the ideal world of Paradise in the Hereafter. Such a personality looks at the positive in everything. He finds opportunities for growth where others only see destruction. He extracts positive lessons from negative experiences.\n\nWhat is the description of a positive personality who can be found deserving of Paradise in the world Hereafter? The following example of a Japanese person helps us understand this. An Indian man had the opportunity to visit Japan for the first time. During a conversation with his Japanese host, he said sympathetically:\n\n“America treated your people very unfairly. It dropped the first atomic bombs in history on your country, reducing two of your cities to rubble.”\n\nThis question could have provoked the Japanese to react. However, the Japanese host replied calmly:\n\n“Not at all. Those bombs turned out to be a blessing in disguise for us. Before the war, these cities—Hiroshima and Nagasaki—were built in an outdated manner, with narrow, winding streets, dilapidated houses, and unhygienic neighbourhoods. Under normal circumstances, it would have been impossible to rebuild them in a modern way. But when the war completely wiped them off the map, we were presented with an opportunity. We seized it and rebuilt these cities as modern, well-planned urban centres.”",
+      "token_count": 781,
       "chapter": "Main",
       "page_start": 93,
-      "page_end": 94,
+      "page_end": 96,
       "collapsed": false
     },
     {
       "group_id": "g_036",
       "para_ids": [
-        488,
-        489,
-        490,
-        491,
         492,
         493
       ],
-      "combined_text": "What is the description of a positive personality who can be found deserving of Paradise in the world Hereafter? The following example of a Japanese person helps us understand this. An Indian man had the opportunity to visit Japan for the first time. During a conversation with his Japanese host, he said sympathetically:\n\n“America treated your people very unfairly. It dropped the first atomic bombs in history on your country, reducing two of your cities to rubble.”\n\nThis question could have provoked the Japanese to react. However, the Japanese host replied calmly:\n\n“Not at all. Those bombs turned out to be a blessing in disguise for us. Before the war, these cities—Hiroshima and Nagasaki—were built in an outdated manner, with narrow, winding streets, dilapidated houses, and unhygienic neighbourhoods. Under normal circumstances, it would have been impossible to rebuild them in a modern way. But when the war completely wiped them off the map, we were presented with an opportunity. We seized it and rebuilt these cities as modern, well-planned urban centres.”\n\nThis is the essence of positive thinking: finding opportunities for growth and renewal even in the face of destruction. The response of the Japanese can make us understand what a true positive character is. He does not live in complaints. He looks for the positive in everything. He finds opportunities for growth where others only see destruction. He extracts positive lessons from negative experiences. Only people with such completely positive character will find entry into Paradise, The Home of Peace (Quran, 10: 25) in the Hereafter.\n\nOnly positive personalities will enter the ideal world of Paradise. They see the good in everything, find growth in adversity, and learn from negative experiences.",
-      "token_count": 363,
+      "combined_text": "This is the essence of positive thinking: finding opportunities for growth and renewal even in the face of destruction. The response of the Japanese can make us understand what a true positive character is. He does not live in complaints. He looks for the positive in everything. He finds opportunities for growth where others only see destruction. He extracts positive lessons from negative experiences. Only people with such completely positive character will find entry into Paradise, The Home of Peace (Quran, 10: 25) in the Hereafter.\n\nOnly positive personalities will enter the ideal world of Paradise. They see the good in everything, find growth in adversity, and learn from negative experiences.",
+      "token_count": 143,
       "chapter": "Main",
-      "page_start": 95,
+      "page_start": 96,
       "page_end": 96,
       "collapsed": false
     }
@@ -13226,8 +13058,8 @@
     }
   ],
   "book_status": "pending",
-  "last_worked_para": 56,
-  "last_saved": "2026-01-12T23:00:48.313888",
+  "last_worked_para": null,
+  "last_saved": "2026-01-13T21:33:11.526359",
   "last_saved_by": "admin",
   "current_book_folder": "japan_a_model_of_peace_and_positivity_from"
 }

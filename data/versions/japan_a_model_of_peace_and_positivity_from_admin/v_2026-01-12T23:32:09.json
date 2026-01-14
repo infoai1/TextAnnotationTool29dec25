@@ -17,12 +17,12 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 1,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "deleted": true
+      }
     },
     {
       "id": 2,
@@ -41,13 +41,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 1,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 3,
@@ -66,13 +66,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 1,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 4,
@@ -91,13 +91,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 5,
@@ -116,13 +116,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 6,
@@ -139,15 +139,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 7,
@@ -164,15 +164,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 8,
@@ -189,15 +189,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 9,
@@ -224,13 +224,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 10,
@@ -247,15 +247,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 11,
@@ -272,15 +272,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 12,
@@ -299,13 +299,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 13,
@@ -324,13 +324,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 14,
@@ -349,13 +349,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 2,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 15,
@@ -374,13 +374,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 16,
@@ -399,13 +399,13 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 17,
@@ -422,15 +422,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 3,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 18,
@@ -447,15 +447,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 19,
@@ -472,15 +472,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 20,
@@ -497,15 +497,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 21,
@@ -522,15 +522,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 5,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 22,
@@ -547,15 +547,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 5,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 23,
@@ -572,15 +572,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 5,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 24,
@@ -597,15 +597,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "group_id": "g_001",
+      "deleted": true,
       "page_info": {
         "page_number": 6,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "group_id": "g_001",
-      "deleted": true
+      }
     },
     {
       "id": 25,
@@ -622,15 +622,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 6,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 26,
@@ -647,15 +647,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 6,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 27,
@@ -672,15 +672,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 7,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 28,
@@ -697,15 +697,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 7,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 29,
@@ -722,15 +722,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 7,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 30,
@@ -747,15 +747,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 8,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 31,
@@ -772,15 +772,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 8,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 32,
@@ -797,15 +797,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 8,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 33,
@@ -822,15 +822,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 9,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 34,
@@ -847,15 +847,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 9,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 35,
@@ -872,15 +872,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 9,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 36,
@@ -897,15 +897,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 10,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 37,
@@ -922,15 +922,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 10,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 38,
@@ -947,15 +947,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 10,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 39,
@@ -972,15 +972,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 11,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 40,
@@ -997,15 +997,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 11,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 41,
@@ -1022,15 +1022,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 11,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 42,
@@ -1047,15 +1047,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 12,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 43,
@@ -1072,15 +1072,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 12,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 44,
@@ -1097,15 +1097,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 12,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 45,
@@ -1122,15 +1122,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 13,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 46,
@@ -1147,15 +1147,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 13,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 47,
@@ -1172,15 +1172,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 13,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 48,
@@ -1197,15 +1197,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 14,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 49,
@@ -1222,15 +1222,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 14,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 50,
@@ -1247,15 +1247,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 14,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 51,
@@ -1272,15 +1272,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 15,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 52,
@@ -1297,15 +1297,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 15,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 53,
@@ -1322,15 +1322,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 54,
@@ -1347,15 +1347,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 55,
@@ -1372,15 +1372,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 56,
@@ -1397,15 +1397,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 4,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 57,
@@ -1422,15 +1422,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 85,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 58,
@@ -1447,15 +1447,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 85,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 59,
@@ -1472,15 +1472,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 85,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 60,
@@ -1497,15 +1497,15 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
+      "potential_delete": false,
+      "delete_reason": "range_select",
+      "deleted": true,
       "page_info": {
         "page_number": 95,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_001",
-      "potential_delete": false,
-      "delete_reason": "range_select",
-      "deleted": true
+      }
     },
     {
       "id": 61,
@@ -1543,12 +1543,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
       "page_info": {
         "page_number": 5,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_001"
+      }
     },
     {
       "id": 63,
@@ -1587,12 +1587,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
       "page_info": {
         "page_number": 5,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001"
+      }
     },
     {
       "id": 64,
@@ -1624,12 +1624,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
       "page_info": {
         "page_number": 5,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001"
+      }
     },
     {
       "id": 65,
@@ -1654,12 +1654,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
       "page_info": {
         "page_number": 5,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_001"
+      }
     },
     {
       "id": 66,
@@ -1684,12 +1684,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_001",
       "page_info": {
         "page_number": 6,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_001"
+      }
     },
     {
       "id": 67,
@@ -1714,12 +1714,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 6,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 68,
@@ -1751,12 +1751,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 6,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 69,
@@ -1773,12 +1773,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 6,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 70,
@@ -1795,12 +1795,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 7,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 71,
@@ -1846,12 +1846,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 7,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 72,
@@ -1876,12 +1876,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 7,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 73,
@@ -1898,12 +1898,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 8,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 74,
@@ -1920,12 +1920,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 8,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 75,
@@ -1942,12 +1942,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_002",
       "page_info": {
         "page_number": 8,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_002"
+      }
     },
     {
       "id": 76,
@@ -1964,12 +1964,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 8,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 77,
@@ -1986,12 +1986,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 9,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 78,
@@ -2029,12 +2029,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 9,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 80,
@@ -2066,12 +2066,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 9,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 81,
@@ -2096,12 +2096,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 10,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 82,
@@ -2118,12 +2118,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 10,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 83,
@@ -2155,12 +2155,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 10,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 84,
@@ -2177,12 +2177,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 10,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 85,
@@ -2199,12 +2199,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 11,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 86,
@@ -2221,12 +2221,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_003",
       "page_info": {
         "page_number": 11,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_003"
+      }
     },
     {
       "id": 87,
@@ -2243,12 +2243,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 11,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 88,
@@ -2265,12 +2265,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 11,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 89,
@@ -2308,12 +2308,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 12,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 91,
@@ -2338,12 +2338,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 12,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 92,
@@ -2360,12 +2360,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 12,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 93,
@@ -2382,12 +2382,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 13,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 94,
@@ -2412,12 +2412,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 13,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 95,
@@ -2434,12 +2434,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 13,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 96,
@@ -2456,12 +2456,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_004",
       "page_info": {
         "page_number": 13,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_004"
+      }
     },
     {
       "id": 97,
@@ -2478,12 +2478,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 14,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 98,
@@ -2500,12 +2500,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 14,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 99,
@@ -2522,12 +2522,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 14,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 100,
@@ -2552,12 +2552,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 14,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 101,
@@ -2595,12 +2595,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 15,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 103,
@@ -2639,12 +2639,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 15,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 104,
@@ -2661,12 +2661,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 15,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 105,
@@ -2683,12 +2683,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 15,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 106,
@@ -2720,12 +2720,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 16,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 107,
@@ -2742,12 +2742,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 16,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 108,
@@ -2785,12 +2785,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 16,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 110,
@@ -2815,12 +2815,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_005",
       "page_info": {
         "page_number": 17,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_005"
+      }
     },
     {
       "id": 111,
@@ -2845,12 +2845,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 17,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 112,
@@ -2867,12 +2867,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 17,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 113,
@@ -2897,12 +2897,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 17,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 114,
@@ -2919,12 +2919,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 17,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 115,
@@ -2941,12 +2941,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 17,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 116,
@@ -2984,12 +2984,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 18,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 118,
@@ -3006,12 +3006,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 18,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 119,
@@ -3028,12 +3028,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 18,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 120,
@@ -3058,12 +3058,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 18,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 121,
@@ -3080,12 +3080,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 18,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 122,
@@ -3102,12 +3102,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 18,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 123,
@@ -3145,12 +3145,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 19,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 125,
@@ -3167,12 +3167,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 19,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 126,
@@ -3189,12 +3189,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_006",
       "page_info": {
         "page_number": 19,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_006"
+      }
     },
     {
       "id": 127,
@@ -3211,12 +3211,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 19,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 128,
@@ -3233,12 +3233,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 20,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 129,
@@ -3255,12 +3255,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 20,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 130,
@@ -3277,12 +3277,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 20,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 131,
@@ -3299,12 +3299,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 21,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 132,
@@ -3321,12 +3321,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 21,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 133,
@@ -3343,12 +3343,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 21,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 134,
@@ -3386,12 +3386,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_007",
       "page_info": {
         "page_number": 22,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_007"
+      }
     },
     {
       "id": 136,
@@ -3416,12 +3416,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 22,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 137,
@@ -3438,12 +3438,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 22,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 138,
@@ -3460,12 +3460,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 22,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 139,
@@ -3482,12 +3482,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 23,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 140,
@@ -3525,12 +3525,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 23,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 142,
@@ -3562,12 +3562,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 23,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 143,
@@ -3606,12 +3606,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 23,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 144,
@@ -3628,12 +3628,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 23,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 145,
@@ -3650,12 +3650,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 24,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 146,
@@ -3672,12 +3672,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 24,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 147,
@@ -3694,12 +3694,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 24,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 148,
@@ -3716,12 +3716,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_008",
       "page_info": {
         "page_number": 24,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_008"
+      }
     },
     {
       "id": 149,
@@ -3738,12 +3738,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 25,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 150,
@@ -3781,12 +3781,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 25,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 152,
@@ -3818,12 +3818,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 25,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 153,
@@ -3840,12 +3840,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 26,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 154,
@@ -3870,12 +3870,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 26,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 155,
@@ -3913,12 +3913,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 26,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 157,
@@ -3935,12 +3935,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 28,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 158,
@@ -3972,12 +3972,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 28,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 159,
@@ -3994,12 +3994,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 28,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 160,
@@ -4016,12 +4016,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 28,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 161,
@@ -4038,12 +4038,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_009",
       "page_info": {
         "page_number": 29,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_009"
+      }
     },
     {
       "id": 162,
@@ -4060,12 +4060,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 29,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 163,
@@ -4082,12 +4082,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 27,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 164,
@@ -4104,12 +4104,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 27,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 165,
@@ -4126,12 +4126,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 27,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 166,
@@ -4148,12 +4148,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 27,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 167,
@@ -4170,12 +4170,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 28,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 168,
@@ -4200,12 +4200,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 28,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 169,
@@ -4222,12 +4222,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 28,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 170,
@@ -4265,12 +4265,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 29,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 172,
@@ -4287,12 +4287,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 31,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 173,
@@ -4309,12 +4309,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_010",
       "page_info": {
         "page_number": 31,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_010"
+      }
     },
     {
       "id": 174,
@@ -4331,12 +4331,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 31,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 175,
@@ -4353,12 +4353,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 30,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 176,
@@ -4375,12 +4375,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 30,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 177,
@@ -4397,12 +4397,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 30,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 178,
@@ -4419,12 +4419,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 30,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 179,
@@ -4441,12 +4441,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 31,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 180,
@@ -4463,12 +4463,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 31,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 181,
@@ -4506,12 +4506,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_011",
       "page_info": {
         "page_number": 32,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_011"
+      }
     },
     {
       "id": 183,
@@ -4528,12 +4528,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 32,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 184,
@@ -4550,12 +4550,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 32,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 185,
@@ -4572,12 +4572,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 33,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 186,
@@ -4594,12 +4594,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 33,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 187,
@@ -4616,12 +4616,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 33,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 188,
@@ -4638,12 +4638,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 33,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 189,
@@ -4660,12 +4660,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 34,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 190,
@@ -4682,12 +4682,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_012",
       "page_info": {
         "page_number": 34,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_012"
+      }
     },
     {
       "id": 191,
@@ -4704,12 +4704,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 34,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 192,
@@ -4726,12 +4726,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 34,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 193,
@@ -4748,12 +4748,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 35,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 194,
@@ -4770,12 +4770,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 35,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 195,
@@ -4792,12 +4792,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 35,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 196,
@@ -4835,12 +4835,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 36,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 198,
@@ -4872,12 +4872,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 36,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 199,
@@ -4894,12 +4894,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 36,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 200,
@@ -4916,12 +4916,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 36,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 201,
@@ -4946,12 +4946,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_013",
       "page_info": {
         "page_number": 37,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_013"
+      }
     },
     {
       "id": 202,
@@ -4968,12 +4968,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 37,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 203,
@@ -5011,12 +5011,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 37,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 205,
@@ -5033,12 +5033,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 37,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 206,
@@ -5070,12 +5070,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 37,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 207,
@@ -5092,12 +5092,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 38,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 208,
@@ -5114,12 +5114,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 38,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 209,
@@ -5157,12 +5157,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_014",
       "page_info": {
         "page_number": 39,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_014"
+      }
     },
     {
       "id": 211,
@@ -5194,12 +5194,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 39,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 212,
@@ -5216,12 +5216,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 39,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 213,
@@ -5238,12 +5238,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 39,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 214,
@@ -5260,12 +5260,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 40,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 215,
@@ -5304,12 +5304,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 40,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 216,
@@ -5326,12 +5326,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 40,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 217,
@@ -5348,12 +5348,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 40,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 218,
@@ -5370,12 +5370,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 41,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 219,
@@ -5392,12 +5392,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 41,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 220,
@@ -5435,12 +5435,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_015",
       "page_info": {
         "page_number": 42,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_015"
+      }
     },
     {
       "id": 222,
@@ -5457,12 +5457,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 42,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 223,
@@ -5479,12 +5479,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 42,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 224,
@@ -5509,12 +5509,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 42,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 225,
@@ -5531,12 +5531,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 226,
@@ -5553,12 +5553,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 227,
@@ -5575,12 +5575,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 228,
@@ -5618,12 +5618,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 230,
@@ -5648,12 +5648,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 231,
@@ -5670,12 +5670,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 232,
@@ -5692,12 +5692,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 43,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 233,
@@ -5714,12 +5714,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 44,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 234,
@@ -5757,12 +5757,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 44,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 236,
@@ -5794,12 +5794,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_016",
       "page_info": {
         "page_number": 44,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_016"
+      }
     },
     {
       "id": 237,
@@ -5816,12 +5816,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 44,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 238,
@@ -5838,12 +5838,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 45,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 239,
@@ -5860,12 +5860,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 45,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 240,
@@ -5882,12 +5882,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 45,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 241,
@@ -5925,12 +5925,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 46,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 243,
@@ -5947,12 +5947,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 46,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 244,
@@ -5969,12 +5969,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 46,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 245,
@@ -5991,12 +5991,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 46,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 246,
@@ -6021,12 +6021,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 47,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 247,
@@ -6043,12 +6043,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 47,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 248,
@@ -6065,12 +6065,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 47,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 249,
@@ -6087,12 +6087,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 47,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 250,
@@ -6130,12 +6130,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_017",
       "page_info": {
         "page_number": 48,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_017"
+      }
     },
     {
       "id": 252,
@@ -6160,12 +6160,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 48,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 253,
@@ -6182,12 +6182,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 48,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 254,
@@ -6204,12 +6204,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 48,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 255,
@@ -6226,12 +6226,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 49,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 256,
@@ -6248,12 +6248,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 49,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 257,
@@ -6291,12 +6291,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 49,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 259,
@@ -6313,12 +6313,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 50,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 260,
@@ -6335,12 +6335,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 50,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 261,
@@ -6357,12 +6357,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 50,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 262,
@@ -6379,12 +6379,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 50,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 263,
@@ -6401,12 +6401,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 51,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 264,
@@ -6444,12 +6444,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_018",
       "page_info": {
         "page_number": 51,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_018"
+      }
     },
     {
       "id": 266,
@@ -6466,12 +6466,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 267,
@@ -6488,12 +6488,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 268,
@@ -6510,12 +6510,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 51,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 269,
@@ -6532,12 +6532,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 51,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 270,
@@ -6554,12 +6554,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 51,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 271,
@@ -6576,12 +6576,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 51,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 272,
@@ -6619,12 +6619,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 274,
@@ -6656,12 +6656,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 275,
@@ -6693,12 +6693,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 53,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 276,
@@ -6715,12 +6715,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 277,
@@ -6758,12 +6758,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 279,
@@ -6780,12 +6780,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 52,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 280,
@@ -6802,12 +6802,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_019",
       "page_info": {
         "page_number": 53,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_019"
+      }
     },
     {
       "id": 281,
@@ -6845,12 +6845,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 54,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 283,
@@ -6875,12 +6875,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 54,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 284,
@@ -6897,12 +6897,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 54,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 285,
@@ -6919,12 +6919,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 54,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 286,
@@ -6941,12 +6941,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 287,
@@ -6963,12 +6963,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 288,
@@ -6985,12 +6985,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 289,
@@ -7007,12 +7007,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 56,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 290,
@@ -7029,12 +7029,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 56,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 291,
@@ -7051,12 +7051,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 56,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 292,
@@ -7073,12 +7073,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 293,
@@ -7103,12 +7103,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 294,
@@ -7125,12 +7125,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 295,
@@ -7147,12 +7147,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 58,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 296,
@@ -7190,12 +7190,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 298,
@@ -7227,12 +7227,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 299,
@@ -7249,12 +7249,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 300,
@@ -7271,12 +7271,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 55,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 301,
@@ -7293,12 +7293,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 56,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 302,
@@ -7336,12 +7336,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 56,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 304,
@@ -7373,12 +7373,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_020",
       "page_info": {
         "page_number": 56,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_020"
+      }
     },
     {
       "id": 305,
@@ -7395,12 +7395,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 306,
@@ -7417,12 +7417,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 307,
@@ -7439,12 +7439,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 57,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 308,
@@ -7461,12 +7461,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 309,
@@ -7483,12 +7483,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 57,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 310,
@@ -7526,12 +7526,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 58,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 312,
@@ -7556,12 +7556,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 58,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 313,
@@ -7578,12 +7578,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 58,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 314,
@@ -7600,12 +7600,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 58,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 315,
@@ -7622,12 +7622,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 59,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 316,
@@ -7644,12 +7644,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_021",
       "page_info": {
         "page_number": 59,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_021"
+      }
     },
     {
       "id": 317,
@@ -7681,12 +7681,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 59,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 318,
@@ -7703,12 +7703,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 59,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 319,
@@ -7733,12 +7733,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 59,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 320,
@@ -7755,12 +7755,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 60,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 321,
@@ -7798,12 +7798,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 60,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 323,
@@ -7820,12 +7820,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 60,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 324,
@@ -7850,12 +7850,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 61,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 325,
@@ -7872,12 +7872,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 61,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 326,
@@ -7915,12 +7915,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 61,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 328,
@@ -7952,12 +7952,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 61,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 329,
@@ -7974,12 +7974,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 62,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 330,
@@ -7996,12 +7996,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_022",
       "page_info": {
         "page_number": 62,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_022"
+      }
     },
     {
       "id": 331,
@@ -8018,12 +8018,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 62,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 332,
@@ -8061,12 +8061,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 62,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 334,
@@ -8083,12 +8083,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 62,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 335,
@@ -8120,12 +8120,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 63,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 336,
@@ -8142,12 +8142,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 63,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 337,
@@ -8164,12 +8164,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 63,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 338,
@@ -8186,12 +8186,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 63,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 339,
@@ -8237,12 +8237,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 64,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 341,
@@ -8259,12 +8259,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 64,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 342,
@@ -8281,12 +8281,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 64,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 343,
@@ -8311,12 +8311,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 64,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 344,
@@ -8333,12 +8333,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_023",
       "page_info": {
         "page_number": 64,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_023"
+      }
     },
     {
       "id": 345,
@@ -8363,12 +8363,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 64,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 346,
@@ -8385,12 +8385,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 65,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 347,
@@ -8407,12 +8407,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 65,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 348,
@@ -8429,12 +8429,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 65,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 349,
@@ -8451,12 +8451,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 65,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 350,
@@ -8473,12 +8473,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 66,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 351,
@@ -8516,12 +8516,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 66,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 353,
@@ -8546,12 +8546,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 66,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 354,
@@ -8568,12 +8568,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 67,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 355,
@@ -8590,12 +8590,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 67,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 356,
@@ -8612,12 +8612,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_024",
       "page_info": {
         "page_number": 67,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_024"
+      }
     },
     {
       "id": 357,
@@ -8634,12 +8634,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 67,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 358,
@@ -8656,12 +8656,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 67,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 359,
@@ -8699,12 +8699,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 68,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 361,
@@ -8721,12 +8721,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 68,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 362,
@@ -8743,12 +8743,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 68,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 363,
@@ -8765,12 +8765,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 68,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 364,
@@ -8787,12 +8787,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 69,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 365,
@@ -8809,12 +8809,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 69,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 366,
@@ -8831,12 +8831,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 69,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 367,
@@ -8861,12 +8861,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 70,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 368,
@@ -8883,12 +8883,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 69,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 369,
@@ -8913,12 +8913,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 69,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 370,
@@ -8956,12 +8956,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 69,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 372,
@@ -8986,12 +8986,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_025",
       "page_info": {
         "page_number": 70,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_025"
+      }
     },
     {
       "id": 373,
@@ -9008,12 +9008,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 70,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 374,
@@ -9030,12 +9030,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 70,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 375,
@@ -9052,12 +9052,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 70,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 376,
@@ -9074,12 +9074,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 70,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 377,
@@ -9096,12 +9096,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 71,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 378,
@@ -9118,12 +9118,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 71,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 379,
@@ -9140,12 +9140,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 71,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 380,
@@ -9183,12 +9183,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 71,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 382,
@@ -9205,12 +9205,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 71,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 383,
@@ -9227,12 +9227,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 72,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 384,
@@ -9249,12 +9249,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 72,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 385,
@@ -9271,12 +9271,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 72,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 386,
@@ -9314,12 +9314,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 73,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 388,
@@ -9351,12 +9351,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 72,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 389,
@@ -9373,12 +9373,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_026",
       "page_info": {
         "page_number": 72,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_026"
+      }
     },
     {
       "id": 390,
@@ -9395,12 +9395,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_027",
       "page_info": {
         "page_number": 72,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_027"
+      }
     },
     {
       "id": 391,
@@ -9417,12 +9417,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_027",
       "page_info": {
         "page_number": 73,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_027"
+      }
     },
     {
       "id": 392,
@@ -9439,12 +9439,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_027",
       "page_info": {
         "page_number": 73,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_027"
+      }
     },
     {
       "id": 393,
@@ -9461,12 +9461,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_027",
       "page_info": {
         "page_number": 73,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_027"
+      }
     },
     {
       "id": 394,
@@ -9491,12 +9491,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_027",
       "page_info": {
         "page_number": 74,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_027"
+      }
     },
     {
       "id": 395,
@@ -9513,12 +9513,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_027",
       "page_info": {
         "page_number": 74,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_027"
+      }
     },
     {
       "id": 396,
@@ -9550,12 +9550,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 75,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 397,
@@ -9593,12 +9593,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 75,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 399,
@@ -9615,12 +9615,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 75,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 400,
@@ -9645,12 +9645,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 76,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 401,
@@ -9696,12 +9696,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 76,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 403,
@@ -9718,12 +9718,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 76,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 404,
@@ -9740,12 +9740,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 76,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 405,
@@ -9783,12 +9783,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 77,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 407,
@@ -9805,12 +9805,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 77,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 408,
@@ -9827,12 +9827,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 77,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 409,
@@ -9849,12 +9849,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 78,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 410,
@@ -9871,12 +9871,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 78,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 411,
@@ -9893,12 +9893,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 78,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 412,
@@ -9936,12 +9936,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_028",
       "page_info": {
         "page_number": 78,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_028"
+      }
     },
     {
       "id": 414,
@@ -9966,12 +9966,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 78,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 415,
@@ -9988,12 +9988,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 79,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 416,
@@ -10010,12 +10010,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 79,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 417,
@@ -10053,12 +10053,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 79,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 419,
@@ -10075,12 +10075,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 79,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 420,
@@ -10097,12 +10097,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 79,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 421,
@@ -10119,12 +10119,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 79,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 422,
@@ -10141,12 +10141,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 80,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 423,
@@ -10163,12 +10163,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 80,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 424,
@@ -10185,12 +10185,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 80,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 425,
@@ -10207,12 +10207,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_029",
       "page_info": {
         "page_number": 80,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_029"
+      }
     },
     {
       "id": 426,
@@ -10250,12 +10250,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 81,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 428,
@@ -10289,12 +10289,12 @@
       "footnote_refs": [],
       "potential_delete": false,
       "delete_reason": "pattern_match",
+      "group_id": "g_030",
       "page_info": {
         "page_number": 81,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 429,
@@ -10311,12 +10311,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 81,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 430,
@@ -10348,12 +10348,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 82,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 431,
@@ -10370,12 +10370,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 82,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 432,
@@ -10413,12 +10413,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 82,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 434,
@@ -10435,12 +10435,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 83,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 435,
@@ -10457,12 +10457,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_030",
       "page_info": {
         "page_number": 83,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_030"
+      }
     },
     {
       "id": 436,
@@ -10479,12 +10479,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 83,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 437,
@@ -10501,12 +10501,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 83,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 438,
@@ -10523,12 +10523,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 83,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 439,
@@ -10545,12 +10545,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 84,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 440,
@@ -10576,12 +10576,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 84,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 441,
@@ -10598,12 +10598,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 84,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 442,
@@ -10629,12 +10629,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 84,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 443,
@@ -10651,12 +10651,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 85,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 444,
@@ -10682,12 +10682,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 85,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 445,
@@ -10704,12 +10704,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 85,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 446,
@@ -10747,12 +10747,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_031",
       "page_info": {
         "page_number": 86,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_031"
+      }
     },
     {
       "id": 448,
@@ -10769,12 +10769,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 86,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 449,
@@ -10791,12 +10791,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 86,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 450,
@@ -10813,12 +10813,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 86,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 451,
@@ -10835,12 +10835,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 86,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 452,
@@ -10857,12 +10857,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 86,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 453,
@@ -10879,12 +10879,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 87,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 454,
@@ -10901,12 +10901,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 87,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 455,
@@ -10923,12 +10923,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 87,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 456,
@@ -10966,12 +10966,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 87,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 458,
@@ -10996,12 +10996,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_032",
       "page_info": {
         "page_number": 88,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_032"
+      }
     },
     {
       "id": 459,
@@ -11018,12 +11018,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 88,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 460,
@@ -11040,12 +11040,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 88,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 461,
@@ -11062,12 +11062,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 88,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 462,
@@ -11084,12 +11084,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 88,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 463,
@@ -11106,12 +11106,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 89,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 464,
@@ -11128,12 +11128,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 89,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 465,
@@ -11150,12 +11150,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 89,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 466,
@@ -11172,12 +11172,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 89,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 467,
@@ -11194,12 +11194,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 89,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 468,
@@ -11237,12 +11237,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 90,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 470,
@@ -11259,12 +11259,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_033",
       "page_info": {
         "page_number": 90,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_033"
+      }
     },
     {
       "id": 471,
@@ -11281,12 +11281,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 90,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 472,
@@ -11303,12 +11303,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 91,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 473,
@@ -11325,12 +11325,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 91,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 474,
@@ -11356,12 +11356,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 91,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 475,
@@ -11378,12 +11378,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 91,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 476,
@@ -11400,12 +11400,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 92,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 477,
@@ -11422,12 +11422,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 92,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 478,
@@ -11444,12 +11444,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 92,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 479,
@@ -11466,12 +11466,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_034",
       "page_info": {
         "page_number": 92,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_034"
+      }
     },
     {
       "id": 480,
@@ -11497,12 +11497,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 93,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 481,
@@ -11519,12 +11519,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 93,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 482,
@@ -11541,12 +11541,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 93,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 483,
@@ -11563,12 +11563,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 93,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 484,
@@ -11585,12 +11585,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 94,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 485,
@@ -11607,12 +11607,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 94,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 486,
@@ -11650,12 +11650,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_035",
       "page_info": {
         "page_number": 94,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_035"
+      }
     },
     {
       "id": 488,
@@ -11672,12 +11672,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_036",
       "page_info": {
         "page_number": 95,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_036"
+      }
     },
     {
       "id": 489,
@@ -11694,12 +11694,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_036",
       "page_info": {
         "page_number": 95,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_036"
+      }
     },
     {
       "id": 490,
@@ -11716,12 +11716,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_036",
       "page_info": {
         "page_number": 95,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_036"
+      }
     },
     {
       "id": 491,
@@ -11738,12 +11738,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_036",
       "page_info": {
         "page_number": 96,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_036"
+      }
     },
     {
       "id": 492,
@@ -11760,12 +11760,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_036",
       "page_info": {
         "page_number": 96,
         "confidence": 1.0,
         "match_type": "exact"
-      },
-      "group_id": "g_036"
+      }
     },
     {
       "id": 493,
@@ -11782,12 +11782,12 @@
       "other_book_refs": [],
       "manual_notes": "",
       "footnote_refs": [],
+      "group_id": "g_036",
       "page_info": {
         "page_number": 96,
         "confidence": 0.0,
         "match_type": "estimated"
-      },
-      "group_id": "g_036"
+      }
     }
   ],
   "groups": [
@@ -13227,7 +13227,7 @@
   ],
   "book_status": "pending",
   "last_worked_para": 56,
-  "last_saved": "2026-01-12T23:00:13.613273",
+  "last_saved": "2026-01-12T23:32:09.857631",
   "last_saved_by": "admin",
   "current_book_folder": "japan_a_model_of_peace_and_positivity_from"
 }
