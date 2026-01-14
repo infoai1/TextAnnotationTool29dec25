@@ -5,6 +5,7 @@ Provides debugging support with file-based logs and optional UI display.
 """
 
 import logging
+import os
 from pathlib import Path
 from logging.handlers import RotatingFileHandler
 
@@ -17,7 +18,7 @@ def setup_logging(debug_mode: bool = False, log_file: str = None) -> logging.Log
 
     Args:
         debug_mode: If True, log DEBUG level; otherwise INFO
-        log_file: Custom log file path (default: /root/annotation_tool/logs/annotation_tool.log)
+        log_file: Custom log file path (default: auto-detected)
 
     Returns:
         Configured logger instance
@@ -29,8 +30,14 @@ def setup_logging(debug_mode: bool = False, log_file: str = None) -> logging.Log
         logger.debug(f"Loaded {len(paragraphs)} paragraphs")
         logger.error(f"Failed to save: {error}")
     """
-    log_dir = Path("/root/annotation_tool/logs")
-    log_dir.mkdir(exist_ok=True)
+    # Detect environment: Docker uses /app, host uses /root/annotation_tool
+    if os.path.exists("/app"):
+        log_dir = Path("/app/logs")
+    else:
+        log_dir = Path("/root/annotation_tool/logs")
+
+    # Create directory with parents=True for safety
+    log_dir.mkdir(parents=True, exist_ok=True)
 
     if log_file is None:
         log_file = log_dir / "annotation_tool.log"
@@ -100,7 +107,12 @@ def read_recent_logs(num_lines: int = 50) -> str:
         if st.checkbox("Debug Mode"):
             st.code(read_recent_logs(100))
     """
-    log_file = Path("/root/annotation_tool/logs/annotation_tool.log")
+    # Detect environment: Docker uses /app, host uses /root/annotation_tool
+    if os.path.exists("/app"):
+        log_file = Path("/app/logs/annotation_tool.log")
+    else:
+        log_file = Path("/root/annotation_tool/logs/annotation_tool.log")
+
     if not log_file.exists():
         return "No logs yet"
 
