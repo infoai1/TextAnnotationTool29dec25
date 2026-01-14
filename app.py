@@ -4112,13 +4112,10 @@ def render_portal():
                     if cols[4].button("📥", key=f"dl_{book['folder']}", help="Download JSON"):
                         st.info(f"Export JSON for {book['title']}")
                 else:
-                    cols[4].button(
-                        "👁",
-                        key=f"view_{book['folder']}",
-                        help="View",
-                        on_click=on_view_book_click,
-                        args=(book['folder'],)
-                    )
+                    if cols[4].button("👁", key=f"view_{book['folder']}", help="View", on_click=on_view_book_click, args=(book['folder'],)):
+                        # Callback already executed - file_uploaded is now True
+                        # Force rerun to show annotation view
+                        st.rerun()
 
                 # Delete button
                 if cols[5].button("🗑", key=f"del_{book['folder']}", help="Delete"):
@@ -4172,12 +4169,8 @@ def render_portal():
                     st.write(f"**{book['title']}**")
                     st.caption(f"By: {book.get('annotated_by', '?')} | Submitted: {book.get('submitted_at', '?')[:10] if book.get('submitted_at') else '?'}")
                 with col3:
-                    st.button(
-                        "👁 View",
-                        key=f"view_sub_{book['folder']}",
-                        on_click=on_view_book_click,
-                        args=(book['folder'],)
-                    )
+                    if st.button("👁 View", key=f"view_sub_{book['folder']}", on_click=on_view_book_click, args=(book['folder'],)):
+                        st.rerun()
                 with col4:
                     if st.button("✅", key=f"approve_{book['folder']}", help="Approve"):
                         with st.spinner("Approving..."):
