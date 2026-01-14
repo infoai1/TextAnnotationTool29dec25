@@ -1,72 +1,61 @@
 """
-Application configuration module.
-
-Centralized settings for easy feature toggles and customization.
-Modify this file to enable/disable features without changing core logic.
+Configuration constants for Annotation Tool.
+All paths and constants in one place for easy modification.
 """
+from pathlib import Path
+import os
 
-from dataclasses import dataclass, field
+# Determine environment
+IS_DOCKER = os.path.exists('/.dockerenv')
 
+# Base paths
+if IS_DOCKER:
+    BASE_DIR = Path("/app")
+    DATA_DIR = Path("/app/data")
+    BOOKS_DIR = Path("/app/books")
+    EXPORTS_DIR = Path("/app/exports")
+    LOGS_DIR = Path("/app/logs")
+else:
+    BASE_DIR = Path("/root/annotation_tool")
+    DATA_DIR = BASE_DIR / "data"
+    BOOKS_DIR = BASE_DIR / "books"
+    EXPORTS_DIR = BASE_DIR / "exports"
+    LOGS_DIR = BASE_DIR / "logs"
 
-@dataclass
-class AppConfig:
-    """
-    Main application configuration.
+# Versions subdirectory
+VERSIONS_DIR = DATA_DIR / "versions"
 
-    Toggle features on/off by setting boolean flags.
-    Customize behavior by modifying values.
-    """
+# Ensure directories exist
+for d in [DATA_DIR, BOOKS_DIR, EXPORTS_DIR, LOGS_DIR, VERSIONS_DIR]:
+    d.mkdir(parents=True, exist_ok=True)
 
-    # === Feature Toggles ===
-    enable_quran_detection: bool = True
-    enable_hadith_detection: bool = True
-    enable_auto_highlight: bool = True
-    enable_progress_tracking: bool = True
-    enable_export: bool = True
+# Timing (seconds)
+AUTO_SAVE_INTERVAL = 30  # Auto-save every 30 seconds
+CACHE_TTL = 3600  # Cache TTL for expensive operations (1 hour)
+LOCK_TIMEOUT_HOURS = 2  # Release locks after 2 hours of inactivity
 
-    # === UI Settings ===
-    app_title: str = "Islamic Text Annotation Tool"
-    paragraphs_per_page: int = 10  # For pagination (0 = show all)
-    show_detection_confidence: bool = False  # Future feature
+# Versioning
+VERSION_KEEP_COUNT = 10  # Keep last 10 versions per book
 
-    # === Detection Settings ===
-    min_surah_number: int = 1
-    max_surah_number: int = 114
-    min_ayah_number: int = 1
-    max_ayah_number: int = 286  # Al-Baqarah has most ayahs
+# Grouping token ranges
+GROUP_TOKEN_MIN = 512  # Minimum tokens for a group
+GROUP_TOKEN_TARGET = 650  # Target tokens for a group
+GROUP_TOKEN_MAX = 800  # Maximum tokens for a group
 
-    # === Export Settings ===
-    export_format: str = "json"  # Currently only json supported
-    include_unreviewed: bool = True
-    pretty_print_json: bool = True
+# UI defaults
+DEFAULT_COLLAPSED = True  # Collapse paragraphs by default
+MAX_SLUG_LENGTH = 50  # Maximum length for book slugs
 
-    # === Debug Settings ===
-    debug_mode: bool = False
-    log_level: str = "INFO"  # DEBUG, INFO, WARNING, ERROR
+# Auth
+AUTH_CONFIG_FILE = DATA_DIR / "users.yaml"
 
+# Export formats
+EXPORT_INDENT = 2  # JSON indentation for exports
 
-@dataclass
-class ColorConfig:
-    """Color scheme configuration for highlights."""
+# IST Timezone (India Standard Time - UTC+5:30)
+from datetime import datetime, timedelta
+IST_OFFSET = timedelta(hours=5, minutes=30)
 
-    quran_bg: str = "#d4edda"
-    quran_text: str = "#155724"
-    hadith_bg: str = "#cce5ff"
-    hadith_text: str = "#004085"
-    reviewed_bg: str = "#f8f9fa"
-    pending_bg: str = "#ffffff"
-
-
-# Global config instances (import and modify as needed)
-app_config = AppConfig()
-color_config = ColorConfig()
-
-
-def get_config() -> AppConfig:
-    """Get the current app configuration."""
-    return app_config
-
-
-def get_colors() -> ColorConfig:
-    """Get the current color configuration."""
-    return color_config
+def get_ist_now():
+    """Get current datetime in IST timezone."""
+    return datetime.utcnow() + IST_OFFSET

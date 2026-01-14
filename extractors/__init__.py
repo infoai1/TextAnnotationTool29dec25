@@ -1,14 +1,19 @@
-"""Extractors module for parsing documents and detecting references."""
-
-from .docx_parser import parse_docx, iter_paragraphs
-from .quran_detector import detect_quran_refs, QuranReference
-from .hadith_detector import detect_hadith_refs, HadithReference
+from .docx_parser import extract_paragraphs
+from .quran_detector import detect_quran_refs
+from .hadith_detector import detect_hadith_refs
+from .footnote_detector import (
+    detect_footnote_markers,
+    extract_docx_footnotes,
+    extract_endnotes_from_text,
+    link_markers_to_footnotes
+)
 
 __all__ = [
-    'parse_docx',
-    'iter_paragraphs',
+    'extract_paragraphs',
     'detect_quran_refs',
-    'QuranReference',
     'detect_hadith_refs',
-    'HadithReference',
+    'detect_footnote_markers',
+    'extract_docx_footnotes',
+    'extract_endnotes_from_text',
+    'link_markers_to_footnotes'
 ]

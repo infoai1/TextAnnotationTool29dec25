@@ -1,20 +1,13 @@
-"""Hadith reference detector with pre-compiled regex patterns."""
+"""
+Hadith Reference Detector Module
+Auto-detects Hadith references in text using regex patterns.
+"""
 
 import re
-from dataclasses import dataclass
+from typing import List, Dict, Any
 
 
-@dataclass
-class HadithReference:
-    """Represents a detected Hadith reference."""
-    collection: str | None
-    hadith_number: int | None
-    matched_text: str
-    start_pos: int
-    end_pos: int
-
-
-# Hadith collection names
+# Hadith collections
 HADITH_COLLECTIONS = [
     "Sahih al-Bukhari",
     "Sahih Muslim",
@@ -30,97 +23,162 @@ HADITH_COLLECTIONS = [
     "Bukhari",
     "Muslim",
     "Tirmidhi",
+    "Abu Dawood",
+    "Nasa'i",
+    "Ibn Majah",
 ]
 
-# Pre-compiled pattern for collection names (single alternation, case-insensitive)
-_COLLECTION_PATTERN = re.compile(
-    r'(' + '|'.join(re.escape(c) for c in HADITH_COLLECTIONS) + r')',
-    re.IGNORECASE
-)
-
-# Pre-compiled patterns for hadith references
-_PATTERNS = [
-    # *Sahih al-Bukhari*, Hadith No. 5971 (markdown italics)
-    re.compile(
-        r'\*(' + '|'.join(re.escape(c) for c in HADITH_COLLECTIONS) + r')\*'
-        r',?\s*Hadith\s*(?:No\.?|Number)?\s*(\d+)',
-        re.IGNORECASE
-    ),
-    # Sahih al-Bukhari, Hadith No. 5971 (plain text)
-    re.compile(
-        r'(' + '|'.join(re.escape(c) for c in HADITH_COLLECTIONS) + r')'
-        r',?\s*Hadith\s*(?:No\.?|Number)?\s*(\d+)',
-        re.IGNORECASE
-    ),
-    # Hadith No. 236 (number only, no collection)
-    re.compile(r'Hadith\s*(?:No\.?|Number)\s*(\d+)', re.IGNORECASE),
-    # (Bukhari: 1234) or (Muslim: 5678) - parenthesized format
-    re.compile(
-        r'\((' + '|'.join(re.escape(c) for c in HADITH_COLLECTIONS) + r')'
-        r'[:\s]+(\d+)\)',
-        re.IGNORECASE
-    ),
-]
+# Build pattern for collection names (case-insensitive)
+COLLECTION_PATTERN = '|'.join(re.escape(c) for c in HADITH_COLLECTIONS)
 
 
-def detect_hadith_refs(text: str) -> list[HadithReference]:
+def detect_hadith_refs(text: str) -> List[Dict[str, Any]]:
     """
-    Detect all Hadith references in text.
+    Detect Hadith references in the given text.
 
     Args:
-        text: Input text to search
+        text: The text to search for Hadith references
 
     Returns:
-        List of HadithReference objects with positions
+        List of detected Hadith references with details
     """
     refs = []
     seen_positions = set()
 
-    for pattern in _PATTERNS:
-        for match in pattern.finditer(text):
-            if match.start() in seen_positions:
-                continue
-
-            seen_positions.add(match.start())
-            groups = match.groups()
-
-            # Handle different pattern group structures
-            if len(groups) == 2:
-                collection, number = groups
-            elif len(groups) == 1:
-                collection, number = None, groups[0]
-            else:
-                continue
-
-            refs.append(HadithReference(
-                collection=collection,
-                hadith_number=int(number) if number else None,
-                matched_text=match.group(0),
-                start_pos=match.start(),
-                end_pos=match.end(),
+    # Pattern 1: *Collection Name*, Hadith No. 1234 or (Collection Name, Hadith No. 1234)
+    pattern1 = rf'\*({COLLECTION_PATTERN})\*[,\s]*[Hh]adith\s*[Nn]o\.?\s*(\d+)'
+    for match in re.finditer(pattern1, text, re.IGNORECASE):
+        if match.start() not in seen_positions:
+            refs.append(_create_hadith_ref(
+                collection=match.group(1),
+                number=int(match.group(2)),
+                match=match
             ))
+            seen_positions.add(match.start())
 
-    refs.sort(key=lambda r: r.start_pos)
+    # Pattern 2: Collection Name, Hadith No. 1234 (without asterisks)
+    pattern2 = rf'({COLLECTION_PATTERN})[,\s]+[Hh]adith\s*[Nn]o\.?\s*(\d+)'
+    for match in re.finditer(pattern2, text, re.IGNORECASE):
+        if match.start() not in seen_positions:
+            refs.append(_create_hadith_ref(
+                collection=match.group(1),
+                number=int(match.group(2)),
+                match=match
+            ))
+            seen_positions.add(match.start())
+
+    # Pattern 3: Collection Name: 1234 or Collection Name #1234
+    pattern3 = rf'({COLLECTION_PATTERN})[:\s#]+(\d+)'
+    for match in re.finditer(pattern3, text, re.IGNORECASE):
+        if match.start() not in seen_positions:
+            refs.append(_create_hadith_ref(
+                collection=match.group(1),
+                number=int(match.group(2)),
+                match=match
+            ))
+            seen_positions.add(match.start())
+
+    # Pattern 4: Hadith No. 1234 (without collection - generic)
+    pattern4 = r'[Hh]adith\s*[Nn]o\.?\s*(\d+)'
+    for match in re.finditer(pattern4, text):
+        if match.start() not in seen_positions:
+            refs.append(_create_hadith_ref(
+                collection=None,
+                number=int(match.group(1)),
+                match=match
+            ))
+            seen_positions.add(match.start())
+
+    # Pattern 5: Narrated by/from patterns (common hadith indicator)
+    pattern5 = r'[Nn]arrated\s+(?:by|from)\s+([\w\s]+?)(?:\s*[:,]|\s+that)'
+    for match in re.finditer(pattern5, text):
+        if match.start() not in seen_positions:
+            narrator = match.group(1).strip()
+            # Only include if narrator looks like a name (not too long)
+            if len(narrator) < 50 and narrator:
+                refs.append({
+                    'collection': None,
+                    'number': None,
+                    'narrator': narrator,
+                    'detection': 'auto',
+                    'verified': False,
+                    'start_pos': match.start(),
+                    'end_pos': match.end(),
+                    'matched_text': match.group(0)
+                })
+                seen_positions.add(match.start())
+
+    # Sort by position in text
+    refs.sort(key=lambda x: x['start_pos'])
+
     return refs
 
 
-def detect_hadith_refs_batch(paragraphs: list[str]) -> list[list[HadithReference]]:
-    """
-    Detect Hadith references in multiple paragraphs.
+def _create_hadith_ref(collection: str, number: int, match: re.Match) -> Dict[str, Any]:
+    """Create a hadith reference dictionary from a match."""
+    return {
+        'collection': _normalize_collection_name(collection) if collection else None,
+        'number': number,
+        'narrator': None,
+        'detection': 'auto',
+        'verified': False,
+        'start_pos': match.start(),
+        'end_pos': match.end(),
+        'matched_text': match.group(0)
+    }
 
-    Args:
-        paragraphs: List of paragraph texts
 
-    Returns:
-        List of reference lists, one per paragraph
-    """
-    return [detect_hadith_refs(p) for p in paragraphs]
-
-
-def normalize_collection_name(name: str) -> str:
+def _normalize_collection_name(name: str) -> str:
     """Normalize collection name to standard form."""
-    name_lower = name.lower()
-    for collection in HADITH_COLLECTIONS:
-        if collection.lower() == name_lower:
-            return collection
-    return name
+    name_lower = name.lower().strip()
+
+    # Map shortened names to full names
+    name_map = {
+        'bukhari': 'Sahih al-Bukhari',
+        'muslim': 'Sahih Muslim',
+        'tirmidhi': 'Sunan at-Tirmidhi',
+        'abu dawood': 'Sunan Abi Dawood',
+        "nasa'i": "Sunan an-Nasa'i",
+        'ibn majah': 'Sunan Ibn Majah',
+    }
+
+    for short, full in name_map.items():
+        if short in name_lower:
+            return full
+
+    # Return original with proper capitalization if no mapping found
+    return name.strip()
+
+
+def format_hadith_ref(ref: Dict[str, Any]) -> str:
+    """Format a Hadith reference for display."""
+    parts = []
+
+    if ref.get('collection'):
+        parts.append(ref['collection'])
+
+    if ref.get('number'):
+        parts.append(f"Hadith No. {ref['number']}")
+
+    if ref.get('narrator') and not parts:
+        return f"Narrated by {ref['narrator']}"
+
+    return ', '.join(parts) if parts else "Hadith reference"
+
+
+def get_collection_list() -> List[str]:
+    """Return the list of known hadith collections."""
+    return [
+        "Sahih al-Bukhari",
+        "Sahih Muslim",
+        "Sunan at-Tirmidhi",
+        "Sunan Abi Dawood",
+        "Sunan an-Nasa'i",
+        "Sunan Ibn Majah",
+        "Musnad Ahmad",
+        "Muwatta Malik",
+        "Musnad Al-Bazzar",
+        "Musnad Al-Shihab",
+        "Al-Tabarani",
+        "Other"
+    ]

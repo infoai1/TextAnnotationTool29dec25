@@ -1,0 +1,22 @@
+{
+  "chunks": [],
+  "entities": [
+    {
+      "entity_name": "unknown-book",
+      "entity_type": "BOOK",
+      "description": "Unknown Book by Unknown Author",
+      "source_id": "book:unknown-book"
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "book_slug": "unknown-book",
+    "book_title": "Unknown Book",
+    "total_chunks": 0,
+    "total_entities": 1,
+    "total_relationships": 0,
+    "use_merged_chunks": true,
+    "target_tokens": 512,
+    "overlap_tokens": 75
+  }
+}

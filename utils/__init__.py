@@ -1,5 +1,13 @@
-"""Utility modules for text processing and formatting."""
+from .highlighter import (
+    highlight_text_simple,
+    get_highlight_css,
+    find_year_positions,
+    DEFAULT_KEYWORDS
+)
 
-from .highlighter import highlight_references, HighlightConfig
-
-__all__ = ['highlight_references', 'HighlightConfig']
+__all__ = [
+    'highlight_text_simple',
+    'get_highlight_css',
+    'find_year_positions',
+    'DEFAULT_KEYWORDS'
+]

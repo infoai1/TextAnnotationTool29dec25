@@ -1,70 +1,70 @@
 {
   "collections": [
     {
-      "id": "bukhari",
       "name": "Sahih al-Bukhari",
-      "aliases": ["Bukhari", "Sahih Bukhari"],
-      "total_hadith": 7563
+      "short_names": ["Bukhari", "Al-Bukhari"],
+      "compiler": "Imam al-Bukhari",
+      "total_hadith": 7275
     },
     {
-      "id": "muslim",
       "name": "Sahih Muslim",
-      "aliases": ["Muslim", "Sahih Muslim"],
+      "short_names": ["Muslim"],
+      "compiler": "Imam Muslim",
       "total_hadith": 7500
     },
     {
-      "id": "tirmidhi",
       "name": "Sunan at-Tirmidhi",
-      "aliases": ["Tirmidhi", "Jami at-Tirmidhi"],
+      "short_names": ["Tirmidhi", "At-Tirmidhi", "Jami at-Tirmidhi"],
+      "compiler": "Imam at-Tirmidhi",
       "total_hadith": 3956
     },
     {
-      "id": "abu_dawood",
       "name": "Sunan Abi Dawood",
-      "aliases": ["Abu Dawood", "Abu Dawud"],
+      "short_names": ["Abu Dawood", "Abi Dawood", "Abu Dawud"],
+      "compiler": "Imam Abu Dawood",
       "total_hadith": 5274
     },
     {
-      "id": "nasai",
       "name": "Sunan an-Nasa'i",
-      "aliases": ["Nasa'i", "Nasai"],
+      "short_names": ["Nasa'i", "An-Nasa'i", "Nasai"],
+      "compiler": "Imam an-Nasa'i",
       "total_hadith": 5761
     },
     {
-      "id": "ibn_majah",
       "name": "Sunan Ibn Majah",
-      "aliases": ["Ibn Majah"],
+      "short_names": ["Ibn Majah"],
+      "compiler": "Imam Ibn Majah",
       "total_hadith": 4341
     },
     {
-      "id": "ahmad",
       "name": "Musnad Ahmad",
-      "aliases": ["Ahmad", "Musnad"],
+      "short_names": ["Ahmad", "Musnad"],
+      "compiler": "Imam Ahmad ibn Hanbal",
       "total_hadith": 27647
     },
     {
-      "id": "malik",
       "name": "Muwatta Malik",
-      "aliases": ["Malik", "Muwatta"],
-      "total_hadith": 1832
+      "short_names": ["Malik", "Muwatta"],
+      "compiler": "Imam Malik",
+      "total_hadith": 1720
     },
     {
-      "id": "bazzar",
       "name": "Musnad Al-Bazzar",
-      "aliases": ["Bazzar"],
-      "total_hadith": 0
+      "short_names": ["Al-Bazzar", "Bazzar"],
+      "compiler": "Imam al-Bazzar",
+      "total_hadith": null
     },
     {
-      "id": "shihab",
       "name": "Musnad Al-Shihab",
-      "aliases": ["Shihab"],
-      "total_hadith": 0
+      "short_names": ["Al-Shihab", "Shihab"],
+      "compiler": "Al-Quda'i",
+      "total_hadith": null
     },
     {
-      "id": "tabarani",
       "name": "Al-Tabarani",
-      "aliases": ["Tabarani"],
-      "total_hadith": 0
+      "short_names": ["Tabarani", "Al-Mu'jam"],
+      "compiler": "Imam al-Tabarani",
+      "total_hadith": null
     }
   ]
 }

@@ -1,0 +1,15 @@
+credentials:
+  usernames:
+    admin:
+      name: Admin
+      password: $2b$12$NVEjRPHk2kROo7NMQkJ.3eosJU037fy/HqiTda2B8eKmmqIXUIrVC
+      role: admin
+    annotator:
+      name: Annotator
+      password: $2b$12$k18GyUNac4ada9zhyzvbxOBEHoKpZRnNuAkMKEhBee29A5NbiTO8q
+      role: annotator
+
+cookie:
+  name: annotation_tool_auth_v2
+  key: islamicannotation2026freshkey
+  expiry_days: 30
