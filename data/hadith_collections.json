@@ -1,0 +1,70 @@
+{
+  "collections": [
+    {
+      "id": "bukhari",
+      "name": "Sahih al-Bukhari",
+      "aliases": ["Bukhari", "Sahih Bukhari"],
+      "total_hadith": 7563
+    },
+    {
+      "id": "muslim",
+      "name": "Sahih Muslim",
+      "aliases": ["Muslim", "Sahih Muslim"],
+      "total_hadith": 7500
+    },
+    {
+      "id": "tirmidhi",
+      "name": "Sunan at-Tirmidhi",
+      "aliases": ["Tirmidhi", "Jami at-Tirmidhi"],
+      "total_hadith": 3956
+    },
+    {
+      "id": "abu_dawood",
+      "name": "Sunan Abi Dawood",
+      "aliases": ["Abu Dawood", "Abu Dawud"],
+      "total_hadith": 5274
+    },
+    {
+      "id": "nasai",
+      "name": "Sunan an-Nasa'i",
+      "aliases": ["Nasa'i", "Nasai"],
+      "total_hadith": 5761
+    },
+    {
+      "id": "ibn_majah",
+      "name": "Sunan Ibn Majah",
+      "aliases": ["Ibn Majah"],
+      "total_hadith": 4341
+    },
+    {
+      "id": "ahmad",
+      "name": "Musnad Ahmad",
+      "aliases": ["Ahmad", "Musnad"],
+      "total_hadith": 27647
+    },
+    {
+      "id": "malik",
+      "name": "Muwatta Malik",
+      "aliases": ["Malik", "Muwatta"],
+      "total_hadith": 1832
+    },
+    {
+      "id": "bazzar",
+      "name": "Musnad Al-Bazzar",
+      "aliases": ["Bazzar"],
+      "total_hadith": 0
+    },
+    {
+      "id": "shihab",
+      "name": "Musnad Al-Shihab",
+      "aliases": ["Shihab"],
+      "total_hadith": 0
+    },
+    {
+      "id": "tabarani",
+      "name": "Al-Tabarani",
+      "aliases": ["Tabarani"],
+      "total_hadith": 0
+    }
+  ]
+}

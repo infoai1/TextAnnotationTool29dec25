@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Logs
+*.log
+app.log
+
+# Exports (keep directory, ignore contents)
+exports/*
+!exports/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploaded files (temporary)
+*.docx
+!tests/*.docx
